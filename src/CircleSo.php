@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace AdroSoftware\CircleSoSdk;
 
+use AdroSoftware\CircleSoSdk\Endpoint\Me;
 use Http\Client\Common\HttpMethodsClientInterface;
 use Http\Client\Common\Plugin\BaseUriPlugin;
 use Http\Client\Common\Plugin\HeaderDefaultsPlugin;
@@ -29,6 +30,11 @@ final class CircleSo
                 ]
             )
         );
+    }
+
+    public function me(): Me
+    {
+        return new Me($this);
     }
 
     public function getHttpClient(): HttpMethodsClientInterface

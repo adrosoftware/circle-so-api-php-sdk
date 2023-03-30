@@ -10,9 +10,6 @@ use AdroSoftware\CircleSoSdk\Options;
 use GuzzleHttp\Client;
 use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;
-use GuzzleHttp\Psr7\Response;
-use GuzzleHttp\Psr7\Request;
-use GuzzleHttp\Exception\RequestException;
 use Psr\Http\Client\ClientInterface;
 
 abstract class TestCase extends \PHPUnit\Framework\TestCase
@@ -34,5 +31,12 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
         $handlerStack = HandlerStack::create($mock);
 
         return new Client(['handler' => $handlerStack]);
+    }
+
+    protected function getSdkWithMockedClient(array $responses = []): CircleSo
+    {
+        return $this->sdk(
+            $this->mockedClient($responses)
+        );
     }
 }
