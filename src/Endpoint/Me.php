@@ -8,7 +8,7 @@ final class Me extends AbstractEndpoint
 {
     public function get(): array
     {
-        return $this->decodeContent(
+        return $this->mediateResponse(
             $this->circleSo->getHttpClient()->get('/me')
         );
     }

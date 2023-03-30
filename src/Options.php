@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace AdroSoftware\CircleSoSdk;
 
+use AdroSoftware\CircleSoSdk\Http\Message\ResponseMediator;
+use AdroSoftware\CircleSoSdk\Http\Message\ResponseMediatorInterface;
 use Http\Discovery\Psr17FactoryDiscovery;
 use Psr\Http\Message\UriFactoryInterface;
 use Psr\Http\Message\UriInterface;
@@ -24,6 +26,7 @@ final class Options
         $resolver->setDefaults([
             'client_builder' => new ClientBuilder(),
             'uri_factory' => Psr17FactoryDiscovery::findUriFactory(),
+            'response_mediator' => new ResponseMediator(),
             'uri' => 'https://app.circle.so/api/',
             'version' => 'v1',
             'user_agent' => 'AdroSoftware/CircleSoSdk',
@@ -34,6 +37,7 @@ final class Options
         $resolver->setAllowedTypes('user_agent', 'string');
         $resolver->setAllowedTypes('client_builder', ClientBuilder::class);
         $resolver->setAllowedTypes('uri_factory', UriFactoryInterface::class);
+        $resolver->setAllowedTypes('response_mediator', ResponseMediatorInterface::class);
     }
 
     public function getClientBuilder(): ClientBuilder
@@ -44,6 +48,11 @@ final class Options
     public function getUriFactory(): UriFactoryInterface
     {
         return $this->options['uri_factory'];
+    }
+
+    public function getResponseMediator(): ResponseMediatorInterface
+    {
+        return $this->options['response_mediator'];
     }
 
     public function getUri(): UriInterface

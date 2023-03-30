@@ -12,8 +12,8 @@ abstract class AbstractEndpoint implements EndpointInterface
     {
     }
 
-    protected function decodeContent(ResponseInterface $response): array
+    protected function mediateResponse(ResponseInterface $response): array
     {
-        return json_decode($response->getBody()->getContents(), true);
+        return $this->circleSo->mediateResponse($response);
     }
 }

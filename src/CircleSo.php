@@ -5,9 +5,11 @@ declare(strict_types=1);
 namespace AdroSoftware\CircleSoSdk;
 
 use AdroSoftware\CircleSoSdk\Endpoint\Me;
+use AdroSoftware\CircleSoSdk\Http\Message\ResponseMediatorInterface;
 use Http\Client\Common\HttpMethodsClientInterface;
 use Http\Client\Common\Plugin\BaseUriPlugin;
 use Http\Client\Common\Plugin\HeaderDefaultsPlugin;
+use Psr\Http\Message\ResponseInterface;
 
 final class CircleSo
 {
@@ -15,8 +17,11 @@ final class CircleSo
         private string $token,
         private ?Options $options = null,
         private ?ClientBuilder $clientBuilder = null,
+        private ?ResponseMediatorInterface $responseMediator = null,
     ) {
         $options = $options ?? new Options();
+
+        $this->responseMediator = $responseMediator ?? $options->getResponseMediator();
 
         $this->clientBuilder = $options->getClientBuilder();
         $this->clientBuilder->addPlugin(new BaseUriPlugin($options->getUri()));
@@ -40,5 +45,12 @@ final class CircleSo
     public function getHttpClient(): HttpMethodsClientInterface
     {
         return $this->clientBuilder->getHttpClient();
+    }
+
+    public function mediateResponse(ResponseInterface $response): array|object|string|null
+    {
+        $mediator = $this->responseMediator;
+
+        return $mediator($response);
     }
 }
