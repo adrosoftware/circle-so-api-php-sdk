@@ -46,6 +46,23 @@ final class CircleSoTest extends TestCase
         $circleSo->me()->info();
     }
 
+    public function test_community_members_ok(): void
+    {
+        $circleSo = $this->getSdkWithMockedClient([
+            new Response(200, [], json_response('community_members')),
+        ]);
+
+        $communityMembers = $circleSo->members()
+            ->communityId(1)
+            ->communityMembers(perPage: 2);
+
+        $this->assertCount(2, $communityMembers);
+
+        $this->assertSame(1, $communityMembers[0]['id']);
+        $this->assertSame('Adro', $communityMembers[0]['first_name']);
+        $this->assertSame('Adro Morelos', $communityMembers[0]['name']);
+    }
+
     public function test_member_search_ok(): void
     {
         $circleSo = $this->getSdkWithMockedClient([

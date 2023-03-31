@@ -13,6 +13,29 @@ use AdroSoftware\CircleSoSdk\Exception\{
 
 final class Members extends AbstractEndpoint implements EndpointInterface
 {
+    public function communityMembers(
+        ?string $sortBy = null,
+        ?int $perPage = null,
+        ?int $page = null,
+        ?string $status = null,
+        ?int $communityId = null,
+    ): mixed {
+        $this->ensureCommunityIdIsPresent($communityId);
+
+        $query = [
+            'sort' => $sortBy ?? 'latest',
+            'per_page' => $perPage ?? 10,
+            'page' => $page ?? 1,
+            'status' => $status ?? 'active',
+        ];
+
+        return $this->factorResponse(
+            $this->circleSo->getHttpClient()->get(
+                "/community_members?" . http_build_query($query)
+            )
+        );
+    }
+
     /**
      * @throws CommunityIdNotPresentException
      */
