@@ -1,6 +1,6 @@
 {
     "name": "adrosoftware/circle-so-api-php-sdk",
-    "description": "A PHP SDK to interact with api.circle.so API",
+    "description": "A PHP SDK to interact with the circle.so API",
     "type": "library",
     "license": "MIT",
     "authors": [
