@@ -3,7 +3,7 @@
     "message": "Community member is updated.",
     "community_member": {
         "id": 1,
-        "first_name": "Adro",
+        "first_name": "Adroeck",
         "last_name": "Morelos",
         "headline": "Superman",
         "bio": "Photographer",
@@ -66,7 +66,7 @@
         ],
         "avatar_url": "https://ui-avatars.com/api/?name=Adro+Morelos",
         "user_id": 123,
-        "name": "Adro Morelos",
+        "name": "Adroeck Morelos",
         "email": "",
         "topics_count": 0,
         "posts_count": 0,

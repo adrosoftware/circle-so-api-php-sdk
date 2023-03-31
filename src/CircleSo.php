@@ -69,7 +69,7 @@ final class CircleSo
         return $this->clientBuilder->getHttpClient();
     }
 
-    public function factorResponse(ResponseInterface $response): array|object|string|null
+    public function factorResponse(ResponseInterface $response): mixed
     {
         if ($this->responseFactory instanceof FactoryInterface) {
             return $this->responseFactory->factor(

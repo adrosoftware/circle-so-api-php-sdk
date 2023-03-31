@@ -35,7 +35,7 @@ abstract class AbstractEndpoint
         }
     }
 
-    protected function factorResponse(ResponseInterface $response): array
+    protected function factorResponse(ResponseInterface $response): mixed
     {
         return $this->circleSo->factorResponse($response);
     }

@@ -63,4 +63,50 @@ final class CircleSoTest extends TestCase
         $this->assertSame('Adro', $member['first_name']);
         $this->assertSame('Adro Morelos', $member['name']);
     }
+
+    public function test_member_update_ok(): void
+    {
+        $circleSo = $this->getSdkWithMockedClient([
+            new Response(200, [], json_response('member_updated')),
+        ]);
+
+        $memberUpdated = $circleSo->members()
+            ->communityId(1)
+            ->update(
+                id: 1,
+                data: ['first_name' => 'Adroeck'],
+                spaceIds: [1,2,3,],
+                spaceGroupIds: [1,2,3,],
+                skipInvitation: true
+            );
+
+        $this->assertArrayHasKey('community_member', $memberUpdated);
+
+        $this->assertSame(true, $memberUpdated['success']);
+        $this->assertSame(1, $memberUpdated['community_member']['id']);
+        $this->assertSame('Adroeck', $memberUpdated['community_member']['first_name']);
+        $this->assertSame('Adroeck Morelos', $memberUpdated['community_member']['name']);
+    }
+
+    public function test_member_update_failed(): void
+    {
+        $circleSo = $this->getSdkWithMockedClient([
+            new Response(200, [], json_response('member_update_failed')),
+        ]);
+
+        $memberUpdated = $circleSo->members()
+            ->communityId(1)
+            ->update(
+                id: 1,
+                data: ['first_name' => 'Adroeck'],
+                spaceIds: [1,2,3,],
+                spaceGroupIds: [1,2,3,],
+                skipInvitation: true
+            );
+
+        $this->assertArrayHasKey('success', $memberUpdated);
+        $this->assertArrayNotHasKey('community_member', $memberUpdated);
+
+        $this->assertSame(false, $memberUpdated['success']);
+    }
 }
