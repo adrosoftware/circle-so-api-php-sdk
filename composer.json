@@ -34,7 +34,10 @@
     "autoload-dev": {
         "psr-4": {
             "AdroSoftware\\CircleSoSdk\\Tests\\": "tests"
-        }
+        },
+        "files": [
+          "tests/helpers.php"
+        ]
     },
     "config": {
         "allow-plugins": {

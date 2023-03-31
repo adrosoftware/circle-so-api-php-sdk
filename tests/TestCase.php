@@ -16,7 +16,7 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
 {
     protected function sdk(ClientInterface $client): CircleSo
     {
-        return new CircleSo(
+        return CircleSo::make(
             '5up3r53cr3770k3n',
             new Options([
                 'client_builder' => new ClientBuilder($client),

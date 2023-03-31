@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace AdroSoftware\CircleSoSdk;
 
-use AdroSoftware\CircleSoSdk\Http\Message\ResponseMediator;
-use AdroSoftware\CircleSoSdk\Http\Message\ResponseMediatorInterface;
+use AdroSoftware\CircleSoSdk\Response\BypassFactory;
+use AdroSoftware\CircleSoSdk\Response\FactoryInterface;
 use Http\Discovery\Psr17FactoryDiscovery;
 use Psr\Http\Message\UriFactoryInterface;
 use Psr\Http\Message\UriInterface;
@@ -26,18 +26,18 @@ final class Options
         $resolver->setDefaults([
             'client_builder' => new ClientBuilder(),
             'uri_factory' => Psr17FactoryDiscovery::findUriFactory(),
-            'response_mediator' => new ResponseMediator(),
+            'response_factory' => new BypassFactory(),
             'uri' => 'https://app.circle.so/api/',
-            'version' => 'v1',
-            'user_agent' => 'AdroSoftware/CircleSoSdk',
+            'api_version' => 'v1',
+            'user_agent' => 'adrosoftware/circle-so-api-php-sdk',
         ]);
 
         $resolver->setAllowedTypes('uri', 'string');
-        $resolver->setAllowedTypes('version', 'string');
+        $resolver->setAllowedTypes('api_version', 'string');
         $resolver->setAllowedTypes('user_agent', 'string');
         $resolver->setAllowedTypes('client_builder', ClientBuilder::class);
         $resolver->setAllowedTypes('uri_factory', UriFactoryInterface::class);
-        $resolver->setAllowedTypes('response_mediator', ResponseMediatorInterface::class);
+        $resolver->setAllowedTypes('response_factory', FactoryInterface::class);
     }
 
     public function getClientBuilder(): ClientBuilder
@@ -50,20 +50,20 @@ final class Options
         return $this->options['uri_factory'];
     }
 
-    public function getResponseMediator(): ResponseMediatorInterface
+    public function getResponseFactory(): ?FactoryInterface
     {
-        return $this->options['response_mediator'];
+        return $this->options['response_factory'];
     }
 
     public function getUri(): UriInterface
     {
         return $this->getUriFactory()
-            ->createUri($this->options['uri'] . "{$this->getVersion()}/");
+            ->createUri($this->options['uri'] . "{$this->getApiVersion()}/");
     }
 
-    public function getVersion(): string
+    public function getApiVersion(): string
     {
-        return $this->options['version'];
+        return $this->options['api_version'];
     }
 
     public function getUserAgent(): string

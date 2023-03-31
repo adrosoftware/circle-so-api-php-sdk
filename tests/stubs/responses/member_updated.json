@@ -1,0 +1,84 @@
+{
+    "success": true,
+    "message": "Community member is updated.",
+    "community_member": {
+        "id": 1,
+        "first_name": "Adro",
+        "last_name": "Morelos",
+        "headline": "Superman",
+        "bio": "Photographer",
+        "created_at": "2023-01-01T00:00:00.000Z",
+        "updated_at": "2023-01-01T00:00:00.000Z",
+        "community_id": 1,
+        "member_tags": [],
+        "last_seen_at": "2023-01-01T00:00:00.000Z",
+        "profile_url": "https://circle.com/u/123456",
+        "public_uid": "123456",
+        "profile_fields": [
+            {
+                "id": 123,
+                "label": "Bio",
+                "field_type": "textarea",
+                "key": "bio",
+                "placeholder": "Tell us a bit about yourself",
+                "description": "A short bio about yourself",
+                "required": false,
+                "platform_field": true,
+                "created_at": "2023-01-01T00:00:00.000Z",
+                "updated_at": "2023-01-01T00:00:00.000Z",
+                "community_member_profile_field": {
+                    "id": 456,
+                    "text": null,
+                    "textarea": "Photographer",
+                    "created_at": "2023-01-01T00:00:00.000Z",
+                    "updated_at": "2023-01-01T00:00:00.000Z",
+                    "community_member_choices": []
+                },
+                "number_options": null,
+                "choices": [],
+                "pages": [
+                    {
+                        "id": 123,
+                        "name": "edit_profile",
+                        "position": 1,
+                        "visible": true,
+                        "created_at": "2023-01-01T00:00:00.000Z",
+                        "updated_at": "2023-01-01T00:00:00.000Z"
+                    },
+                    {
+                        "id": 123,
+                        "name": "profile_view",
+                        "position": 1,
+                        "visible": true,
+                        "created_at": "2023-01-01T00:00:00.000Z",
+                        "updated_at": "2023-01-01T00:00:00.000Z"
+                    },
+                    {
+                        "id": 123,
+                        "name": "signup",
+                        "position": 1,
+                        "visible": false,
+                        "created_at": "2023-01-01T00:00:00.000Z",
+                        "updated_at": "2023-01-01T00:00:00.000Z"
+                    }
+                ]
+            }
+        ],
+        "avatar_url": "https://ui-avatars.com/api/?name=Adro+Morelos",
+        "user_id": 123,
+        "name": "Adro Morelos",
+        "email": "",
+        "topics_count": 0,
+        "posts_count": 0,
+        "comments_count": 0,
+        "location": "Earth",
+        "website_url": "",
+        "instagram_url": "",
+        "twitter_url": "",
+        "linkedin_url": "",
+        "facebook_url": "",
+        "accepted_invitation": "2023-01-01T00:00:00.000Z",
+        "active": true,
+        "sso_provider_user_id": "123"
+    }
+}

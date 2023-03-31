@@ -4,8 +4,13 @@ declare(strict_types=1);
 
 namespace AdroSoftware\CircleSoSdk;
 
-use AdroSoftware\CircleSoSdk\Endpoint\Me;
-use AdroSoftware\CircleSoSdk\Http\Message\ResponseMediatorInterface;
+use AdroSoftware\CircleSoSdk\Endpoint\{
+    Me\Me,
+    Member\Members,
+};
+use AdroSoftware\CircleSoSdk\Http\Message\ArrayTransformer;
+use AdroSoftware\CircleSoSdk\Http\Message\ResponseTransformerInterface;
+use AdroSoftware\CircleSoSdk\Response\FactoryInterface;
 use Http\Client\Common\HttpMethodsClientInterface;
 use Http\Client\Common\Plugin\BaseUriPlugin;
 use Http\Client\Common\Plugin\HeaderDefaultsPlugin;
@@ -13,15 +18,27 @@ use Psr\Http\Message\ResponseInterface;
 
 final class CircleSo
 {
+    private ?ClientBuilder $clientBuilder = null;
+
+    private ?FactoryInterface $responseFactory = null;
+
+    private ?ResponseTransformerInterface $responseTransformer = null;
+
+    public static function make(
+        string $token,
+        ?Options $options = null,
+    ): static {
+        return new static($token, $options);
+    }
+
     public function __construct(
         private string $token,
         private ?Options $options = null,
-        private ?ClientBuilder $clientBuilder = null,
-        private ?ResponseMediatorInterface $responseMediator = null,
     ) {
         $options = $options ?? new Options();
 
-        $this->responseMediator = $responseMediator ?? $options->getResponseMediator();
+        $this->responseTransformer = new ArrayTransformer();
+        $this->responseFactory = $options->getResponseFactory();
 
         $this->clientBuilder = $options->getClientBuilder();
         $this->clientBuilder->addPlugin(new BaseUriPlugin($options->getUri()));
@@ -42,15 +59,24 @@ final class CircleSo
         return new Me($this);
     }
 
+    public function members(): Members
+    {
+        return new Members($this);
+    }
+
     public function getHttpClient(): HttpMethodsClientInterface
     {
         return $this->clientBuilder->getHttpClient();
     }
 
-    public function mediateResponse(ResponseInterface $response): array|object|string|null
+    public function factorResponse(ResponseInterface $response): array|object|string|null
     {
-        $mediator = $this->responseMediator;
+        if ($this->responseFactory instanceof FactoryInterface) {
+            return $this->responseFactory->factor(
+                $this->responseTransformer->transform($response)
+            );
+        }
 
-        return $mediator($response);
+        return  $this->responseTransformer->transform($response);
     }
 }
