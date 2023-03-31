@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace AdroSoftware\CircleSoSdk\Tests;
 
 use AdroSoftware\CircleSoSdk\CircleSo;
+use AdroSoftware\CircleSoSdk\Exception\RequestUnauthorizedException;
+use AdroSoftware\CircleSoSdk\Exception\UnsuccessfulResponseException;
 use GuzzleHttp\Psr7\Response;
 
 final class CircleSoTest extends TestCase
@@ -29,6 +31,19 @@ final class CircleSoTest extends TestCase
 
         $this->assertSame(1, $me['id']);
         $this->assertSame('Adro', $me['first_name']);
+    }
+
+    public function test_get_me_not_authorized(): void
+    {
+        $this->expectException(RequestUnauthorizedException::class);
+        $this->expectExceptionMessage('Your account could not be authenticated.');
+        $this->expectExceptionCode(500);
+
+        $circleSo = $this->getSdkWithMockedClient([
+            new Response(200, [], json_response('unauthorized')),
+        ]);
+
+        $circleSo->me()->info();
     }
 
     public function test_member_search_ok(): void
@@ -64,6 +79,21 @@ final class CircleSoTest extends TestCase
         $this->assertSame('Adro Morelos', $member['name']);
     }
 
+    public function test_member_show_failed(): void
+    {
+        $this->expectException(UnsuccessfulResponseException::class);
+        $this->expectExceptionMessage('Could not find CommunityMember record with ID 000000');
+        $this->expectExceptionCode(500);
+
+        $circleSo = $this->getSdkWithMockedClient([
+            new Response(200, [], json_response('member_update_failed')),
+        ]);
+
+        $circleSo->members()
+            ->communityId(1)
+            ->show(000000);
+    }
+
     public function test_member_update_ok(): void
     {
         $circleSo = $this->getSdkWithMockedClient([
@@ -88,25 +118,22 @@ final class CircleSoTest extends TestCase
         $this->assertSame('Adroeck Morelos', $memberUpdated['community_member']['name']);
     }
 
+
     public function test_member_update_failed(): void
     {
+        $this->expectException(UnsuccessfulResponseException::class);
+        $this->expectExceptionMessage('Could not find CommunityMember record with ID 000000');
+        $this->expectExceptionCode(500);
+
         $circleSo = $this->getSdkWithMockedClient([
             new Response(200, [], json_response('member_update_failed')),
         ]);
 
-        $memberUpdated = $circleSo->members()
+        $circleSo->members()
             ->communityId(1)
             ->update(
-                id: 1,
+                id: 000000,
                 data: ['first_name' => 'Adroeck'],
-                spaceIds: [1,2,3,],
-                spaceGroupIds: [1,2,3,],
-                skipInvitation: true
             );
-
-        $this->assertArrayHasKey('success', $memberUpdated);
-        $this->assertArrayNotHasKey('community_member', $memberUpdated);
-
-        $this->assertSame(false, $memberUpdated['success']);
     }
 }

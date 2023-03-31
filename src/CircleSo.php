@@ -8,9 +8,12 @@ use AdroSoftware\CircleSoSdk\Endpoint\{
     Me\Me,
     Member\Members,
 };
+use AdroSoftware\CircleSoSdk\Exception\RequestUnauthorizedException;
+use AdroSoftware\CircleSoSdk\Exception\UnsuccessfulResponseException;
 use AdroSoftware\CircleSoSdk\Http\Message\ArrayTransformer;
 use AdroSoftware\CircleSoSdk\Http\Message\ResponseTransformerInterface;
 use AdroSoftware\CircleSoSdk\Response\FactoryInterface;
+use AdroSoftware\CircleSoSdk\Response\Status;
 use Http\Client\Common\HttpMethodsClientInterface;
 use Http\Client\Common\Plugin\BaseUriPlugin;
 use Http\Client\Common\Plugin\HeaderDefaultsPlugin;
@@ -18,11 +21,11 @@ use Psr\Http\Message\ResponseInterface;
 
 final class CircleSo
 {
-    private ?ClientBuilder $clientBuilder = null;
+    private ClientBuilder $clientBuilder;
 
-    private ?FactoryInterface $responseFactory = null;
+    private FactoryInterface $responseFactory;
 
-    private ?ResponseTransformerInterface $responseTransformer = null;
+    private ResponseTransformerInterface $responseTransformer;
 
     public static function make(
         string $token,
@@ -69,14 +72,41 @@ final class CircleSo
         return $this->clientBuilder->getHttpClient();
     }
 
+    public function getResponseTransformer(): ResponseTransformerInterface
+    {
+        return $this->responseTransformer;
+    }
+
+    public function getResponseFactory(): FactoryInterface
+    {
+        return $this->responseFactory;
+    }
+
     public function factorResponse(ResponseInterface $response): mixed
     {
-        if ($this->responseFactory instanceof FactoryInterface) {
-            return $this->responseFactory->factor(
-                $this->responseTransformer->transform($response)
-            );
+        $response = $this->getResponseTransformer()->transform($response);
+
+        $this->checkIfRequestWasSuccessful($response);
+
+        if ($this->getResponseFactory() instanceof FactoryInterface) {
+            $response = $this->getResponseFactory()->factor($response);
         }
 
-        return  $this->responseTransformer->transform($response);
+        return $response;
+    }
+
+    protected function checkIfRequestWasSuccessful(array $response): void
+    {
+        if (isset($response['status']) && $response['status'] === Status::UNAUTHORIZED) {
+            $message  = isset($response['message']) ? $response['message'] : "The request was not authorized.";
+
+            throw new RequestUnauthorizedException($message, 500);
+        }
+
+        if (isset($response['success']) && boolval($response['success']) === false) {
+            $message  = isset($response['message']) ? $response['message'] : "The request did not return a successful response.";
+
+            throw new UnsuccessfulResponseException($message, 500);
+        }
     }
 }

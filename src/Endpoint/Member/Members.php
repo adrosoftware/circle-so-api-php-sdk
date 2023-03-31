@@ -6,6 +6,10 @@ namespace AdroSoftware\CircleSoSdk\Endpoint\Member;
 
 use AdroSoftware\CircleSoSdk\Endpoint\AbstractEndpoint;
 use AdroSoftware\CircleSoSdk\Endpoint\EndpointInterface;
+use AdroSoftware\CircleSoSdk\Exception\{
+    CommunityIdNotPresentException,
+    UnsuccessfulResponseException,
+};
 
 final class Members extends AbstractEndpoint implements EndpointInterface
 {
@@ -25,6 +29,7 @@ final class Members extends AbstractEndpoint implements EndpointInterface
 
     /**
      * @throws CommunityIdNotPresentException
+     * @throws UnsuccessfulResponseException
      */
     public function show(int $id, ?int $communityId = null): mixed
     {
@@ -67,6 +72,7 @@ final class Members extends AbstractEndpoint implements EndpointInterface
      * }
      * ```
      * @throws CommunityIdNotPresentException
+     * @throws UnsuccessfulResponseException
      */
     public function update(
         int $id,

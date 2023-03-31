@@ -5,7 +5,10 @@ declare(strict_types=1);
 namespace AdroSoftware\CircleSoSdk\Endpoint;
 
 use AdroSoftware\CircleSoSdk\CircleSo;
-use AdroSoftware\CircleSoSdk\Exception\CommunityIdNotPresentException;
+use AdroSoftware\CircleSoSdk\Exception\{
+    CommunityIdNotPresentException,
+    UnsuccessfulResponseException,
+};
 use Psr\Http\Message\ResponseInterface;
 
 abstract class AbstractEndpoint
@@ -35,8 +38,11 @@ abstract class AbstractEndpoint
         }
     }
 
-    protected function factorResponse(ResponseInterface $response): mixed
+    /**
+     * @throws UnsuccessfulResponseException
+     */
+    protected function factorResponse(ResponseInterface $response, ?bool $checkForSuccess = null): mixed
     {
-        return $this->circleSo->factorResponse($response);
+        return $this->circleSo->factorResponse($response, $checkForSuccess);
     }
 }
