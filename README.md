@@ -1,3 +1,7 @@
+<p align="center">
+  <img style="padding: 25px" height="50" src="./art/circle-so-plus-php.png">
+</p>
+
 # Unofficial [Circle](https://www.circle.so/) SDK for PHP
 
 This is a PHP SDK to interact with the [Circle](https://www.circle.so/) API. Circle documentation can be found [here](https://api.circle.so).

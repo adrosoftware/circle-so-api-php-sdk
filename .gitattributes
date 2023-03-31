@@ -8,3 +8,4 @@
 /README.md          export-ignore
 /phpunit.xml        export-ignore
 /tests              export-ignore
+/art                export-ignore
