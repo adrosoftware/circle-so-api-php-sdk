@@ -25,11 +25,25 @@ jobs:
           php-version: ${{ matrix.php-versions }}
           coverage: none
 
-      - name: Install Composer Dependencies
-        uses: ramsey/composer-install@v2
+      - name: Install composer and dependencies
+        uses: php-actions/composer@v6
 
-      - name: Run phpunit
-        run: vendor/bin/phpunit
+      - name: PHPUnit Tests
+        uses: php-actions/phpunit@v3
+        env:
+          XDEBUG_MODE: coverage
+        with:
+          bootstrap: vendor/autoload.php
+          configuration: phpunit.xml
+          php_extensions: xdebug
+          args: tests --coverage-clover ./coverage.xml
+
+      - name: Upload to Codecov
+        uses: codecov/codecov-action@v2
+        with:
+          token: ${{ secrets.CODE_COV_TOKEN }}
+          files: ./coverage.xml
+          verbose: true
 
   phpstan:
     name: PHPStan
@@ -54,11 +68,3 @@ jobs:
 
       - name: Run phpstan
         run: vendor/bin/phpstan analyse --no-progress
-
-  codecov:
-    name: Upload coverage reports to Codecov
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v3
-      - uses: codecov/codecov-action@v3
