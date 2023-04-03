@@ -5,8 +5,11 @@ declare(strict_types=1);
 namespace AdroSoftware\CircleSoSdk\Tests;
 
 use AdroSoftware\CircleSoSdk\CircleSo;
-use AdroSoftware\CircleSoSdk\Exception\RequestUnauthorizedException;
-use AdroSoftware\CircleSoSdk\Exception\UnsuccessfulResponseException;
+use AdroSoftware\CircleSoSdk\Exception\{
+    CommunityIdNotPresentException,
+    RequestUnauthorizedException,
+    UnsuccessfulResponseException,
+};
 use GuzzleHttp\Psr7\Response;
 
 final class CircleSoTest extends TestCase
@@ -148,6 +151,23 @@ final class CircleSoTest extends TestCase
 
         $circleSo->members()
             ->communityId(1)
+            ->update(
+                id: 000000,
+                data: ['first_name' => 'Adroeck'],
+            );
+    }
+
+    public function test_community_id_not_set(): void
+    {
+        $this->expectException(CommunityIdNotPresentException::class);
+        $this->expectExceptionMessage("The 'communityId' needs to be defined");
+        $this->expectExceptionCode(500);
+
+        $circleSo = $this->getSdkWithMockedClient([
+            new Response(200, [], json_response('member_update_failed')),
+        ]);
+
+        $circleSo->members()
             ->update(
                 id: 000000,
                 data: ['first_name' => 'Adroeck'],
