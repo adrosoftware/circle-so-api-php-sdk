@@ -41,8 +41,8 @@ abstract class AbstractEndpoint
     /**
      * @throws UnsuccessfulResponseException
      */
-    protected function factorResponse(ResponseInterface $response, ?bool $checkForSuccess = null): mixed
+    protected function factorResponse(ResponseInterface $response): mixed
     {
-        return $this->circleSo->factorResponse($response, $checkForSuccess);
+        return $this->circleSo->factorResponse($response);
     }
 }

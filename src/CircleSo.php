@@ -38,20 +38,20 @@ final class CircleSo
         private string $token,
         private ?Options $options = null,
     ) {
-        $options = $options ?? new Options();
+        $this->options = $options ?? new Options();
 
         $this->responseTransformer = new ArrayTransformer();
-        $this->responseFactory = $options->getResponseFactory();
+        $this->responseFactory = $this->options->getResponseFactory();
 
-        $this->clientBuilder = $options->getClientBuilder();
-        $this->clientBuilder->addPlugin(new BaseUriPlugin($options->getUri()));
+        $this->clientBuilder = $this->options->getClientBuilder();
+        $this->clientBuilder->addPlugin(new BaseUriPlugin($this->options->getUri()));
         $this->clientBuilder->addPlugin(
             new HeaderDefaultsPlugin(
                 [
-                    'User-Agent' => $options->getUserAgent(),
+                    'User-Agent' => $this->options->getUserAgent(),
                     'Content-Type' => 'application/json',
                     'Accept' => 'application/json',
-                    'Authorization' => "Token {$token}",
+                    'Authorization' => "Token {$this->token}",
                 ]
             )
         );
