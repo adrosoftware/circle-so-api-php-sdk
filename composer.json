@@ -26,6 +26,7 @@
         "php-http/message": "^1.0",
         "phpstan/phpstan": "^1.10",
         "phpunit/phpunit": "^10.0",
+        "squizlabs/php_codesniffer": "^3.7",
         "symfony/var-dumper": "^6.2"
     },
     "autoload": {
@@ -48,6 +49,20 @@
         "sort-packages": true
     },
     "scripts": {
-        "phpunit": "./vendor/bin/phpunit"
+        "check": [
+            "@phpunit",
+            "@phpstan",
+            "@cscheck"
+        ],
+        "githooks": [
+            "@pre-commit",
+            "@pre-push"
+        ],
+        "pre-commit": "cp ./.githooks/pre-commit ./.git/hooks/pre-commit && chmod a+x ./.git/hooks/pre-commit",
+        "pre-push": "cp ./.githooks/pre-push ./.git/hooks/pre-push && chmod a+x ./.git/hooks/pre-push",
+        "phpunit": "./vendor/bin/phpunit",
+        "cscheck": "./vendor/bin/phpcs",
+        "csfix": "./vendor/bin/phpcbf",
+        "phpstan": "./vendor/bin/phpstan analyse -c phpstan.neon"
     }
 }

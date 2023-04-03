@@ -89,8 +89,8 @@ final class Members extends AbstractEndpoint implements EndpointInterface
      *     "community_member_profile_fields": {
      *         "nickname": "MyNickname",
      *         "your_business_description": "My bussiness is focused on enterprise customers...",
-     *         "favourite_colors": [1, 2, 3], // ids of favourite colors (it could be fetched by https://api.circle.so/#dc911459-2a75-4406-bc50-dfbce24a5da3)
-     *         "best_country_to_live": 1 // id of the item in the dropdown (it could be fetched by https://api.circle.so/#dc911459-2a75-4406-bc50-dfbce24a5da3)
+     *         "favourite_colors": [1, 2, 3],
+     *         "best_country_to_live": 1
      *     }
      * }
      * ```

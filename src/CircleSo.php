@@ -104,7 +104,9 @@ final class CircleSo
         }
 
         if (isset($response['success']) && boolval($response['success']) === false) {
-            $message  = isset($response['message']) ? $response['message'] : "The request did not return a successful response.";
+            $message  = isset($response['message']) ?
+                $response['message'] :
+                "The request did not return a successful response.";
 
             throw new UnsuccessfulResponseException($message, 500);
         }
