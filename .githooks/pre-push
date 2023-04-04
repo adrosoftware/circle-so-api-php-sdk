@@ -1,0 +1,27 @@
+#!/bin/sh
+
+vendor/bin/phpunit --colors=always;
+
+if [ $? -gt 0 ]
+then
+  echo "Aborting commit ..."
+  exit 1
+fi
+
+vendor/bin/phpcs
+
+if [ $? -gt 0 ]
+then
+  echo "Aborting commit ..."
+  exit 1
+fi
+
+vendor/bin/phpstan analyse -c phpstan.neon
+
+if [ $? -gt 0 ]
+then
+  echo "Aborting commit ..."
+  exit 1
+fi
+
+exit 0
