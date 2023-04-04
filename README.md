@@ -4,7 +4,7 @@
 
 <p align="center">
   <a href="https://packagist.org/packages/adrosoftware/circle-so-api-php-sdk">
-    <img alt="Latest Stable Version" src="https://poser.pugx.org/adrosoftware/circle-so-api-php-sdk/v/stable">
+    <img alt="Latest Stable Version" src="https://img.shields.io/packagist/v/adrosoftware/circle-so-api-php-sdk.svg">
   </a>
   <a href="https://codecov.io/gh/adrosoftware/circle-so-api-php-sdk" > 
     <img src="https://codecov.io/gh/adrosoftware/circle-so-api-php-sdk/branch/main/graph/badge.svg?token=SI4NXOC1AX"/> 
