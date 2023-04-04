@@ -7,6 +7,7 @@ namespace AdroSoftware\CircleSoSdk;
 use AdroSoftware\CircleSoSdk\Endpoint\{
     Me\Me,
     Member\Members,
+    MemberTag\MemberTag,
 };
 use AdroSoftware\CircleSoSdk\Exception\RequestUnauthorizedException;
 use AdroSoftware\CircleSoSdk\Exception\UnsuccessfulResponseException;
@@ -57,6 +58,10 @@ final class CircleSo
         );
     }
 
+    /**
+     * API endpoints
+     */
+
     public function me(): Me
     {
         return new Me($this);
@@ -65,6 +70,11 @@ final class CircleSo
     public function members(): Members
     {
         return new Members($this);
+    }
+
+    public function memberTags(): MemberTag
+    {
+        return new MemberTag($this);
     }
 
     public function getHttpClient(): HttpMethodsClientInterface

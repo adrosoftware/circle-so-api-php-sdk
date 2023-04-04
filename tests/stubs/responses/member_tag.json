@@ -1,0 +1,18 @@
+{
+    "id": 12345,
+    "name": "Rock n' Roll",
+    "emoji": "🤘🏼",
+    "color": "#F0509D",
+    "community_id": 1,
+    "is_public": true,
+    "display_locations": {
+        "post_bio": true,
+        "member_cards": true,
+        "profile_page": true,
+        "member_directory": true
+    },
+    "display_format": "icon",
+    "created_at": "2023-01-01T00:00:00.000Z",
+    "updated_at": "2023-01-01T00:00:00.000Z",
+    "tagged_members_count": 1
+}
