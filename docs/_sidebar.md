@@ -1,12 +1,9 @@
 - [Home](/?id=main)
-- Getting started
-
-  - [Quick start](content/getting-started.md)
+- [Getting started](content/getting-started.md)
 
 - Usage
 
-  - [Global configuration](content/usage/global-configuration.md)
+  - [Client configuration](content/usage/configuration.md)
+  - [SDK public api](content/usage/api.md)
 
-- Contributing
-
-  - [Guide](content/contributing.md)
+- [Contributing](content/contributing.md)

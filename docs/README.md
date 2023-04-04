@@ -10,6 +10,72 @@ From [Circle API documentation](https://api.circle.so):
 >
 >The main purpose of the Circle API is to allow Circle's community admins to build bulk automations, migration scripts, and access data for reporting purposes. Our API is not meant to be used on the browser/client side, or to re-create your own Circle app from scratch.
 
+## Why?
+
+The [Circle](https://circle.so) team currently has no official SDK. Having an sdk help developers be more productive. Even when the [official documentation](https://api.circle.so) has nice examples on how to interact with the API with different technologies it is easier to just have a single instance to interact with all the endpoints. 
+
+Let's use the next examples found in the [official documentation](https://api.circle.so) using `curl` and `Guzzle`:
+
+```php
+<?php
+
+$curl = curl_init();
+
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://app.circle.so/api/v1/me',
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_ENCODING => '',
+  CURLOPT_MAXREDIRS => 10,
+  CURLOPT_TIMEOUT => 0,
+  CURLOPT_FOLLOWLOCATION => true,
+  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST => 'GET',
+  CURLOPT_HTTPHEADER => array(
+    'Authorization: Token {{api_token}}'
+  ),
+));
+
+$response = curl_exec($curl);
+
+curl_close($curl);
+
+echo $response;
+
+```
+
+or:
+
+```php
+<?php
+
+$client = new Client();
+
+$headers = [
+  'Authorization' => 'Token {{api_token}}'
+];
+
+$request = new Request('GET', 'https://app.circle.so/api/v1/me', $headers);
+
+$res = $client->sendAsync($request)->wait();
+
+echo $res->getBody();
+
+```
+Now lets compere it with using this package:
+
+```php
+<?php
+
+$circleSo = CircleSo::make({{api_token}});
+
+/** @var array $me */
+$me = $circleSo->me()->info();
+```
+
+You can see the difference already.
+
+Also there is another __important__ reason. When there is a bad response, like a `member not found`, instead of returning a `404` http response code the API returns a `200` response code with the body containing a `{success:false}` json response, this library catch this responses and convert them into proper exceptions.
+
 ## Easy use
 
 Require the package with [composer](https://getcomposer.org/):
