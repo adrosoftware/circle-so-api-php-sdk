@@ -4,23 +4,21 @@ declare(strict_types=1);
 
 namespace AdroSoftware\CircleSoSdk\Tests;
 
+use AdroSoftware\CircleSoSdk\CircleSo;
 use AdroSoftware\CircleSoSdk\Exception\{
     CommunityIdNotPresentException,
-};
-use AdroSoftware\CircleSoSdk\Tests\Traits\{
-    Me,
-    Members,
-    MemberTags,
-    SdkInstance,
 };
 use GuzzleHttp\Psr7\Response;
 
 final class CircleSoTest extends TestCase
 {
-    use SdkInstance;
-    use Me;
-    use Members;
-    use MemberTags;
+    public function test_circle_so_sdk_instance(): void
+    {
+        $this->assertInstanceOf(
+            CircleSo::class,
+            $this->getSdkWithMockedClient()
+        );
+    }
 
     public function test_community_id_not_set(): void
     {

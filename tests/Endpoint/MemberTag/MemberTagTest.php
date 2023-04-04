@@ -2,11 +2,12 @@
 
 declare(strict_types=1);
 
-namespace AdroSoftware\CircleSoSdk\Tests\Traits;
+namespace AdroSoftware\CircleSoSdk\Tests\Endpoint\MemberTag;
 
+use AdroSoftware\CircleSoSdk\Tests\TestCase;
 use GuzzleHttp\Psr7\Response;
 
-trait MemberTags
+class MemberTagTest extends TestCase
 {
     public function test_member_tags_ok(): void
     {

@@ -2,14 +2,15 @@
 
 declare(strict_types=1);
 
-namespace AdroSoftware\CircleSoSdk\Tests\Traits;
+namespace AdroSoftware\CircleSoSdk\Tests\Endpoint\Me;
 
 use AdroSoftware\CircleSoSdk\Exception\{
     RequestUnauthorizedException,
 };
+use AdroSoftware\CircleSoSdk\Tests\TestCase;
 use GuzzleHttp\Psr7\Response;
 
-trait Me
+class MeTest extends TestCase
 {
     public function test_get_me(): void
     {

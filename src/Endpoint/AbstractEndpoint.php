@@ -30,7 +30,7 @@ abstract class AbstractEndpoint
     protected function ensureCommunityIdIsPresent(?int $communityId = null): void
     {
         if ($communityId === null && $this->communityId === null) {
-            throw new CommunityIdNotPresentException("The 'communityId' needs to be defined", 500);
+            throw new CommunityIdNotPresentException();
         }
 
         if ($this->communityId === null) {

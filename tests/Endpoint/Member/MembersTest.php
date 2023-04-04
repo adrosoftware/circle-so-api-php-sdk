@@ -2,14 +2,16 @@
 
 declare(strict_types=1);
 
-namespace AdroSoftware\CircleSoSdk\Tests\Traits;
+namespace AdroSoftware\CircleSoSdk\Tests\Endpoint\Member;
 
 use AdroSoftware\CircleSoSdk\Exception\{
     UnsuccessfulResponseException,
 };
+use AdroSoftware\CircleSoSdk\Tests\TestCase;
 use GuzzleHttp\Psr7\Response;
 
-trait Members
+
+class MembersTest extends TestCase
 {
     public function test_community_members_ok(): void
     {
