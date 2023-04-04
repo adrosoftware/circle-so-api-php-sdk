@@ -54,7 +54,7 @@ final class Members extends AbstractEndpoint implements EndpointInterface
      * @throws CommunityIdNotPresentException
      * @throws UnsuccessfulResponseException
      */
-    public function show(int $id, ?int $communityId = null): mixed
+    public function member(int $id, ?int $communityId = null): mixed
     {
         $this->ensureCommunityIdIsPresent($communityId);
 
