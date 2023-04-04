@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+if [ "$(uname)" == "Darwin" ]; then
+    open './.phpunit.cache/logs/html/index.html'
+fi

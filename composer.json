@@ -63,6 +63,7 @@
         "phpunit": "./vendor/bin/phpunit",
         "cscheck": "./vendor/bin/phpcs",
         "csfix": "./vendor/bin/phpcbf",
-        "phpstan": "./vendor/bin/phpstan analyse -c phpstan.neon"
+        "phpstan": "./vendor/bin/phpstan analyse -c phpstan.neon",
+        "coverage": "XDEBUG_MODE=coverage ./vendor/bin/phpunit --coverage-html ./.phpunit.cache/logs/html && chmod a+x ./coverage && ./coverage"
     }
 }

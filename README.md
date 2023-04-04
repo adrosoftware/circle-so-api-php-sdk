@@ -30,7 +30,7 @@ This is a simple Object Oriented wrapper for the [Circle](https://www.circle.so/
 
 ## How to use it
 
-> This package is decoupled from any HTTP messaging client with help by [HTTPlug](https://httplug.io). For this reason you need to install a PSR-17 and PSR-18 implementation packages. Example: `composer require symfony/http-client nyholm/psr7`.
+_This package is decoupled from any HTTP messaging client with help by [HTTPlug](https://httplug.io). For this reason you need to install a PSR-17 and PSR-18 implementation packages. Example: `composer require symfony/http-client nyholm/psr7`._
 
 Require the package with [composer](https://getcomposer.org/):
 
