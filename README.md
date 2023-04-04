@@ -20,7 +20,11 @@
 
 # Unofficial [Circle](https://www.circle.so/) SDK for PHP
 
-This is a simple Object Oriented wrapper for the [Circle](https://www.circle.so/) API, written with PHP. The full Circle API documentation can be found [here](https://api.circle.so).
+This is a Object Oriented wrapper for the [Circle](https://www.circle.so/) API, written with PHP. The full Circle API documentation can be found [here](https://api.circle.so).
+
+## Documentation
+
+To see ful documentation visit the oficial [documentation](https://adrosoftware.github.io/circle-so-api-php-sdk/)
 
 ## Requirements
 
@@ -47,27 +51,11 @@ declare(strict_types=1);
 
 use AdroSoftware\CircleSoSdk\CircleSo;
 
-$circleSo = new CircleSo('5up3r53cr3770k3n');
-
-// or
-
 $circleSo = CircleSo::make('5up3r53cr3770k3n');
 
 // Interact with the API.
 
 $me = $circleSo->me()->info();
-
-$member = $circleSo->members()
-    ->search(
-        email: 'adro@example.com',
-        communityId: 456,
-    );
-
-$member = $circleSo->members()
-    ->show(
-        id: 123,
-        communityId: 456,
-    );
 ```
 
 ## License
