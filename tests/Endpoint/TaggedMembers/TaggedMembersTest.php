@@ -26,6 +26,20 @@ class TaggedMembersTest extends TestCase
         $this->assertSame(true, $response['success']);
     }
 
+    public function test_untag_member_ok(): void
+    {
+        $circleSo = $this->getSdkWithMockedClient([
+            new Response(200, [], json_response('untag_member')),
+        ]);
+
+        $response = $circleSo->taggedMembers()
+            ->untagMember('adro@example.com', 123456, 1);
+
+        $this->assertArrayHasKey('success', $response);
+
+        $this->assertSame(true, $response['success']);
+    }
+
     public function test_tag_member_failed_no_message(): void
     {
         $this->expectException(UnsuccessfulResponseException::class);

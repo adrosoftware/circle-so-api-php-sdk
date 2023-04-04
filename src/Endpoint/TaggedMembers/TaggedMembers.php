@@ -16,11 +16,25 @@ final class TaggedMembers extends AbstractEndpoint implements EndpointInterface
     /**
      * @throws CommunityIdNotPresentException
      */
-    public function tagMember(string $email, int $memberTagId): mixed
+    public function tagMember(string|array $email, int $memberTagId): mixed
     {
         return $this->factorResponse(
             $this->circleSo->getHttpClient()->post(
                 "/tagged_members?user_email={$email}&member_tag_id={$memberTagId}"
+            )
+        );
+    }
+
+    /**
+     * @throws CommunityIdNotPresentException
+     */
+    public function untagMember(string $email, int $memberTagId, ?int $communityId = null): mixed
+    {
+        $this->ensureCommunityIdIsPresent($communityId);
+
+        return $this->factorResponse(
+            $this->circleSo->getHttpClient()->delete(
+                "/tagged_members?email={$email}&member_tag_id={$memberTagId}&community_id={$this->communityId}"
             )
         );
     }
