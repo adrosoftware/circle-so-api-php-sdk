@@ -14,11 +14,11 @@ use AdroSoftware\CircleSoSdk\Exception\{
 final class Members extends AbstractEndpoint implements EndpointInterface
 {
     public function communityMembers(
+        ?int $communityId = null,
         ?string $sortBy = null,
         ?int $perPage = null,
         ?int $page = null,
         ?string $status = null,
-        ?int $communityId = null,
     ): mixed {
         $this->ensureCommunityIdIsPresent($communityId);
 
@@ -100,10 +100,10 @@ final class Members extends AbstractEndpoint implements EndpointInterface
     public function update(
         int $id,
         array $data,
+        ?int $communityId = null,
         ?array $spaceIds = null,
         ?array $spaceGroupIds = null,
         ?bool $skipInvitation = null,
-        ?int $communityId = null,
     ): mixed {
         $this->ensureCommunityIdIsPresent($communityId);
 
