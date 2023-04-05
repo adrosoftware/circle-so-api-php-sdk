@@ -18,9 +18,20 @@ final class TaggedMembers extends AbstractEndpoint implements EndpointInterface
      */
     public function tagMember(string|array $email, int $memberTagId): mixed
     {
+        if (is_array($email)) {
+            $emailParam = '';
+            foreach ($email as $e) {
+                $emailParam .= "user_email[]={$e}&";
+            }
+
+            $emailParam = trim($emailParam, '&');
+        } else {
+            $emailParam = "user_email={$email}";
+        }
+
         return $this->factorResponse(
             $this->circleSo->getHttpClient()->post(
-                "/tagged_members?user_email={$email}&member_tag_id={$memberTagId}"
+                "/tagged_members?{$emailParam}&member_tag_id={$memberTagId}"
             )
         );
     }
