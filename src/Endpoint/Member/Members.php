@@ -132,4 +132,18 @@ final class Members extends AbstractEndpoint implements EndpointInterface
             )
         );
     }
+
+    /**
+     * Remove Member from Community
+     */
+    public function remove(string $email, ?int $communityId = null): mixed
+    {
+        $this->ensureCommunityIdIsPresent($communityId);
+
+        return $this->factorResponse(
+            $this->circleSo->getHttpClient()->delete(
+                "/community_members?community_id={$this->communityId}&email={$email}"
+            )
+        );
+    }
 }

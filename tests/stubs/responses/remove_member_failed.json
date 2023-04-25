@@ -1,0 +1,4 @@
+{
+    "success": false,
+    "message": "This user could not be removed. Please ensure that the user and community specified exists, and that the user is a member of the community."
+}
