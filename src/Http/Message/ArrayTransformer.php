@@ -8,7 +8,7 @@ use Psr\Http\Message\ResponseInterface;
 
 final class ArrayTransformer implements ResponseTransformerInterface
 {
-    public function transform(ResponseInterface $response): array
+    public function transform(ResponseInterface $response): ?array
     {
         return json_decode($response->getBody()->getContents(), true);
     }

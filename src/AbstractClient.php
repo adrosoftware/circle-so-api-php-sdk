@@ -6,6 +6,7 @@ namespace AdroSoftware\CircleSoSdk;
 
 use AdroSoftware\CircleSoSdk\Exception\{
     RequestUnauthorizedException,
+    ResourceNotFoundException,
     UnsuccessfulResponseException
 };
 use AdroSoftware\CircleSoSdk\Http\Message\ArrayTransformer;
@@ -61,11 +62,16 @@ abstract class AbstractClient
         return $this->responseFactory;
     }
 
-    public function factorResponse(ResponseInterface $response): mixed
+    /**
+     * @throws ResourceNotFoundException
+     * @throws RequestUnauthorizedException
+     * @throws UnsuccessfulResponseException
+     */
+    public function factorResponse(ResponseInterface $response, ?bool $throwNotFoundException = null): mixed
     {
         $response = $this->getResponseTransformer()->transform($response);
 
-        $this->checkIfRequestWasSuccessful($response);
+        $this->checkIfRequestWasSuccessful($response, $throwNotFoundException);
 
         if ($this->getResponseFactory() instanceof FactoryInterface) {
             $response = $this->getResponseFactory()->factor($response);
@@ -74,7 +80,18 @@ abstract class AbstractClient
         return $response;
     }
 
-    protected function checkIfRequestWasSuccessful(array $response): void
+    /**
+     * Check if the request was successful.
+     *
+     * If the resource return `null` it could mean the resource was not found,
+     * in this scenario we can throw a `not found` exception setting the
+     * `$throwNotFoundException` parameter to true.
+     *
+     * @throws ResourceNotFoundException
+     * @throws RequestUnauthorizedException
+     * @throws UnsuccessfulResponseException
+     */
+    protected function checkIfRequestWasSuccessful(?array $response = null, ?bool $throwNotFoundException = null): void
     {
         if (isset($response['status']) && $response['status'] === Status::UNAUTHORIZED) {
             $message  = isset($response['message']) ? $response['message'] : "The request was not authorized.";
@@ -88,6 +105,10 @@ abstract class AbstractClient
                 "The request did not return a successful response.";
 
             throw new UnsuccessfulResponseException($message);
+        }
+
+        if ($response === null && $throwNotFoundException === true) {
+            throw new ResourceNotFoundException();
         }
     }
 }

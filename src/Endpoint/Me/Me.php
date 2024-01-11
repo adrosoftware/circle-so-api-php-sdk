@@ -9,7 +9,7 @@ use AdroSoftware\CircleSoSdk\Endpoint\EndpointInterface;
 
 final class Me extends AbstractEndpoint implements EndpointInterface
 {
-    public function info(): array
+    public function info(): mixed
     {
         return $this->factorResponse(
             $this->circleSo->getHttpClient()->get('/me')

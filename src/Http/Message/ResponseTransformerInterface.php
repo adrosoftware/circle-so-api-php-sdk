@@ -6,5 +6,5 @@ use Psr\Http\Message\ResponseInterface;
 
 interface ResponseTransformerInterface
 {
-    public function transform(ResponseInterface $response): array;
+    public function transform(ResponseInterface $response): ?array;
 }

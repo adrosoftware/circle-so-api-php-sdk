@@ -6,7 +6,7 @@ namespace AdroSoftware\CircleSoSdk\Response;
 
 final class BypassFactory implements FactoryInterface
 {
-    public function factor(?array $response = null): array
+    public function factor(?array $response = null): ?array
     {
         return $response;
     }
