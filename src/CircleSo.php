@@ -6,6 +6,7 @@ namespace AdroSoftware\CircleSoSdk;
 
 use AdroSoftware\CircleSoSdk\Contracts\InteractsWithEndpoints;
 use AdroSoftware\CircleSoSdk\Endpoint\{
+    Community\Communities,
     Me\Me,
     Member\Members,
     MemberTag\MemberTag,
@@ -24,6 +25,11 @@ final class CircleSo extends AbstractClient implements InteractsWithEndpoints
     public function me(): Me
     {
         return new Me($this);
+    }
+
+    public function communities(): Communities
+    {
+        return new Communities($this);
     }
 
     public function members(): Members

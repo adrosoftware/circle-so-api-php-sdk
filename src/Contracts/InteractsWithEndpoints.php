@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace AdroSoftware\CircleSoSdk\Contracts;
 
 use AdroSoftware\CircleSoSdk\Endpoint\{
+    Community\Communities,
     Me\Me,
     Member\Members,
     MemberTag\MemberTag,
@@ -14,6 +15,8 @@ use AdroSoftware\CircleSoSdk\Endpoint\{
 interface InteractsWithEndpoints
 {
     public function me(): Me;
+
+    public function communities(): Communities;
 
     public function members(): Members;
 

@@ -1,0 +1,45 @@
+[
+    {
+        "id": 1,
+        "name": "Test community",
+        "slug": "test-community",
+        "icon_url": "https://d2y5h3osumboay.cloudfront.net/qran10ilr2xb13ryvjhlkbm97db0",
+        "logo_url": null,
+        "dark_icon_url": null,
+        "dark_logo_url": null,
+        "owner_id": 1,
+        "is_private": true,
+        "space_ids": [
+            1,
+            2,
+            3,
+            4,
+            5
+        ],
+        "last_visited_by_current_user": true,
+        "custom_tos": "https://test.com/terms",
+        "custom_tos_enabled": true,
+        "default_existing_member_space_id": 0,
+        "root_url": "circle.test.com",
+        "display_on_switcher": false,
+        "prefs": {
+
+            "has_posts": true,
+            "has_spaces": true,
+            "brand_color": {
+                "dark": "#FFFFFF",
+                "light": "#000000"
+            },
+            "has_seen_widget": true,
+            "brand_text_color": {
+                "dark": "#FFFFFF",
+                "light": "#000000"
+            },
+            "has_topics": true,
+            "has_completed_onboarding": true,
+            "has_invited_member": true,
+            "new_community_event_fired": true
+        },
+        "white_label": true
+    }
+]
