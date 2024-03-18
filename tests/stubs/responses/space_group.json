@@ -1,0 +1,21 @@
+{
+    "id": 1,
+    "name": "Space Group One",
+    "is_hidden_from_non_members": false,
+    "allow_members_to_create_spaces": false,
+    "community_id": 1,
+    "space_order_array": [
+        123456,
+        123457,
+        123458
+    ],
+    "created_at": "2022-09-26T19:31:32.224Z",
+    "updated_at": "2023-10-05T21:15:23.225Z",
+    "automatically_add_members_to_new_spaces": true,
+    "add_members_to_space_group_on_space_join": true,
+    "slug": "space-group-one",
+    "hide_non_member_spaces_from_sidebar": null,
+    "space_group_members_count": 10,
+    "active_space_group_members_count": 20,
+    "hide_members_count": false
+}

@@ -12,6 +12,7 @@ use AdroSoftware\CircleSoSdk\Endpoint\{
     MemberTag\MemberTag,
     TaggedMembers\TaggedMembers,
 };
+use AdroSoftware\CircleSoSdk\Endpoint\SpaceGroup\SpaceGroups;
 
 final class CircleSo extends AbstractClient implements InteractsWithEndpoints
 {
@@ -45,5 +46,10 @@ final class CircleSo extends AbstractClient implements InteractsWithEndpoints
     public function taggedMembers(): TaggedMembers
     {
         return new TaggedMembers($this);
+    }
+
+    public function spaceGroups(): SpaceGroups
+    {
+        return new SpaceGroups($this);
     }
 }

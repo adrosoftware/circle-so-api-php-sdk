@@ -1,0 +1,20 @@
+{
+    "success": true,
+    "message": "Space Group created.",
+    "space_group":
+    {
+        "id": 4,
+        "name": "Awesome Space Group",
+        "is_hidden_from_non_members": false,
+        "allow_members_to_create_spaces": true,
+        "community_id": 1,
+        "space_order_array": null,
+        "created_at": "2022-06-17T13:22:33.256Z",
+        "updated_at": "2022-06-17T13:22:33.256Z",
+        "automatically_add_members_to_new_spaces": false,
+        "add_members_to_space_group_on_space_join": false,
+        "slug": "awesome-space-group",
+        "hide_non_member_spaces_from_sidebar": true,
+        "space_group_members_count": 1
+    }
+}
