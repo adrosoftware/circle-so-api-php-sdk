@@ -11,8 +11,8 @@ use AdroSoftware\CircleSoSdk\Endpoint\{
     Member\Members,
     MemberTag\MemberTag,
     TaggedMembers\TaggedMembers,
+    SpaceGroup\SpaceGroups,
 };
-use AdroSoftware\CircleSoSdk\Endpoint\SpaceGroup\SpaceGroups;
 
 final class CircleSo extends AbstractClient implements InteractsWithEndpoints
 {
