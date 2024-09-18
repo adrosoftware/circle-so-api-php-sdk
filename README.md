@@ -24,7 +24,7 @@ This is a Object Oriented wrapper for the [Circle](https://www.circle.so/) API, 
 
 ## Documentation
 
-To see full documentation visit the oficial [documentation](https://adrosoftware.github.io/circle-so-api-php-sdk/)
+To see full documentation visit the official [documentation](https://adrosoftware.github.io/circle-so-api-php-sdk/)
 
 ## Requirements
 

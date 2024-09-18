@@ -1,6 +1,6 @@
 ?> For more details on the data returned by the endpoints visit the [official documentation](https://api.circle.so/)
 
-!> For details on the values accepted for each parameter pelase visit the [official documentation](https://api.circle.so/)
+!> For details on the values accepted for each parameter please visit the [official documentation](https://api.circle.so/)
 
 ## Me
 
