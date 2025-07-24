@@ -152,4 +152,19 @@ class MembersTest extends TestCase
             ->remove('i_dont_exist@example.com');
 
     }
+
+    public function test_member_invite_ok(): void
+    {
+        $circleSo = $this->getSdkWithMockedClient([
+            new Response(200, [], json_response('invite_member')),
+        ]);
+
+        $response = $circleSo
+            ->members()
+            ->communityId(1)
+            ->invite('adro@example.com');
+
+        $this->assertSame(true, $response['success']);
+        $this->assertSame('This user has been invited to the community.', $response['message']);
+    }
 }

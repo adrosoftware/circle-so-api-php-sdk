@@ -150,8 +150,8 @@ final class Members extends AbstractEndpoint implements EndpointInterface
     /**
      * Invite Member to Community
      */
-    public function invite(string $email, ?int $communityId = null): mixed {
-        
+    public function invite(string $email, ?int $communityId = null): mixed
+    {
         $endpoint =  "/community_members/";
 
         $data = [

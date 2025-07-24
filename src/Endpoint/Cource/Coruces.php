@@ -6,10 +6,11 @@ namespace AdroSoftware\CircleSoSdk\Endpoint\Course;
 
 use AdroSoftware\CircleSoSdk\Endpoint\AbstractEndpoint;
 use AdroSoftware\CircleSoSdk\Endpoint\EndpointInterface;
-use AdroSoftware\CircleSoSdk\Exception\{
-    CommunityIdNotPresentException,
-    UnsuccessfulResponseException,
-};
+use AdroSoftware\CircleSoSdk\Exception\{CommunityIdNotPresentException,
+    RequestUnauthorizedException,
+    ResourceNotFoundException,
+    UnsuccessfulResponseException};
+use Http\Client\Exception;
 
 class Courses extends AbstractEndpoint implements EndpointInterface
 {
@@ -110,6 +111,7 @@ class Courses extends AbstractEndpoint implements EndpointInterface
     /**
      * Create a course lesson.
      *
+     * @param array<string, mixed> $data
      * @throws CommunityIdNotPresentException
      * @throws UnsuccessfulResponseException
      */
@@ -131,6 +133,9 @@ class Courses extends AbstractEndpoint implements EndpointInterface
      * Delete a course lesson.
      *
      * @throws CommunityIdNotPresentException
+     * @throws Exception
+     * @throws RequestUnauthorizedException
+     * @throws ResourceNotFoundException
      * @throws UnsuccessfulResponseException
      */
     public function deleteLesson(

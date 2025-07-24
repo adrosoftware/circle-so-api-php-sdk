@@ -94,14 +94,13 @@ abstract class AbstractClient
     protected function checkIfRequestWasSuccessful(?array $response = null, ?bool $throwNotFoundException = null): void
     {
         if (isset($response['status']) && $response['status'] === Status::UNAUTHORIZED) {
-            $message  = isset($response['message']) ? $response['message'] : "The request was not authorized.";
+            $message  = $response['message'] ?? "The request was not authorized.";
 
             throw new RequestUnauthorizedException($message);
         }
 
         if (isset($response['success']) && boolval($response['success']) === false) {
-            $message  = isset($response['message']) ?
-                $response['message'] :
+            $message  = $response['message'] ??
                 "The request did not return a successful response.";
 
             throw new UnsuccessfulResponseException($message);
