@@ -146,4 +146,28 @@ final class Members extends AbstractEndpoint implements EndpointInterface
             )
         );
     }
+
+    /**
+     * Invite Member to Community
+     */
+    public function invite(string $email, ?int $communityId = null): mixed {
+        
+        $endpoint =  "/community_members/";
+
+        $data = [
+            'email' => $email,
+        ];
+
+        if (!empty($communityId)) {
+            $this->ensureCommunityIdIsPresent($communityId);
+            $data['community_id'] = $communityId;
+        }
+
+        return $this->factorResponse(
+            $this->circleSo->getHttpClient()->post(
+                uri: $endpoint,
+                body: json_encode($data),
+            )
+        );
+    }
 }
