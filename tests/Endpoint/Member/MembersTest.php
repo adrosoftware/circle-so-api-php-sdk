@@ -167,4 +167,23 @@ class MembersTest extends TestCase
         $this->assertSame(true, $response['success']);
         $this->assertSame('This user has been invited to the community.', $response['message']);
     }
+
+    public function test_member_invite_failed(): void
+    {
+        $this->expectException(UnsuccessfulResponseException::class);
+        $this->expectExceptionMessage(
+            'This user could not be invited. Please ensure that the user and community specified exists, and that the user is not already a member of the community.'
+        );
+
+        $this->expectExceptionCode(500);
+
+        $circleSo = $this->getSdkWithMockedClient([
+            new Response(200, [], json_response('invite_member_failed')),
+        ]);
+
+        $circleSo
+            ->members()
+            ->communityId(1)
+            ->invite('error@example.com');
+    }
 }
