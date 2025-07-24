@@ -1,0 +1,4 @@
+{
+    "success": false,
+    "message": "This user could not be invited. Please ensure that the user and community specified exists, and that the user is not already a member of the community."
+}
