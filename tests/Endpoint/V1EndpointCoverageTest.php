@@ -61,6 +61,22 @@ final class V1EndpointCoverageTest extends TestCase
      */
     public static function endpointProvider(): iterable
     {
+        yield 'spaces show' => [
+            'GET', '/api/v1/spaces/2',
+            static fn (CircleSo $sdk): mixed => $sdk->spaces()->show(2, 5),
+        ];
+        yield 'spaces create' => [
+            'POST', '/api/v1/spaces',
+            static fn (CircleSo $sdk): mixed => $sdk->spaces()->create(['name' => 'Space'], 5),
+        ];
+        yield 'spaces delete' => [
+            'DELETE', '/api/v1/spaces/2',
+            static fn (CircleSo $sdk): mixed => $sdk->spaces()->delete(2, 5),
+        ];
+        yield 'space members index' => [
+            'GET', '/api/v1/space_members',
+            static fn (CircleSo $sdk): mixed => $sdk->spaces()->members(2, 5),
+        ];
         yield 'space group member show' => [
             'GET', '/api/v1/space_group_member',
             static fn (CircleSo $sdk): mixed => $sdk->spaceGroupMembers()->show('a@example.com', 2, 5),

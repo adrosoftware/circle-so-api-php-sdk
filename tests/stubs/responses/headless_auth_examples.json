@@ -1,0 +1,14 @@
+{
+  "PATCH /api/v1/headless/access_token/refresh": {
+    "access_token": "eyJhbGciOiJIUzI1NiJ9.eyJjb21tdW5pdHlfaWQiOjEsImNvbW11bml0eV9tZW1iZXJfaWQiOjEsInNzb191c2VyX2lkIjoiMzI3NjBjNzE3NjcxMTI3ODRlZmQ0Mzc5YjBjNmM2NzAiLCJleHAiOjE3MDg2MDc4MTIsImp0aSI6ImQ1ZjcyY2M1LTE3MWUtNDRlMy1hZWRmLTk0YTNlOGVjM2Q2NCJ9.MLhVBGtmScRCZWbAQ1T-g5wAzwMe4ly1hwgKdv2ie94",
+    "access_token_expires_at": "2022-01-01T00:00:00.000Z"
+  },
+  "POST /api/v1/headless/auth_token": {
+    "access_token": "eyJhbGciOiJIUzI1NiJ9.eyJjb21tdW5pdHlfaWQiOjEsImNvbW11bml0eV9tZW1iZXJfaWQiOjEsInNzb191c2VyX2lkIjoiZjdiOThlYjczZjdkMGQ0NGU0ZWE1MjYyN2JiYjVhMzkiLCJleHAiOjE3MDg1NDE1MTAsImp0aSI6ImE1MjM2ZmQzLWY4NGItNDcyYy1iNjI2LTcyYTk3YmYwZTcyOSJ9.-MY06GiyXB41dLAx_F4Eu8R4sRxq6QEjy3uLWc4Z6k8",
+    "refresh_token": "jaebyVK59l5xxAx1D4pM8H-wYyFA6gMC12RGYZcy44w",
+    "access_token_expires_at": "2022-01-01T00:00:00.000Z",
+    "refresh_token_expires_at": "2022-01-01T00:00:00.000Z",
+    "community_member_id": 1,
+    "community_id": 1
+  }
+}

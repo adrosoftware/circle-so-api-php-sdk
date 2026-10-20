@@ -105,3 +105,47 @@ $posts = $circleSo->posts()
     ->communityId(123)
     ->all(spaceId: 456);
 ```
+
+## Admin API V2
+
+Use an Admin API token with the V2 client. Its resource methods cover all 171
+operations published in Circle's Admin API V2 specification.
+
+```php
+use AdroSoftware\CircleSoSdk\AdminV2;
+
+$admin = AdminV2::make($adminApiToken);
+
+$members = $admin->communityMembers()->all(['page' => 1]);
+$space = $admin->spaces()->show(123);
+$post = $admin->posts()->create([
+    'space_id' => 123,
+    'name' => 'Welcome',
+    'body' => 'Welcome to the community.',
+]);
+```
+
+## Headless Auth and Member APIs
+
+Create a member access token with the Headless Auth client, then pass that
+access token to the Headless Member client. These clients cover all 4 Auth and
+102 Member operations in Circle's published specifications.
+
+```php
+use AdroSoftware\CircleSoSdk\HeadlessAuth;
+use AdroSoftware\CircleSoSdk\HeadlessMember;
+
+$auth = HeadlessAuth::make($headlessApiToken);
+$tokens = $auth->tokens()->createGetAnAuthToken([
+    'email' => 'member@example.com',
+]);
+
+$member = HeadlessMember::make($tokens['access_token']);
+$spaces = $member->spaces()->getListOfSpaces();
+$notifications = $member->notifications()->getAPaginatedListOfNotifications([
+    'page' => 1,
+]);
+```
+
+All API clients retain the configured response factory. For forward
+compatibility, call `raw()->call($method, $path, $query, $data)` on any client.
