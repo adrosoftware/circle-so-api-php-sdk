@@ -80,5 +80,4 @@ interface InteractsWithEndpoints
     public function contacts(): Contacts;
 
     public function flaggedContents(): FlaggedContents;
-
 }

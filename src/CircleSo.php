@@ -160,5 +160,4 @@ final class CircleSo extends AbstractClient implements InteractsWithEndpoints
     {
         return new FlaggedContents($this);
     }
-
 }
