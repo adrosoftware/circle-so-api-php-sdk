@@ -58,6 +58,11 @@ $circleSo = CircleSo::make('5up3r53cr3770k3n');
 $me = $circleSo->me()->info();
 ```
 
+The V1 client covers the complete published API surface, including communities,
+members, spaces, space groups, posts, comments, messages, events, attendees,
+subscriptions, charges, likes, tags, courses, topics, notifications, contacts,
+profile fields, and flagged content.
+
 ## License
 
 This package is licensed under the MIT License - see the [LICENSE](https://github.com/adrosoftware/circle-so-api-php-sdk/blob/main/LICENSE) file for details

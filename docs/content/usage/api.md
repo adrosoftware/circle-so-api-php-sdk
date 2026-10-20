@@ -67,3 +67,41 @@ $member = $circleSo->members()->update(
     skipInvitation: true // Optional
 );
 ```
+
+## V1 endpoint groups
+
+The client exposes the complete published V1 resource set:
+
+```php
+$circleSo->communities();
+$circleSo->spaceGroups();
+$circleSo->spaceGroupMembers();
+$circleSo->spaces();
+$circleSo->spaceMembers();
+$circleSo->posts();
+$circleSo->comments();
+$circleSo->members();
+$circleSo->memberTags();
+$circleSo->taggedMembers();
+$circleSo->messages();
+$circleSo->subscriptions();
+$circleSo->events();
+$circleSo->eventAttendees();
+$circleSo->charges();
+$circleSo->likes();
+$circleSo->communityMemberSpaces();
+$circleSo->profileFields();
+$circleSo->courses();
+$circleSo->notifications();
+$circleSo->topics();
+$circleSo->contacts();
+$circleSo->flaggedContents();
+```
+
+Set a community once when making several scoped calls:
+
+```php
+$posts = $circleSo->posts()
+    ->communityId(123)
+    ->all(spaceId: 456);
+```
