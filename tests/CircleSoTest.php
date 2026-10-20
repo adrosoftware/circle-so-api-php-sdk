@@ -4,10 +4,13 @@ declare(strict_types=1);
 
 namespace AdroSoftware\CircleSoSdk\Tests;
 
+use AdroSoftware\CircleSoSdk\ClientBuilder;
 use AdroSoftware\CircleSoSdk\CircleSo;
 use AdroSoftware\CircleSoSdk\Exception\{
     CommunityIdNotPresentException,
 };
+use AdroSoftware\CircleSoSdk\Options;
+use AdroSoftware\CircleSoSdk\Response\FactoryInterface;
 use GuzzleHttp\Psr7\Response;
 
 final class CircleSoTest extends TestCase
@@ -35,5 +38,26 @@ final class CircleSoTest extends TestCase
                 id: 000000,
                 data: ['first_name' => 'Adroeck'],
             );
+    }
+
+    public function test_endpoint_requests_use_the_configured_response_factory(): void
+    {
+        $factory = new class implements FactoryInterface {
+            public function factor(?array $response = null): object
+            {
+                return (object) $response;
+            }
+        };
+        $circleSo = CircleSo::make('token', new Options([
+            'client_builder' => new ClientBuilder($this->mockedClient([
+                new Response(200, [], '{"records":[]}'),
+            ])),
+            'response_factory' => $factory,
+        ]));
+
+        $response = $circleSo->posts()->all(spaceId: 1, communityId: 2);
+
+        $this->assertIsObject($response);
+        $this->assertSame([], $response->records);
     }
 }
