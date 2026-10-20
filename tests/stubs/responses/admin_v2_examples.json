@@ -1,0 +1,4065 @@
+{
+  "POST /api/admin/v2/access_groups/101/community_members": {
+    "message": "Member has been added to 'ACCESS_GROUP_NAME' access group."
+  },
+  "DELETE /api/admin/v2/access_groups/101/community_members": {
+    "message": "Member removed from 'ACCESS_GROUP_NAME' access group."
+  },
+  "GET /api/admin/v2/access_groups/101/community_members": {
+    "page": 1,
+    "per_page": 60,
+    "has_next_page": false,
+    "count": 2,
+    "page_count": 2,
+    "records": [
+      {
+        "id": 2,
+        "access_group_id": 1,
+        "community_member_id": 2,
+        "community_id": 2,
+        "created_at": "2024-09-11T12:48:42.000Z",
+        "updated_at": "2024-09-11T12:48:42.000Z"
+      },
+      {
+        "id": 1,
+        "access_group_id": 1,
+        "community_member_id": 1,
+        "community_id": 2,
+        "created_at": "2024-09-11T12:48:42.000Z",
+        "updated_at": "2024-09-11T12:48:42.000Z"
+      }
+    ]
+  },
+  "GET /api/admin/v2/access_groups/101/community_member": {
+    "id": 1,
+    "access_group_id": 1,
+    "community_member_id": 1,
+    "community_id": 1,
+    "created_at": "2024-09-12T12:03:02.000Z",
+    "updated_at": "2024-09-12T12:03:02.000Z"
+  },
+  "POST /api/admin/v2/access_groups": {
+    "id": 1,
+    "name": "Test Access Group",
+    "status": "active",
+    "description": "Test description for access group",
+    "community_id": 1,
+    "created_at": "2024-01-01T00:00:00.000Z",
+    "updated_at": "2024-01-01T00:00:00.000Z"
+  },
+  "GET /api/admin/v2/access_groups": {
+    "page": 1,
+    "per_page": 60,
+    "has_next_page": false,
+    "count": 2,
+    "page_count": 2,
+    "records": [
+      {
+        "id": 2,
+        "name": "Group Two",
+        "status": "active",
+        "community_id": 1,
+        "created_at": "2024-01-01T00:00:00.000Z",
+        "updated_at": "2024-01-01T00:00:00.000Z",
+        "description": "Group Two Description"
+      },
+      {
+        "id": 1,
+        "name": "Group One",
+        "status": "active",
+        "community_id": 1,
+        "created_at": "2024-01-01T00:00:00.000Z",
+        "updated_at": "2024-01-01T00:00:00.000Z",
+        "description": "Group One Description"
+      }
+    ]
+  },
+  "DELETE /api/admin/v2/access_groups/101": {
+    "success": true,
+    "message": "Access group archived"
+  },
+  "PUT /api/admin/v2/access_groups/101": {
+    "id": 1,
+    "name": "Updated Name",
+    "status": "active",
+    "description": "Updated Description",
+    "community_id": 1,
+    "created_at": "2024-01-01T00:00:00Z",
+    "updated_at": "2024-01-01T00:00:00Z"
+  },
+  "PATCH /api/admin/v2/access_groups/101/unarchive": {
+    "id": 1,
+    "name": "Test Access Group",
+    "status": "active",
+    "description": "Test Description",
+    "community_id": 1,
+    "created_at": "2024-01-01T00:00:00Z",
+    "updated_at": "2024-01-01T00:00:00Z"
+  },
+  "GET /api/admin/v2/advanced_search": {
+    "page": 1,
+    "has_next_page": false,
+    "count": 2,
+    "page_count": 2,
+    "per_page": 20,
+    "records": [
+      {
+        "id": 5,
+        "type": "space",
+        "name": "test-course",
+        "slug": "post-f660aa",
+        "emoji": null,
+        "custom_emoji_url": "http://welch.circledev.net:31337/assets/emoji-picker-v3/shapes/circle/shape-circle-blue-65c4a6035acf9fa79fa588f789d2f8033ed911cc1f7c90ffbd8e7525e9050611.png",
+        "custom_emoji_dark_url": "http://welch.circledev.net:31337/assets/emoji-picker-v3/shapes/circle/shape-circle-blue-65c4a6035acf9fa79fa588f789d2f8033ed911cc1f7c90ffbd8e7525e9050611.png",
+        "highlighted_name": "<strong>test</strong>-course",
+        "sgid": "SGID"
+      },
+      {
+        "id": 4,
+        "type": "space",
+        "name": "Test Members Space",
+        "slug": "post-e1ad1d",
+        "emoji": null,
+        "custom_emoji_url": "http://welch.circledev.net:31337/assets/emoji-picker-v3/shapes/circle/shape-circle-blue-65c4a6035acf9fa79fa588f789d2f8033ed911cc1f7c90ffbd8e7525e9050611.png",
+        "custom_emoji_dark_url": "http://welch.circledev.net:31337/assets/emoji-picker-v3/shapes/circle/shape-circle-blue-65c4a6035acf9fa79fa588f789d2f8033ed911cc1f7c90ffbd8e7525e9050611.png",
+        "highlighted_name": "<strong>Test</strong> Members Space",
+        "sgid": "SGID"
+      }
+    ]
+  },
+  "PUT /api/admin/v2/chat_preferences": {
+    "id": 1,
+    "messaging_enabled": true,
+    "group_messaging_enabled": true,
+    "voice_messages_enabled": true,
+    "member_to_member_messaging_enabled": true
+  },
+  "POST /api/admin/v2/comments": {
+    "id": 2,
+    "parent_comment_id": 1,
+    "flagged_for_approval_at": null,
+    "created_at": "2024-09-03T08:59:50.111Z",
+    "body": {
+      "id": 3,
+      "name": "body",
+      "body": "First comment",
+      "record_type": "Comment",
+      "record_id": 2,
+      "created_at": "2024-09-03T08:59:50.000Z",
+      "updated_at": "2024-09-03T08:59:50.000Z"
+    },
+    "user": {
+      "id": 2,
+      "name": "Dulce Hauck",
+      "avatar_url": "https://secure.gravatar.com/avatar/e8e59111d32b648a5d74689a04ecda4c?default=404&secure=true&size=300",
+      "email": "francoise.schmitt@harber-huels.org"
+    },
+    "post": {
+      "id": 1,
+      "name": "First post",
+      "slug": "lind"
+    },
+    "space": {
+      "id": 1,
+      "slug": "comment",
+      "name": "comment"
+    },
+    "url": "http://ratke.circledev.net:31337/c/comment/lind#comment_wrapper_2",
+    "community_id": 1,
+    "likes_count": 0,
+    "user_posts_count": 1,
+    "user_likes_count": 0,
+    "user_comments_count": 2
+  },
+  "GET /api/admin/v2/comments": {
+    "page": 1,
+    "per_page": 10,
+    "has_next_page": false,
+    "count": 2,
+    "page_count": 2,
+    "records": [
+      {
+        "id": 2,
+        "parent_comment_id": 12,
+        "flagged_for_approval_at": "2024-09-04T06:55:07.879Z",
+        "created_at": "2024-09-02T06:55:07.879Z",
+        "body": {
+          "id": 4,
+          "name": "body",
+          "body": "Second comment",
+          "record_type": "Comment",
+          "record_id": 2,
+          "created_at": "2024-09-02T06:55:07.000Z",
+          "updated_at": "2024-09-02T06:55:07.000Z"
+        },
+        "user": {
+          "id": 2,
+          "name": "Alfonzo Treutel",
+          "avatar_url": "https://secure.gravatar.com/avatar/0b0d8721ad4cbc76065f8f7992650ea7?default=404&secure=true&size=300",
+          "email": "tomika@upton-lemke.io"
+        },
+        "post": {
+          "id": 2,
+          "name": "First post",
+          "slug": "leuschke"
+        },
+        "space": {
+          "id": 1,
+          "slug": "comment",
+          "name": "comment"
+        },
+        "url": "http://mccullough-fay.circledev.net:31337/c/comment/leuschke#comment_wrapper_2",
+        "community_id": 1,
+        "likes_count": 0,
+        "user_posts_count": 2,
+        "user_likes_count": 0,
+        "user_comments_count": 2
+      },
+      {
+        "id": 1,
+        "parent_comment_id": null,
+        "flagged_for_approval_at": null,
+        "created_at": "2024-09-02T06:55:07.864Z",
+        "body": {
+          "id": 3,
+          "name": "body",
+          "body": "First comment",
+          "record_type": "Comment",
+          "record_id": 1,
+          "created_at": "2024-09-02T06:55:07.000Z",
+          "updated_at": "2024-09-02T06:55:07.000Z"
+        },
+        "user": {
+          "id": 2,
+          "name": "Alfonzo Treutel",
+          "avatar_url": "https://secure.gravatar.com/avatar/0b0d8721ad4cbc76065f8f7992650ea7?default=404&secure=true&size=300",
+          "email": "tomika@upton-lemke.io"
+        },
+        "post": {
+          "id": 2,
+          "name": "First post",
+          "slug": "leuschke"
+        },
+        "space": {
+          "id": 1,
+          "slug": "comment",
+          "name": "comment"
+        },
+        "url": "http://mccullough-fay.circledev.net:31337/c/comment/leuschke#comment_wrapper_1",
+        "community_id": 1,
+        "likes_count": 0,
+        "user_posts_count": 2,
+        "user_likes_count": 0,
+        "user_comments_count": 2,
+        "replies_count": 1
+      }
+    ]
+  },
+  "DELETE /api/admin/v2/comments/101": {
+    "message": "Comment deleted."
+  },
+  "GET /api/admin/v2/comments/101": {
+    "id": 1,
+    "parent_comment_id": null,
+    "flagged_for_approval_at": null,
+    "created_at": "2024-09-09T16:10:35.597Z",
+    "body": {
+      "id": 2,
+      "name": "body",
+      "body": "First comment",
+      "record_type": "Comment",
+      "record_id": 1,
+      "created_at": "2024-09-09T16:10:35.000Z",
+      "updated_at": "2024-09-09T16:10:35.000Z"
+    },
+    "user": {
+      "id": 2,
+      "name": "Norman Cronin JD",
+      "avatar_url": "https://secure.gravatar.com/avatar/9e6c9fdd020092f3b08403df25b52e1a?default=404&secure=true&size=300",
+      "email": "lois_herzog@boyle.io"
+    },
+    "post": {
+      "id": 1,
+      "name": "First post",
+      "slug": "williamson"
+    },
+    "space": {
+      "id": 1,
+      "slug": "distinctio",
+      "name": "maxime"
+    },
+    "url": "http://corwin.circledev.net:31337/c/distinctio/williamson#comment_wrapper_1",
+    "community_id": 1,
+    "likes_count": 0,
+    "user_posts_count": 1,
+    "user_likes_count": 0,
+    "user_comments_count": 2,
+    "replies_count": 1,
+    "replies": [
+      {
+        "id": 2,
+        "parent_comment_id": 1,
+        "flagged_for_approval_at": null,
+        "created_at": "2024-09-09T16:10:35.612Z",
+        "body": {
+          "id": 3,
+          "name": "body",
+          "body": "Second comment",
+          "record_type": "Comment",
+          "record_id": 2,
+          "created_at": "2024-09-09T16:10:35.000Z",
+          "updated_at": "2024-09-09T16:10:35.000Z"
+        },
+        "user": {
+          "id": 2,
+          "name": "Norman Cronin JD",
+          "avatar_url": "https://secure.gravatar.com/avatar/9e6c9fdd020092f3b08403df25b52e1a?default=404&secure=true&size=300",
+          "email": "lois_herzog@boyle.io"
+        },
+        "post": {
+          "id": 1,
+          "name": "First post",
+          "slug": "williamson"
+        },
+        "space": {
+          "id": 1,
+          "slug": "distinctio",
+          "name": "maxime"
+        },
+        "url": "http://corwin.circledev.net:31337/c/distinctio/williamson#comment_wrapper_2",
+        "community_id": 1,
+        "likes_count": 0,
+        "user_posts_count": 1,
+        "user_likes_count": 0,
+        "user_comments_count": 2
+      }
+    ]
+  },
+  "GET /api/admin/v2/community": {
+    "id": 1,
+    "created_at": "2025-04-01T21:24:17.411Z",
+    "updated_at": "2025-04-01T21:33:43.219Z",
+    "name": "My Community",
+    "locale": "en",
+    "slug": "my-community",
+    "allow_signups_to_public_community": true,
+    "community_switcher_enabled": true,
+    "custom_cta_for_share_links": true,
+    "locked_post_cta_heading": "Become a member",
+    "locked_post_cta_body": "Please join us to continue reading this post.",
+    "locked_post_cta_button_text": "Sign up",
+    "locked_post_cta_button_url": "https://www.community.com/signup",
+    "custom_tos_enabled": true,
+    "custom_tos": "https://www.community.com/tos",
+    "default_existing_member_space_id": 1,
+    "default_logged_out_space_id": 1,
+    "default_new_member_space_id": 1,
+    "default_search_sorting": "latest",
+    "is_private": true,
+    "private_signup_link_label": "Not a member?",
+    "private_signup_link_url": "https://www.community.com/signup",
+    "reply_to_email": "support@community.com",
+    "white_label": true,
+    "weekly_digest_enabled": true,
+    "digest_subject": "Weekly Digest",
+    "digest_intro": "Here's what's happening this week.",
+    "digests_hide_posts": false,
+    "digests_hide_comments": false,
+    "digests_hide_stats": false,
+    "digests_hide_members": false,
+    "prefs": {
+      "has_posts": true,
+      "has_spaces": true,
+      "has_invited_member": true,
+      "brand_color": {
+        "light": "#000000",
+        "dark": "#000000"
+      },
+      "brand_text_color": {
+        "light": "#FFFFFF",
+        "dark": "#FFFFFF"
+      }
+    },
+    "community_setting": {
+      "id": 1,
+      "created_at": "2025-04-01T21:24:17.411Z",
+      "updated_at": "2025-04-01T21:33:43.219Z",
+      "ios_app_enabled": true,
+      "show_ios_app_banner": true,
+      "deactivate_account_enabled": true,
+      "allow_profile_search_indexing": true,
+      "truncate_post_body_in_email_notifications": true,
+      "hide_emails_on_member_profiles": true,
+      "allow_members_to_go_live": true,
+      "enforce_otp_for_signup": true,
+      "community_activity_notifications_email_enabled": true,
+      "community_activity_notifications_in_app_enabled": true,
+      "desktop_app_community_visibility_enabled": true,
+      "allow_moderator_csv_download": true,
+      "member_media_uploads_enabled": true,
+      "default_space_ids": [
+        1,
+        2
+      ],
+      "default_logged_out_redirect_type": "Space",
+      "default_logged_out_redirect_id": 1
+    }
+  },
+  "PUT /api/admin/v2/community": {
+    "id": 1,
+    "created_at": "2025-04-01T21:24:17.411Z",
+    "updated_at": "2025-04-01T21:33:43.219Z",
+    "name": "My Community",
+    "locale": "en",
+    "slug": "my-community",
+    "allow_signups_to_public_community": true,
+    "community_switcher_enabled": true,
+    "custom_cta_for_share_links": true,
+    "locked_post_cta_heading": "Become a member",
+    "locked_post_cta_body": "Please join us to continue reading this post.",
+    "locked_post_cta_button_text": "Sign up",
+    "locked_post_cta_button_url": "https://www.community.com/signup",
+    "custom_tos_enabled": true,
+    "custom_tos": "https://www.community.com/tos",
+    "default_existing_member_space_id": 1,
+    "default_logged_out_space_id": 1,
+    "default_new_member_space_id": 1,
+    "default_search_sorting": "latest",
+    "is_private": true,
+    "private_signup_link_label": "Not a member?",
+    "private_signup_link_url": "https://www.community.com/signup",
+    "reply_to_email": "support@community.com",
+    "white_label": true,
+    "weekly_digest_enabled": true,
+    "digest_subject": "Weekly Digest",
+    "digest_intro": "Here's what's happening this week.",
+    "digests_hide_posts": false,
+    "digests_hide_comments": false,
+    "digests_hide_stats": false,
+    "digests_hide_members": false,
+    "prefs": {
+      "has_posts": true,
+      "has_spaces": true,
+      "has_invited_member": true,
+      "brand_color": {
+        "light": "#123123",
+        "dark": "#555555"
+      },
+      "brand_text_color": {
+        "light": "#987654",
+        "dark": "#333333"
+      }
+    },
+    "community_setting": {
+      "id": 1,
+      "created_at": "2025-04-01T21:24:17.411Z",
+      "updated_at": "2025-04-01T21:33:43.219Z",
+      "ios_app_enabled": true,
+      "show_ios_app_banner": true,
+      "deactivate_account_enabled": true,
+      "allow_profile_search_indexing": true,
+      "truncate_post_body_in_email_notifications": true,
+      "hide_emails_on_member_profiles": true,
+      "allow_members_to_go_live": true,
+      "enforce_otp_for_signup": true,
+      "community_activity_notifications_email_enabled": true,
+      "community_activity_notifications_in_app_enabled": true,
+      "desktop_app_community_visibility_enabled": true,
+      "allow_moderator_csv_download": true,
+      "member_media_uploads_enabled": true,
+      "default_space_ids": [
+        1,
+        2
+      ],
+      "default_logged_out_redirect_type": "Space",
+      "default_logged_out_redirect_id": 1
+    }
+  },
+  "DELETE /api/admin/v2/community_leads/101": {
+    "message": "Non-member contact deleted successfully."
+  },
+  "GET /api/admin/v2/community_member_spaces": {
+    "page": 1,
+    "per_page": 60,
+    "has_next_page": false,
+    "count": 2,
+    "page_count": 2,
+    "records": [
+      {
+        "id": 1,
+        "name": "aut",
+        "slug": "sit",
+        "cover_image_url": "https://community.example.com/storage/cover_images/1/picsum.jpeg",
+        "cover_image_visible": true,
+        "cover_image_display_style": "wide",
+        "community_id": 1,
+        "is_private": false,
+        "hide_post_settings": false,
+        "display_view": "posts",
+        "is_post_disabled": false,
+        "space_type": "basic",
+        "host": "https://community.example.com",
+        "post_ids": [
+          1
+        ],
+        "url": "https://community.example.com/c/sit",
+        "custom_emoji_url": "https://community.example.com/emoji/1",
+        "custom_emoji_dark_url": "https://community.example.com/emoji/2",
+        "emoji": "#",
+        "space_group": {
+          "id": 2,
+          "name": "Name 1"
+        },
+        "topics": [
+          32,
+          21,
+          12
+        ],
+        "event_auto_rsvp_enabled": false,
+        "default_in_app_notification_setting": "never",
+        "default_mobile_notification_setting": "never",
+        "default_notification_setting": "never",
+        "default_mention_in_app_notification_setting": "never",
+        "default_mention_mobile_notification_setting": "never"
+      },
+      {
+        "id": 2,
+        "name": "maxime",
+        "slug": "ad",
+        "community_id": 1,
+        "is_private": false,
+        "hide_post_settings": false,
+        "display_view": "posts",
+        "is_post_disabled": false,
+        "space_type": "basic",
+        "host": "https://community.example.com",
+        "post_ids": [
+          14,
+          52
+        ],
+        "url": "https://community.example.com/c/ad",
+        "custom_emoji_url": "https://community.example.com/emoji/1",
+        "custom_emoji_dark_url": "https://community.example.com/emoji/2",
+        "emoji": "#",
+        "space_group": {
+          "id": 3,
+          "name": "Name 2"
+        },
+        "topics": [
+          1,
+          2,
+          3
+        ],
+        "event_auto_rsvp_enabled": false,
+        "default_in_app_notification_setting": "never",
+        "default_mobile_notification_setting": "never",
+        "default_notification_setting": "never",
+        "default_mention_in_app_notification_setting": "never",
+        "default_mention_mobile_notification_setting": "never"
+      }
+    ]
+  },
+  "GET /api/admin/v2/community_members/101/access_groups": {
+    "page": 1,
+    "per_page": 60,
+    "has_next_page": false,
+    "count": 2,
+    "page_count": 2,
+    "records": [
+      {
+        "id": 2,
+        "name": "Access Group 2",
+        "status": "active",
+        "community_id": 1,
+        "created_at": "2024-09-11T12:48:42.000Z",
+        "updated_at": "2024-09-11T12:48:42.000Z"
+      },
+      {
+        "id": 1,
+        "name": "Access Group 1",
+        "status": "active",
+        "community_id": 1,
+        "created_at": "2024-09-11T12:48:42.000Z",
+        "updated_at": "2024-09-11T12:48:42.000Z"
+      }
+    ]
+  },
+  "PUT /api/admin/v2/community_members/101/ban_member": {
+    "message": "Member banned successfully."
+  },
+  "POST /api/admin/v2/community_members": {
+    "message": "This user has been invited to the community and has been added to following space groups: Name 1 spaces: molestiae.",
+    "community_member": {
+      "first_name": "Baz",
+      "last_name": "Tazo",
+      "headline": "Anotha one",
+      "created_at": "2024-09-04T16:18:10.634Z",
+      "updated_at": "2024-09-04T16:18:10.641Z",
+      "community_id": 1,
+      "last_seen_at": null,
+      "profile_confirmed_at": null,
+      "member_since": null,
+      "member_since_overridden": false,
+      "id": 2,
+      "profile_url": "http://hammes.circledev.net:31337/u/7b8a7a69",
+      "public_uid": "7b8a7a69",
+      "profile_fields": [
+        {
+          "id": 1,
+          "label": "Label",
+          "field_type": "text",
+          "key": "profile_field_key_1",
+          "placeholder": null,
+          "description": null,
+          "required": false,
+          "platform_field": true,
+          "created_at": "2024-09-04T16:18:10.285Z",
+          "updated_at": "2024-09-04T16:18:10.285Z",
+          "community_member_profile_field": {
+            "id": 2,
+            "text": "Bar",
+            "textarea": null,
+            "created_at": "2024-09-04T16:18:10.654Z",
+            "updated_at": "2024-09-04T16:18:10.657Z",
+            "display_value": "Bar",
+            "community_member_choices": [
+
+            ]
+          },
+          "number_options": null,
+          "choices": [
+
+          ],
+          "pages": [
+            {
+              "id": 2,
+              "name": "edit_profile",
+              "position": 1,
+              "visible": true,
+              "created_at": "2024-09-04T16:18:10.287Z",
+              "updated_at": "2024-09-04T16:18:10.287Z"
+            },
+            {
+              "id": 3,
+              "name": "profile_view",
+              "position": 1,
+              "visible": true,
+              "created_at": "2024-09-04T16:18:10.288Z",
+              "updated_at": "2024-09-04T16:18:10.288Z"
+            },
+            {
+              "id": 1,
+              "name": "signup",
+              "position": 1,
+              "visible": true,
+              "created_at": "2024-09-04T16:18:10.286Z",
+              "updated_at": "2024-09-04T16:18:10.286Z"
+            }
+          ]
+        }
+      ],
+      "flattened_profile_fields": {
+        "profile_field_key_1": "Bar"
+      },
+      "avatar_url": null,
+      "user_id": 3,
+      "name": "Baz",
+      "email": "craig_koss@shields.info",
+      "accepted_invitation": "",
+      "active": false,
+      "sso_provider_user_id": null,
+      "member_tags": [
+        {
+          "name": "perferendis",
+          "id": 1
+        }
+      ],
+      "posts_count": 0,
+      "comments_count": 0
+    }
+  },
+  "GET /api/admin/v2/community_members": {
+    "page": 1,
+    "per_page": 10,
+    "has_next_page": false,
+    "count": 2,
+    "page_count": 2,
+    "records": [
+      {
+        "first_name": "Gov.",
+        "last_name": "Loriann Barton",
+        "headline": "Sales Orchestrator",
+        "created_at": "2024-09-03T16:20:19.814Z",
+        "updated_at": "2024-09-03T16:20:19.826Z",
+        "community_id": 1,
+        "last_seen_at": null,
+        "profile_confirmed_at": "2024-09-03T16:20:19.000Z",
+        "member_since": "2024-09-03T16:20:19.000Z",
+        "member_since_overridden": false,
+        "id": 2,
+        "profile_url": "http://reynolds.circledev.net:31337/u/352c3aff",
+        "public_uid": "352c3aff",
+        "profile_fields": [
+          {
+            "id": 1,
+            "label": "Label",
+            "field_type": "select",
+            "key": "profile_field_key_1",
+            "placeholder": null,
+            "description": null,
+            "required": false,
+            "platform_field": false,
+            "created_at": "2024-09-03T16:20:19.864Z",
+            "updated_at": "2024-09-03T16:20:19.864Z",
+            "community_member_profile_field": null,
+            "number_options": null,
+            "choices": [
+              {
+                "id": 1,
+                "value": "Choice 1"
+              }
+            ],
+            "pages": [
+              {
+                "id": 2,
+                "name": "edit_profile",
+                "position": 1,
+                "visible": true,
+                "created_at": "2024-09-03T16:20:19.868Z",
+                "updated_at": "2024-09-03T16:20:19.868Z"
+              },
+              {
+                "id": 3,
+                "name": "profile_view",
+                "position": 1,
+                "visible": true,
+                "created_at": "2024-09-03T16:20:19.869Z",
+                "updated_at": "2024-09-03T16:20:19.869Z"
+              },
+              {
+                "id": 1,
+                "name": "signup",
+                "position": 1,
+                "visible": true,
+                "created_at": "2024-09-03T16:20:19.866Z",
+                "updated_at": "2024-09-03T16:20:19.866Z"
+              }
+            ]
+          }
+        ],
+        "flattened_profile_fields": {
+          "profile_field_key_1": null
+        },
+        "avatar_url": null,
+        "user_id": 3,
+        "name": "Gov. Loriann Barton",
+        "email": "raul@nitzsche.org",
+        "accepted_invitation": "2024-09-03 16:20:19 UTC",
+        "active": true,
+        "sso_provider_user_id": null,
+        "member_tags": [
+
+        ],
+        "posts_count": 0,
+        "comments_count": 0,
+        "gamification_stats": {
+          "community_member_id": 2,
+          "total_points": 0,
+          "current_level": 1,
+          "current_level_name": "Level 1",
+          "points_to_next_level": 50,
+          "level_progress": 50
+        },
+        "activity_score": {
+          "activity_score": "23.0",
+          "presence": "3.0",
+          "participation": "10.0",
+          "contribution": "24.0",
+          "connection": "24.0"
+        }
+      },
+      {
+        "first_name": "Alfred",
+        "last_name": "Rice",
+        "headline": "Government Executive",
+        "created_at": "2024-09-03T16:20:19.605Z",
+        "updated_at": "2024-09-03T16:20:19.779Z",
+        "community_id": 1,
+        "last_seen_at": null,
+        "profile_confirmed_at": "2024-09-03T16:20:19.000Z",
+        "member_since": "2024-09-03T16:20:19.000Z",
+        "member_since_overridden": false,
+        "id": 1,
+        "profile_url": "http://reynolds.circledev.net:31337/u/a5f6b09a",
+        "public_uid": "a5f6b09a",
+        "profile_fields": [
+          {
+            "id": 1,
+            "label": "Label",
+            "field_type": "select",
+            "key": "profile_field_key_1",
+            "placeholder": null,
+            "description": null,
+            "required": false,
+            "platform_field": false,
+            "created_at": "2024-09-03T16:20:19.864Z",
+            "updated_at": "2024-09-03T16:20:19.864Z",
+            "community_member_profile_field": {
+              "id": 1,
+              "text": null,
+              "textarea": null,
+              "created_at": "2024-09-03T16:20:19.885Z",
+              "updated_at": "2024-09-03T16:20:19.885Z",
+              "display_value": [
+                "Choice 1"
+              ],
+              "community_member_choices": [
+                {
+                  "id": 1,
+                  "profile_field_choice": {
+                    "id": 1,
+                    "value": "Choice 1"
+                  }
+                }
+              ]
+            },
+            "number_options": null,
+            "choices": [
+              {
+                "id": 1,
+                "value": "Choice 1"
+              }
+            ],
+            "pages": [
+              {
+                "id": 2,
+                "name": "edit_profile",
+                "position": 1,
+                "visible": true,
+                "created_at": "2024-09-03T16:20:19.868Z",
+                "updated_at": "2024-09-03T16:20:19.868Z"
+              },
+              {
+                "id": 3,
+                "name": "profile_view",
+                "position": 1,
+                "visible": true,
+                "created_at": "2024-09-03T16:20:19.869Z",
+                "updated_at": "2024-09-03T16:20:19.869Z"
+              },
+              {
+                "id": 1,
+                "name": "signup",
+                "position": 1,
+                "visible": true,
+                "created_at": "2024-09-03T16:20:19.866Z",
+                "updated_at": "2024-09-03T16:20:19.866Z"
+              }
+            ]
+          }
+        ],
+        "flattened_profile_fields": {
+          "profile_field_key_1": [
+            "Choice 1"
+          ]
+        },
+        "avatar_url": null,
+        "user_id": 2,
+        "name": "Alfred Rice",
+        "email": "mariano.ondricka@stehr.biz",
+        "accepted_invitation": "2024-09-03 16:20:19 UTC",
+        "active": true,
+        "sso_provider_user_id": null,
+        "member_tags": [
+          {
+            "name": "minus",
+            "id": 1
+          }
+        ],
+        "posts_count": 0,
+        "comments_count": 0,
+        "gamification_stats": {
+          "community_member_id": 1,
+          "total_points": 0,
+          "current_level": 2,
+          "current_level_name": "Level 2",
+          "points_to_next_level": 30,
+          "level_progress": 70
+        },
+        "activity_score": {
+        }
+      }
+    ]
+  },
+  "PUT /api/admin/v2/community_members/101/delete_member": {
+    "message": "Member deleted successfully."
+  },
+  "DELETE /api/admin/v2/community_members/101": {
+    "message": "The community member has been removed from the community."
+  },
+  "GET /api/admin/v2/community_members/101": {
+    "first_name": "Gov.",
+    "last_name": "Loriann Barton",
+    "headline": "Sales Orchestrator",
+    "created_at": "2024-09-03T16:20:19.814Z",
+    "updated_at": "2024-09-03T16:20:19.826Z",
+    "community_id": 1,
+    "last_seen_at": null,
+    "profile_confirmed_at": "2024-09-03T16:20:19.000Z",
+    "member_since": "2024-09-03T16:20:19.000Z",
+    "member_since_overridden": false,
+    "id": 2,
+    "profile_url": "http://reynolds.circledev.net:31337/u/352c3aff",
+    "public_uid": "352c3aff",
+    "profile_fields": [
+      {
+        "id": 1,
+        "label": "Label",
+        "field_type": "select",
+        "key": "profile_field_key_1",
+        "placeholder": null,
+        "description": null,
+        "required": false,
+        "platform_field": false,
+        "created_at": "2024-09-03T16:20:19.864Z",
+        "updated_at": "2024-09-03T16:20:19.864Z",
+        "community_member_profile_field": null,
+        "number_options": null,
+        "choices": [
+          {
+            "id": 1,
+            "value": "Choice 1"
+          }
+        ],
+        "pages": [
+          {
+            "id": 2,
+            "name": "edit_profile",
+            "position": 1,
+            "visible": true,
+            "created_at": "2024-09-03T16:20:19.868Z",
+            "updated_at": "2024-09-03T16:20:19.868Z"
+          },
+          {
+            "id": 3,
+            "name": "profile_view",
+            "position": 1,
+            "visible": true,
+            "created_at": "2024-09-03T16:20:19.869Z",
+            "updated_at": "2024-09-03T16:20:19.869Z"
+          },
+          {
+            "id": 1,
+            "name": "signup",
+            "position": 1,
+            "visible": true,
+            "created_at": "2024-09-03T16:20:19.866Z",
+            "updated_at": "2024-09-03T16:20:19.866Z"
+          }
+        ]
+      }
+    ],
+    "flattened_profile_fields": {
+      "profile_field_key_1": null
+    },
+    "avatar_url": null,
+    "user_id": 3,
+    "name": "Gov. Loriann Barton",
+    "email": "raul@nitzsche.org",
+    "accepted_invitation": "2024-09-03 16:20:19 UTC",
+    "active": true,
+    "sso_provider_user_id": null,
+    "member_tags": [
+
+    ],
+    "posts_count": 0,
+    "comments_count": 0,
+    "gamification_stats": {
+      "community_member_id": 2,
+      "total_points": 0,
+      "current_level": 1,
+      "current_level_name": "Level 1",
+      "points_to_next_level": 50,
+      "level_progress": 50
+    },
+    "activity_score": {
+      "activity_score": "23.0",
+      "presence": "3.0",
+      "participation": "10.0",
+      "contribution": "24.0",
+      "connection": "24.0"
+    }
+  },
+  "PUT /api/admin/v2/community_members/101": {
+    "first_name": "Baz",
+    "last_name": null,
+    "headline": "New headline",
+    "created_at": "2024-09-10T01:40:57.450Z",
+    "updated_at": "2024-09-10T01:41:13.180Z",
+    "community_id": 1,
+    "last_seen_at": null,
+    "profile_confirmed_at": "2024-09-10T01:40:57.000Z",
+    "member_since": "2024-09-10T01:40:57.000Z",
+    "member_since_overridden": false,
+    "id": 2,
+    "profile_url": "http://torphy.circledev.net:31337/u/1e32c94e",
+    "public_uid": "1e32c94e",
+    "profile_fields": [
+      {
+        "id": 1,
+        "label": "Label",
+        "field_type": "text",
+        "key": "profile_field_key_1",
+        "placeholder": null,
+        "description": null,
+        "required": false,
+        "platform_field": true,
+        "created_at": "2024-09-10T01:40:57.484Z",
+        "updated_at": "2024-09-10T01:40:57.484Z",
+        "community_member_profile_field": {
+          "id": 1,
+          "text": "Bar",
+          "textarea": null,
+          "created_at": "2024-09-10T01:41:13.198Z",
+          "updated_at": "2024-09-10T01:41:13.201Z",
+          "display_value": "Bar",
+          "community_member_choices": [
+
+          ]
+        },
+        "number_options": null,
+        "choices": [
+
+        ],
+        "pages": [
+          {
+            "id": 2,
+            "name": "edit_profile",
+            "position": 1,
+            "visible": true,
+            "created_at": "2024-09-10T01:40:57.486Z",
+            "updated_at": "2024-09-10T01:40:57.486Z"
+          },
+          {
+            "id": 3,
+            "name": "profile_view",
+            "position": 1,
+            "visible": true,
+            "created_at": "2024-09-10T01:40:57.487Z",
+            "updated_at": "2024-09-10T01:40:57.487Z"
+          },
+          {
+            "id": 1,
+            "name": "signup",
+            "position": 1,
+            "visible": true,
+            "created_at": "2024-09-10T01:40:57.484Z",
+            "updated_at": "2024-09-10T01:40:57.484Z"
+          }
+        ]
+      }
+    ],
+    "flattened_profile_fields": {
+      "profile_field_key_1": "Bar"
+    },
+    "avatar_url": null,
+    "user_id": 3,
+    "name": "Baz",
+    "email": "carlton@ernser.biz",
+    "accepted_invitation": "2024-09-10 01:40:57 UTC",
+    "active": true,
+    "sso_provider_user_id": null,
+    "member_tags": [
+
+    ],
+    "posts_count": 0,
+    "comments_count": 0
+  },
+  "GET /api/admin/v2/community_members/search": {
+    "first_name": "Johnie",
+    "last_name": "Feeney",
+    "headline": "Senior Developer",
+    "created_at": "2024-08-23T09:01:17.166Z",
+    "updated_at": "2024-08-23T09:01:17.352Z",
+    "community_id": 1,
+    "last_seen_at": "2024-08-23T09:01:37.000Z",
+    "profile_confirmed_at": "2024-08-23T09:01:17.000Z",
+    "member_since": "2024-08-23T09:01:17.000Z",
+    "member_since_overridden": false,
+    "id": 1,
+    "profile_url": "http://becker-hettinger.circledev.net:31337/u/ed9f7768",
+    "public_uid": "ed9f7768",
+    "profile_fields": [
+      {
+        "id": 1,
+        "label": "Label",
+        "field_type": "select",
+        "key": "profile_field_key_1",
+        "placeholder": null,
+        "description": null,
+        "required": false,
+        "platform_field": false,
+        "created_at": "2024-08-23T09:01:17.394Z",
+        "updated_at": "2024-08-23T09:01:17.394Z",
+        "community_member_profile_field": {
+          "id": 1,
+          "text": null,
+          "textarea": null,
+          "created_at": "2024-08-23T09:01:17.413Z",
+          "updated_at": "2024-08-23T09:01:17.413Z",
+          "display_value": [
+            "Choice 1"
+          ],
+          "community_member_choices": [
+            {
+              "id": 1,
+              "profile_field_choice": {
+                "id": 1,
+                "value": "Choice 1"
+              }
+            }
+          ]
+        },
+        "number_options": null,
+        "choices": [
+          {
+            "id": 1,
+            "value": "Choice 1"
+          }
+        ],
+        "pages": [
+          {
+            "id": 2,
+            "name": "edit_profile",
+            "position": 1,
+            "visible": true,
+            "created_at": "2024-08-23T09:01:17.397Z",
+            "updated_at": "2024-08-23T09:01:17.397Z"
+          },
+          {
+            "id": 3,
+            "name": "profile_view",
+            "position": 1,
+            "visible": true,
+            "created_at": "2024-08-23T09:01:17.399Z",
+            "updated_at": "2024-08-23T09:01:17.399Z"
+          },
+          {
+            "id": 1,
+            "name": "signup",
+            "position": 1,
+            "visible": true,
+            "created_at": "2024-08-23T09:01:17.396Z",
+            "updated_at": "2024-08-23T09:01:17.396Z"
+          }
+        ]
+      }
+    ],
+    "flattened_profile_fields": {
+      "profile_field_key_1": [
+        "Choice 1"
+      ]
+    },
+    "avatar_url": null,
+    "user_id": 2,
+    "name": "Johnie Feeney",
+    "email": "benjamin@cremin-okeefe.io",
+    "accepted_invitation": "2024-08-23 09:01:16 UTC",
+    "active": true,
+    "sso_provider_user_id": null,
+    "member_tags": [
+      {
+        "name": "inventore",
+        "id": 1
+      }
+    ],
+    "posts_count": 0,
+    "comments_count": 0,
+    "gamification_stats": {
+      "community_member_id": 2,
+      "total_points": 0,
+      "current_level": 1,
+      "current_level_name": "Level 1",
+      "points_to_next_level": 50,
+      "level_progress": 50
+    }
+  },
+  "POST /api/admin/v2/community_segments": {
+    "id": 1,
+    "title": "VIP Members",
+    "rules": {
+      "rule_type": "custom_filters",
+      "rules": [
+        {
+          "key": "role",
+          "value": "member"
+        }
+      ]
+    },
+    "visible": true,
+    "audience_count": 0,
+    "created_by": {
+      "id": 1,
+      "name": "Ada Lovelace",
+      "email": "ada@example.com",
+      "avatar_url": null,
+      "public_uid": "016ab0fc"
+    },
+    "created_at": "2025-04-01T21:24:17.411Z",
+    "updated_at": "2025-04-01T21:24:17.411Z"
+  },
+  "GET /api/admin/v2/community_segments": {
+    "page": 1,
+    "per_page": 60,
+    "has_next_page": false,
+    "count": 2,
+    "page_count": 2,
+    "records": [
+      {
+        "id": 1,
+        "title": "VIP Members",
+        "rules": {
+          "rule_type": "custom_filters",
+          "rules": [
+            {
+              "key": "role",
+              "value": "member"
+            }
+          ]
+        },
+        "visible": true,
+        "audience_count": 0,
+        "created_by": {
+          "id": 1,
+          "name": "Ada Lovelace",
+          "email": "ada@example.com",
+          "avatar_url": null,
+          "public_uid": "016ab0fc"
+        },
+        "created_at": "2025-04-01T21:24:17.411Z",
+        "updated_at": "2025-04-01T21:24:17.411Z"
+      },
+      {
+        "id": 2,
+        "title": "Active Users",
+        "rules": {
+          "rule_type": "custom_filters",
+          "rules": [
+            {
+              "key": "activity_level",
+              "value": "high"
+            }
+          ]
+        },
+        "visible": true,
+        "audience_count": 0,
+        "created_by": {
+          "id": 1,
+          "name": "Ada Lovelace",
+          "email": "ada@example.com",
+          "avatar_url": null,
+          "public_uid": "016ab0fc"
+        },
+        "created_at": "2025-04-01T21:24:17.411Z",
+        "updated_at": "2025-04-01T21:24:17.411Z"
+      }
+    ]
+  },
+  "DELETE /api/admin/v2/community_segments/101": {
+    "success": true,
+    "message": "Community segment deleted successfully"
+  },
+  "PUT /api/admin/v2/community_segments/101": {
+    "id": 1,
+    "title": "Updated Segment",
+    "rules": {
+      "rule_type": "custom_filters",
+      "rules": [
+        {
+          "key": "role",
+          "value": "member"
+        },
+        {
+          "key": "country",
+          "value": "USA"
+        }
+      ]
+    },
+    "visible": true,
+    "audience_count": 0,
+    "created_by": {
+      "id": 1,
+      "name": "Ada Lovelace",
+      "email": "ada@example.com",
+      "avatar_url": null,
+      "public_uid": "016ab0fc"
+    },
+    "created_at": "2025-04-01T21:24:17.411Z",
+    "updated_at": "2025-04-01T21:24:17.411Z"
+  },
+  "POST /api/admin/v2/community_segments/101/duplicate": {
+    "id": 2,
+    "title": "Duplicated Segment",
+    "rules": {
+      "rule_type": "custom_filters",
+      "rules": [
+        {
+          "key": "email",
+          "value": "test@example.com"
+        }
+      ]
+    },
+    "visible": true,
+    "audience_count": 100,
+    "created_by": {
+      "id": 1,
+      "name": "Rep. Elwood Altenwerth",
+      "email": "rep@example.com",
+      "avatar_url": null,
+      "public_uid": "016ab0fc"
+    },
+    "created_at": "2021-01-01T00:00:00Z",
+    "updated_at": "2021-01-01T00:00:00Z"
+  },
+  "PUT /api/admin/v2/course_lesson_progress": {
+    "success": true,
+    "message": "Lesson progress updated."
+  },
+  "POST /api/admin/v2/course_lessons": {
+    "id": 1,
+    "name": "New lesson",
+    "status": "published",
+    "created_at": "2021-01-01T00:00:00Z",
+    "updated_at": "2021-01-01T00:00:00Z",
+    "section_id": 1,
+    "is_comments_enabled": true,
+    "is_featured_media_enabled": true,
+    "is_featured_media_download_enabled": true,
+    "body_html": "<p>Lesson body</p>",
+    "space_id": 1,
+    "thumbnail": null,
+    "featured_media": null
+  },
+  "GET /api/admin/v2/course_lessons": {
+    "page": 1,
+    "per_page": 10,
+    "has_next_page": true,
+    "count": 3,
+    "page_count": 3,
+    "records": [
+      {
+        "id": 1,
+        "name": "Lesson 1",
+        "status": "published",
+        "created_at": "2021-01-01T00:00:00Z",
+        "updated_at": "2021-01-01T00:00:00Z",
+        "section_id": 1,
+        "is_comments_enabled": true,
+        "is_featured_media_enabled": true,
+        "is_featured_media_download_enabled": true,
+        "body_html": "<p>Lesson body</p>",
+        "space_id": 1,
+        "thumbnail": null,
+        "featured_media": null
+      },
+      {
+        "id": 2,
+        "name": "Lesson 2",
+        "status": "draft",
+        "created_at": "2021-01-01T00:00:00Z",
+        "updated_at": "2021-01-01T00:00:00Z",
+        "section_id": 1,
+        "is_comments_enabled": true,
+        "is_featured_media_enabled": true,
+        "is_featured_media_download_enabled": true,
+        "body_html": "<p>Lesson body</p>",
+        "space_id": 1,
+        "thumbnail": null,
+        "featured_media": null
+      },
+      {
+        "id": 3,
+        "name": "Lesson 3",
+        "status": "draft",
+        "created_at": "2021-01-01T00:00:00Z",
+        "updated_at": "2021-01-01T00:00:00Z",
+        "section_id": 1,
+        "is_comments_enabled": true,
+        "is_featured_media_enabled": true,
+        "is_featured_media_download_enabled": true,
+        "body_html": "<p>Lesson body</p>",
+        "space_id": 1,
+        "thumbnail": null,
+        "featured_media": null
+      }
+    ]
+  },
+  "DELETE /api/admin/v2/course_lessons/101": {
+    "success": true,
+    "message": "Course lesson deleted"
+  },
+  "GET /api/admin/v2/course_lessons/101": {
+    "id": 1,
+    "name": "Lesson 1",
+    "status": "published",
+    "created_at": "2021-01-01T00:00:00Z",
+    "updated_at": "2021-01-01T00:00:00Z",
+    "section_id": 1,
+    "is_comments_enabled": true,
+    "is_featured_media_enabled": true,
+    "is_featured_media_download_enabled": true,
+    "body_html": "<p>Lesson body</p>",
+    "space_id": 1,
+    "thumbnail": null,
+    "featured_media": null
+  },
+  "PATCH /api/admin/v2/course_lessons/101": {
+    "id": 1,
+    "name": "Updated lesson",
+    "status": "published",
+    "created_at": "2021-01-01T00:00:00Z",
+    "updated_at": "2021-01-01T00:00:00Z",
+    "section_id": 1,
+    "is_comments_enabled": true,
+    "is_featured_media_enabled": true,
+    "is_featured_media_download_enabled": true,
+    "body_html": "<p>Updated lesson body</p>",
+    "space_id": 1,
+    "thumbnail": null,
+    "featured_media": null
+  },
+  "PUT /api/admin/v2/course_lessons/reorder": {
+    "success": true,
+    "message": "Course lessons reordered"
+  },
+  "POST /api/admin/v2/course_sections": {
+    "id": 1,
+    "name": "New Section",
+    "space_id": 1,
+    "created_at": "2021-01-01T00:00:00Z",
+    "updated_at": "2021-01-01T00:00:00Z"
+  },
+  "GET /api/admin/v2/course_sections": {
+    "page": 1,
+    "per_page": 10,
+    "has_next_page": true,
+    "count": 3,
+    "page_count": 3,
+    "records": [
+      {
+        "id": 1,
+        "name": "Section 1",
+        "created_at": "2021-01-01T00:00:00Z",
+        "updated_at": "2021-01-01T00:00:00Z",
+        "space_id": 1
+      },
+      {
+        "id": 2,
+        "name": "Section 2",
+        "created_at": "2021-01-01T00:00:00Z",
+        "updated_at": "2021-01-01T00:00:00Z",
+        "space_id": 1
+      },
+      {
+        "id": 3,
+        "name": "Section 3",
+        "created_at": "2021-01-01T00:00:00Z",
+        "updated_at": "2021-01-01T00:00:00Z",
+        "space_id": 1
+      }
+    ]
+  },
+  "GET /api/admin/v2/course_sections/101": {
+    "id": 1,
+    "name": "Section 1",
+    "created_at": "2021-01-01T00:00:00Z",
+    "updated_at": "2021-01-01T00:00:00Z",
+    "space_id": 1
+  },
+  "PUT /api/admin/v2/course_sections/101": {
+    "id": 1,
+    "name": "Updated Section",
+    "created_at": "2021-01-01T00:00:00Z",
+    "updated_at": "2021-01-01T00:00:00Z",
+    "space_id": 1
+  },
+  "POST /api/admin/v2/direct_uploads": {
+    "id": 1,
+    "key": "c7u0d0sjfp9p7wjlzp7v0bxkrykm",
+    "filename": "sample.jpg",
+    "content_type": "image/jpeg",
+    "byte_size": 186822,
+    "checksum": "409fnt4awWB4Ab0ZU4+xyA==",
+    "created_at": "2024-07-22T07:44:52.000Z",
+    "service_name": "test",
+    "community_id": 1,
+    "community_member_id": 1,
+    "signed_id": "eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--705b374a95b895bfd07289c5a26f002d24650efa",
+    "attachable_sgid": "BAh7CEkiCGdpZAY6BkVUSSI5Z2lkOi8vanVtcHN0YXJ0LWFwcC9BY3RpdmVTdG9yYWdlOjpCbG9iLzE_ZXhwaXJlc19pbgY7AFRJIgxwdXJwb3NlBjsAVEkiD2F0dGFjaGFibGUGOwBUSSIPZXhwaXJlc19hdAY7AFQw--88f6aa111f445e903b24937e43a8d44202fa4d08",
+    "direct_upload": {
+      "url": "http://www.example.com:31337/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDam9JYTJWNVNTSWhZemQxTUdRd2MycG1jRGx3TjNkcWJIcHdOM1l3WW5ocmNubHJiUVk2QmtWVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc5cGJXRm5aUzlxY0dWbkJqc0dWRG9UWTI5dWRHVnVkRjlzWlc1bmRHaHBBOGJaQWpvTlkyaGxZMnR6ZFcxSkloMDBNRGxtYm5RMFlYZFhRalJCWWpCYVZUUXJlSGxCUFQwR093WlVPaEZ6WlhKMmFXTmxYMjVoYldVNkNYUmxjM1E9IiwiZXhwIjoiMjAyNC0wNy0yMlQwNzo0OTo1Mi4yMzVaIiwicHVyIjoiYmxvYl90b2tlbiJ9fQ==--d506363ed9b9d09864438ae805bebd80a5d64ed9",
+      "headers": {
+        "Content-Type": "image/jpeg"
+      }
+    },
+    "url": "http://www.example.com/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZemQxTUdRd2MycG1jRGx3TjNkcWJIcHdOM1l3WW5ocmNubHJiUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUDJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5OaGJYQnNaUzVxY0djaU95Qm1hV3hsYm1GdFpTbzlWVlJHTFRnbkozTmhiWEJzWlM1cWNHY0dPd1pVT2hGamIyNTBaVzUwWDNSNWNHVkpJZzlwYldGblpTOXFjR1ZuQmpzR1ZEb1JjMlZ5ZG1salpWOXVZVzFsT2dsMFpYTjAiLCJleHAiOm51bGwsInB1ciI6ImJsb2Jfa2V5In19--133e53c3b198ae40722fd296d4de82a6892bf989/sample.jpg"
+  },
+  "POST /api/admin/v2/embeds": {
+    "id": 1,
+    "url": "https://vimeo.com/253989945",
+    "sgid": "BAh7CEkiCGdpZAY6BkVUSSI...",
+    "type": "embed",
+    "embed_type": "video",
+    "embed_provider": "iframely",
+    "circle_embed_url": "https://example.circle.so/embeds/BAh7CEkiCGdpZAY6BkVUSSI...",
+    "html": "<div>Embed HTML</div>",
+    "title": "Sample Video",
+    "width": 1280,
+    "height": 720,
+    "version": "1.0",
+    "author_url": "https://vimeo.com/testuser",
+    "author_name": "Vimeo Test User",
+    "description": "Sample Video Description",
+    "provider_url": "https://vimeo.com/",
+    "provider_name": "Vimeo",
+    "thumbnail_url": "https://i.vimeocdn.com/video/example.jpg",
+    "thumbnail_width": 1280,
+    "thumbnail_height": 720
+  },
+  "GET /api/admin/v2/embeds/101": {
+    "id": 1,
+    "url": "https://vimeo.com/253989945",
+    "sgid": "BAh7CEkiCGdpZAY6BkVUSSI...",
+    "type": "embed",
+    "embed_type": "video",
+    "embed_provider": "iframely",
+    "circle_embed_url": "https://example.circle.so/embeds/BAh7CEkiCGdpZAY6BkVUSSI...",
+    "html": "<div>Embed HTML</div>",
+    "title": "Test Video",
+    "width": 1280,
+    "height": 720,
+    "provider_url": "https://vimeo.com/",
+    "provider_name": "Vimeo",
+    "thumbnail_url": "https://i.vimeocdn.com/video/example.jpg"
+  },
+  "POST /api/admin/v2/event_attendees": {
+    "message": "RSVP'd to the event."
+  },
+  "DELETE /api/admin/v2/event_attendees": {
+    "message": "Un-RSVP successful from the event"
+  },
+  "GET /api/admin/v2/event_attendees": {
+    "page": 1,
+    "per_page": 10,
+    "has_next_page": false,
+    "count": 2,
+    "page_count": 2,
+    "records": [
+      {
+        "id": 2,
+        "event_id": 2,
+        "community_member_id": 3,
+        "contact_id": 3,
+        "contact_type": "CommunityMember",
+        "rsvp_status": "yes",
+        "event_name": "Eaque tenetur nostrum non.",
+        "member_name": "Margarette Schinner",
+        "member_email": "tamar_powlowski@kemmer.net",
+        "member_avatar_url": null,
+        "headline": "Principal Architect",
+        "rsvp_date": "2024-09-30T10:51:43.834Z"
+      },
+      {
+        "id": 1,
+        "event_id": 2,
+        "community_member_id": 1,
+        "contact_id": 1,
+        "contact_type": "CommunityMember",
+        "rsvp_status": "yes",
+        "event_name": "Eaque tenetur nostrum non.",
+        "member_name": "Elisha Terry",
+        "member_email": "junior@conroy.com",
+        "member_avatar_url": null,
+        "headline": "IT Representative",
+        "rsvp_date": "2024-09-30T10:51:43.800Z"
+      }
+    ]
+  },
+  "POST /api/admin/v2/events": {
+    "id": 3,
+    "name": "Second event",
+    "slug": "flatley-pacocha",
+    "user_id": 6,
+    "community_member_id": 1,
+    "created_at": "2024-09-10T12:39:32.225Z",
+    "hide_meta_info": false,
+    "confirmation_message_title": "Doloremque et et.",
+    "confirmation_message_button_title": "Et et.",
+    "confirmation_message_button_link": "http://www.haag.com/velit-ut-qui",
+    "confirmation_message_description": "Quisquam et et.",
+    "in_person_location": "New York",
+    "host": "Dolores",
+    "comments_count": 0,
+    "duration_in_seconds": 25,
+    "enable_custom_thank_you_message": false,
+    "send_in_app_notification_confirmation": true,
+    "rsvp_disabled": false,
+    "send_email_confirmation": true,
+    "send_email_reminder": true,
+    "send_in_app_notification_reminder": true,
+    "virtual_location_url": "http://schaefer-bode.net/fausto.kreiger",
+    "starts_at": "2024-09-20T12:39:32.000Z",
+    "location_type": "virtual",
+    "hide_attendees": false,
+    "ends_at": "2024-09-20T12:39:57.000Z",
+    "updated_at": "2024-09-10T12:39:32.228Z",
+    "hide_location_from_non_attendees": true,
+    "space": {
+      "id": 2,
+      "slug": "event",
+      "name": "event",
+      "community_id": 1
+    },
+    "body": "Sunt pariatur sequi voluptatem.",
+    "url": "http://armstrong-hayes.circledev.net:31337/c/event/flatley-pacocha",
+    "member_email": "vida.smith@feest-sipes.info",
+    "member_name": "Demetrius Nolan",
+    "member_avatar_url": "http://placekitten.com/200/200",
+    "zapier_display_title": "Second event 20 Sep 2024 12:39PM UTC",
+    "likes_count": 0,
+    "cover_image_url": "http://login.circledev.net/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhOMlk1ZURWNGRXSmlPR0Z3WnpCck1tdzNjbmR4ZURocE4zTnllUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5CcFkzTjFiUzVxY0dWbklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZHdhV056ZFcwdWFuQmxad1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRDJsdFlXZGxMMnB3WldjR093WlVPaEZ6WlhKMmFXTmxYMjVoYldVNkNYUmxjM1E9IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2tleSJ9fQ==--de2ca9f5695147b886fe65a18179e53f445d42cb/picsum.jpeg",
+    "meta_tag_attributes": {
+      "meta_title": "Event meta title",
+      "meta_description": "Event meta description",
+      "opengraph_title": "Event OpenGraph title",
+      "opengraph_description": "Event OpenGraph description",
+      "opengraph_image": "https://example.com/event-opengraph-image.jpg"
+    },
+    "topics": [
+      10,
+      11,
+      12
+    ]
+  },
+  "GET /api/admin/v2/events": {
+    "page": 1,
+    "per_page": 60,
+    "has_next_page": false,
+    "count": 2,
+    "page_count": 2,
+    "records": [
+      {
+        "id": 3,
+        "name": "Second event",
+        "slug": "flatley-pacocha",
+        "user_id": 6,
+        "community_member_id": 1,
+        "created_at": "2024-09-10T12:39:32.225Z",
+        "hide_meta_info": false,
+        "confirmation_message_title": "Doloremque et et.",
+        "confirmation_message_button_title": "Et et.",
+        "confirmation_message_button_link": "http://www.haag.com/velit-ut-qui",
+        "confirmation_message_description": "Quisquam et et.",
+        "in_person_location": "New York",
+        "host": "Dolores",
+        "comments_count": 0,
+        "duration_in_seconds": 25,
+        "enable_custom_thank_you_message": false,
+        "send_in_app_notification_confirmation": true,
+        "rsvp_disabled": false,
+        "send_email_confirmation": true,
+        "send_email_reminder": true,
+        "send_in_app_notification_reminder": true,
+        "virtual_location_url": "http://schaefer-bode.net/fausto.kreiger",
+        "starts_at": "2024-09-20T12:39:32.000Z",
+        "location_type": "virtual",
+        "hide_attendees": false,
+        "ends_at": "2024-09-20T12:39:57.000Z",
+        "updated_at": "2024-09-10T12:39:32.228Z",
+        "hide_location_from_non_attendees": true,
+        "space": {
+          "id": 2,
+          "slug": "event",
+          "name": "event",
+          "community_id": 1
+        },
+        "body": "Sunt pariatur sequi voluptatem.",
+        "url": "http://armstrong-hayes.circledev.net:31337/c/event/flatley-pacocha",
+        "member_email": "vida.smith@feest-sipes.info",
+        "member_name": "Demetrius Nolan",
+        "member_avatar_url": "http://placekitten.com/200/200",
+        "zapier_display_title": "Second event 20 Sep 2024 12:39PM UTC",
+        "likes_count": 0,
+        "cover_image_url": "http://login.circledev.net/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhOMlk1ZURWNGRXSmlPR0Z3WnpCck1tdzNjbmR4ZURocE4zTnllUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5CcFkzTjFiUzVxY0dWbklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZHdhV056ZFcwdWFuQmxad1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRDJsdFlXZGxMMnB3WldjR093WlVPaEZ6WlhKMmFXTmxYMjVoYldVNkNYUmxjM1E9IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2tleSJ9fQ==--de2ca9f5695147b886fe65a18179e53f445d42cb/picsum.jpeg",
+        "meta_tag_attributes": {
+          "meta_title": "Event meta title",
+          "meta_description": "Event meta description",
+          "opengraph_title": "Event OpenGraph title",
+          "opengraph_description": "Event OpenGraph description",
+          "opengraph_image": "https://example.com/event-opengraph-image.jpg"
+        },
+        "topics": [
+          10,
+          11,
+          12
+        ]
+      },
+      {
+        "id": 2,
+        "name": "First event",
+        "slug": "jacobs",
+        "user_id": 5,
+        "community_member_id": 1,
+        "created_at": "2024-09-10T12:39:32.191Z",
+        "hide_meta_info": false,
+        "confirmation_message_title": "Rerum et et.",
+        "confirmation_message_button_title": "Gloria et et.",
+        "confirmation_message_button_link": "http://www.kreiger.com/et-ut-qui",
+        "confirmation_message_description": "Quisquam et et.",
+        "in_person_location": "Atlanta",
+        "host": "Dolores",
+        "comments_count": 0,
+        "duration_in_seconds": 26,
+        "enable_custom_thank_you_message": false,
+        "send_in_app_notification_confirmation": true,
+        "rsvp_disabled": false,
+        "send_email_confirmation": true,
+        "send_email_reminder": true,
+        "send_in_app_notification_reminder": true,
+        "virtual_location_url": "http://wintheiser-schoen.name/ed.langosh",
+        "starts_at": "2024-09-20T12:39:32.000Z",
+        "location_type": "virtual",
+        "hide_attendees": false,
+        "ends_at": "2024-09-20T12:39:58.000Z",
+        "updated_at": "2024-09-10T12:39:32.194Z",
+        "hide_location_from_non_attendees": true,
+        "space": {
+          "id": 2,
+          "slug": "event",
+          "name": "event",
+          "community_id": 1
+        },
+        "body": "A illum quis maxime.",
+        "url": "http://armstrong-hayes.circledev.net:31337/c/event/jacobs",
+        "member_email": "vida.smith@feest-sipes.info",
+        "member_name": "Demetrius Nolan",
+        "member_avatar_url": "http://placekitten.com/200/200",
+        "zapier_display_title": "First event 20 Sep 2024 12:39PM UTC",
+        "likes_count": 0,
+        "cover_image_url": "http://login.circledev.net/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhOMlk1ZURWNGRXSmlPR0Z3WnpCck1tdzNjbmR4ZURocE4zTnllUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5CcFkzTjFiUzVxY0dWbklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZHdhV056ZFcwdWFuQmxad1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRDJsdFlXZGxMMnB3WldjR093WlVPaEZ6WlhKMmFXTmxYMjVoYldVNkNYUmxjM1E9IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2tleSJ9fQ==--de2ca9f5695147b886fe65a18179e53f445d42cb/picsum.jpeg",
+        "topics": [
+          10,
+          11,
+          12
+        ]
+      }
+    ]
+  },
+  "DELETE /api/admin/v2/events/101": {
+    "message": "Event deleted."
+  },
+  "GET /api/admin/v2/events/101": {
+    "id": 3,
+    "name": "Second event",
+    "slug": "flatley-pacocha",
+    "user_id": 6,
+    "community_member_id": 1,
+    "created_at": "2024-09-10T12:39:32.225Z",
+    "hide_meta_info": false,
+    "confirmation_message_title": "Doloremque et et.",
+    "confirmation_message_button_title": "Et et.",
+    "confirmation_message_button_link": "http://www.haag.com/velit-ut-qui",
+    "confirmation_message_description": "Quisquam et et.",
+    "in_person_location": "New York",
+    "host": "Dolores",
+    "comments_count": 0,
+    "duration_in_seconds": 25,
+    "enable_custom_thank_you_message": false,
+    "send_in_app_notification_confirmation": true,
+    "rsvp_disabled": false,
+    "send_email_confirmation": true,
+    "send_email_reminder": true,
+    "send_in_app_notification_reminder": true,
+    "virtual_location_url": "http://schaefer-bode.net/fausto.kreiger",
+    "starts_at": "2024-09-20T12:39:32.000Z",
+    "location_type": "virtual",
+    "hide_attendees": false,
+    "ends_at": "2024-09-20T12:39:57.000Z",
+    "updated_at": "2024-09-10T12:39:32.228Z",
+    "hide_location_from_non_attendees": true,
+    "space": {
+      "id": 2,
+      "slug": "event",
+      "name": "event",
+      "community_id": 1
+    },
+    "body": "Sunt pariatur sequi voluptatem.",
+    "url": "http://armstrong-hayes.circledev.net:31337/c/event/flatley-pacocha",
+    "member_email": "vida.smith@feest-sipes.info",
+    "member_name": "Demetrius Nolan",
+    "member_avatar_url": "http://placekitten.com/200/200",
+    "zapier_display_title": "Second event 20 Sep 2024 12:39PM UTC",
+    "likes_count": 0,
+    "cover_image_url": "http://login.circledev.net/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhOMlk1ZURWNGRXSmlPR0Z3WnpCck1tdzNjbmR4ZURocE4zTnllUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5CcFkzTjFiUzVxY0dWbklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZHdhV056ZFcwdWFuQmxad1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRDJsdFlXZGxMMnB3WldjR093WlVPaEZ6WlhKMmFXTmxYMjVoYldVNkNYUmxjM1E9IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2tleSJ9fQ==--de2ca9f5695147b886fe65a18179e53f445d42cb/picsum.jpeg",
+    "meta_tag_attributes": {
+      "meta_title": "Event meta title",
+      "meta_description": "Event meta description",
+      "opengraph_title": "Event OpenGraph title",
+      "opengraph_description": "Event OpenGraph description",
+      "opengraph_image": "https://example.com/event-opengraph-image.jpg"
+    },
+    "topics": [
+      10,
+      11,
+      12
+    ]
+  },
+  "PUT /api/admin/v2/events/101": {
+    "id": 3,
+    "name": "Second event",
+    "slug": "flatley-pacocha",
+    "user_id": 6,
+    "community_member_id": 1,
+    "created_at": "2024-09-10T12:39:32.225Z",
+    "hide_meta_info": false,
+    "confirmation_message_title": "Doloremque et et.",
+    "confirmation_message_button_title": "Et et.",
+    "confirmation_message_button_link": "http://www.haag.com/velit-ut-qui",
+    "confirmation_message_description": "Quisquam et et.",
+    "in_person_location": "New York",
+    "host": "Dolores",
+    "comments_count": 0,
+    "duration_in_seconds": 25,
+    "enable_custom_thank_you_message": false,
+    "send_in_app_notification_confirmation": true,
+    "rsvp_disabled": false,
+    "send_email_confirmation": true,
+    "send_email_reminder": true,
+    "send_in_app_notification_reminder": true,
+    "virtual_location_url": "http://schaefer-bode.net/fausto.kreiger",
+    "starts_at": "2024-09-20T12:39:32.000Z",
+    "location_type": "virtual",
+    "hide_attendees": false,
+    "ends_at": "2024-09-20T12:39:57.000Z",
+    "updated_at": "2024-09-10T12:39:32.228Z",
+    "hide_location_from_non_attendees": true,
+    "space": {
+      "id": 2,
+      "slug": "event",
+      "name": "event",
+      "community_id": 1
+    },
+    "body": "Sunt pariatur sequi voluptatem.",
+    "url": "http://armstrong-hayes.circledev.net:31337/c/event/flatley-pacocha",
+    "member_email": "vida.smith@feest-sipes.info",
+    "member_name": "Demetrius Nolan",
+    "member_avatar_url": "http://placekitten.com/200/200",
+    "zapier_display_title": "Second event 20 Sep 2024 12:39PM UTC",
+    "likes_count": 0,
+    "cover_image_url": "http://login.circledev.net/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhOMlk1ZURWNGRXSmlPR0Z3WnpCck1tdzNjbmR4ZURocE4zTnllUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5CcFkzTjFiUzVxY0dWbklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZHdhV056ZFcwdWFuQmxad1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRDJsdFlXZGxMMnB3WldjR093WlVPaEZ6WlhKMmFXTmxYMjVoYldVNkNYUmxjM1E9IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2tleSJ9fQ==--de2ca9f5695147b886fe65a18179e53f445d42cb/picsum.jpeg",
+    "meta_tag_attributes": {
+      "meta_title": "Updated event meta title",
+      "meta_description": "Updated event meta description",
+      "opengraph_title": "Updated event OpenGraph title",
+      "opengraph_description": "Updated event OpenGraph description",
+      "opengraph_image": "https://example.com/updated-event-opengraph-image.jpg"
+    },
+    "topics": [
+      10,
+      11,
+      12
+    ]
+  },
+  "POST /api/admin/v2/spaces/101/events/102/duplicate": {
+    "id": 3,
+    "name": "First event",
+    "slug": "first-event-copy",
+    "user_id": 6,
+    "community_member_id": 1,
+    "created_at": "2024-09-10T12:39:32.225Z",
+    "hide_meta_info": false,
+    "confirmation_message_title": null,
+    "confirmation_message_button_title": null,
+    "confirmation_message_button_link": null,
+    "confirmation_message_description": null,
+    "in_person_location": null,
+    "host": "Jane Doe",
+    "comments_count": 0,
+    "duration_in_seconds": 3600,
+    "enable_custom_thank_you_message": false,
+    "send_in_app_notification_confirmation": true,
+    "rsvp_disabled": false,
+    "send_email_confirmation": true,
+    "send_email_reminder": true,
+    "send_in_app_notification_reminder": true,
+    "virtual_location_url": "https://meet.example.com",
+    "starts_at": "2024-09-11T12:00:00.000Z",
+    "location_type": "virtual",
+    "hide_attendees": false,
+    "ends_at": "2024-09-11T13:00:00.000Z",
+    "updated_at": "2024-09-10T12:39:32.225Z",
+    "hide_location_from_non_attendees": false,
+    "space": {
+      "id": 2,
+      "slug": "target",
+      "name": "Target Space",
+      "community_id": 1
+    },
+    "body": "<div>Event description</div>",
+    "url": "https://example.circle.so/c/space/events/first-event-copy",
+    "member_email": "jane@example.com",
+    "member_name": "Jane Doe",
+    "member_avatar_url": "https://example.circle.so/avatar.png",
+    "zapier_display_title": "First event (September 11, 2024)",
+    "likes_count": 0,
+    "cover_image_url": null,
+    "topics": [
+
+    ]
+  },
+  "DELETE /api/admin/v2/filter_kit_controls/101": {
+    "success": true,
+    "message": "Filter control removed successfully."
+  },
+  "POST /api/admin/v2/flagged_contents": {
+    "id": 1,
+    "status": null,
+    "reported_reason_type": "spam",
+    "reported_reason_body": "This content appears to be spam",
+    "reported_at": "2024-09-02T06:55:07.879Z",
+    "action_taken_at": null,
+    "action_reason_body": null,
+    "created_at": "2024-09-02T06:55:07.879Z",
+    "updated_at": "2024-09-02T06:55:07.879Z",
+    "content_id": 1,
+    "content_type": "post",
+    "content_authored_by_id": 2,
+    "content_authored_by_name": "John Doe",
+    "content_authored_by_email": "john@example.com",
+    "reported_by_id": 3,
+    "reported_by_name": "Jane Smith",
+    "reported_by_email": "jane@example.com",
+    "action_by_id": null,
+    "action_by_name": null,
+    "action_by_email": null
+  },
+  "GET /api/admin/v2/flagged_contents": {
+    "page": 1,
+    "per_page": 10,
+    "has_next_page": false,
+    "count": 2,
+    "page_count": 1,
+    "records": [
+      {
+        "id": 1,
+        "status": null,
+        "reported_reason_type": "spam",
+        "reported_reason_body": "This content appears to be spam",
+        "reported_at": "2024-09-02T06:55:07.879Z",
+        "action_taken_at": null,
+        "action_reason_body": null,
+        "created_at": "2024-09-02T06:55:07.879Z",
+        "updated_at": "2024-09-02T06:55:07.879Z",
+        "content_authored_by_id": 2,
+        "content_authored_by_name": "John Doe",
+        "content_authored_by_email": "john@example.com",
+        "reported_by_id": 3,
+        "reported_by_name": "Jane Smith",
+        "reported_by_email": "jane@example.com",
+        "action_by_id": null,
+        "action_by_name": null,
+        "action_by_email": null,
+        "content_id": 1,
+        "content_type": "post"
+      },
+      {
+        "id": 2,
+        "status": "rejected",
+        "reported_reason_type": "other",
+        "reported_reason_body": "Contains inappropriate language",
+        "reported_at": "2024-09-01T06:55:07.879Z",
+        "action_taken_at": "2024-09-02T08:30:15.123Z",
+        "action_reason_body": "Content removed for violating community guidelines",
+        "created_at": "2024-09-01T06:55:07.879Z",
+        "updated_at": "2024-09-02T08:30:15.123Z",
+        "content_authored_by_id": 2,
+        "content_authored_by_name": "John Doe",
+        "content_authored_by_email": "john@example.com",
+        "reported_by_id": 5,
+        "reported_by_name": "Alice Johnson",
+        "reported_by_email": "alice@example.com",
+        "action_by_id": 1,
+        "action_by_name": "Admin User",
+        "action_by_email": "admin@example.com",
+        "content_id": 1,
+        "content_type": "post"
+      }
+    ]
+  },
+  "DELETE /api/admin/v2/forms/101": {
+    "success": true,
+    "message": "Form deleted successfully"
+  },
+  "GET /api/admin/v2/forms/101": {
+    "id": 1,
+    "uid": "abc12345",
+    "after_submission_action": "thank_you_page",
+    "embed_display_format": "inline",
+    "popup_delay": 5,
+    "popup_frequency": 7,
+    "name": "Contact Form",
+    "redirect_url": null,
+    "status": "draft",
+    "thank_you_page_body": "We're thrilled to have you as a part of our vibrant and growing community.",
+    "thank_you_page_title": "Thank you for subscribing!",
+    "updated_at": "2025-12-01T17:01:58.306Z",
+    "submissions_count": 0,
+    "embed_styles": {
+      "form": {
+        "color": "#545861",
+        "backgroundColor": "#fff"
+      },
+      "button": {
+        "color": "#fff",
+        "backgroundColor": "#2B2E33"
+      }
+    },
+    "standalone_page_styles": {
+      "form": {
+        "color": "#545861",
+        "backgroundColor": "#fff"
+      },
+      "button": {
+        "color": "#fff",
+        "backgroundColor": "#2B2E33"
+      }
+    },
+    "elements": [
+      {
+        "id": 1,
+        "type": "text",
+        "position": 0,
+        "elementable_id": 1,
+        "parent_element_id": null,
+        "attributes": {
+          "text_type": "title",
+          "value": "Title"
+        }
+      }
+    ]
+  },
+  "PUT /api/admin/v2/forms/101": {
+    "id": 1,
+    "uid": "5bcd56a2",
+    "after_submission_action": "redirect",
+    "embed_display_format": "popup",
+    "popup_delay": 3,
+    "popup_frequency": 5,
+    "name": "Updated Form Name",
+    "redirect_url": "https://example.com/thank-you",
+    "status": "published",
+    "thank_you_page_body": "We appreciate your submission.",
+    "thank_you_page_title": "Thank You!",
+    "updated_at": "2025-12-01T17:01:58.306Z",
+    "submissions_count": 0,
+    "elements": [
+      {
+        "id": 121,
+        "position": 0,
+        "parent_element_id": null,
+        "type": "text",
+        "elementable_id": 47,
+        "attributes": {
+          "text_type": "title",
+          "value": "Title"
+        }
+      },
+      {
+        "id": 122,
+        "position": 1,
+        "parent_element_id": null,
+        "type": "text",
+        "elementable_id": 48,
+        "attributes": {
+          "text_type": "subtitle",
+          "value": "Subtitle"
+        }
+      },
+      {
+        "id": 123,
+        "position": 2,
+        "parent_element_id": null,
+        "type": "field",
+        "elementable_id": 49,
+        "attributes": {
+          "field_type": "contact_name",
+          "label": "Name",
+          "placeholder": "Enter name",
+          "required": false,
+          "hidden": false
+        }
+      },
+      {
+        "id": 124,
+        "position": 3,
+        "parent_element_id": null,
+        "type": "field",
+        "elementable_id": 50,
+        "attributes": {
+          "field_type": "contact_email",
+          "label": "Email",
+          "placeholder": null,
+          "required": true,
+          "hidden": false
+        }
+      },
+      {
+        "id": 125,
+        "position": 4,
+        "parent_element_id": null,
+        "type": "button",
+        "elementable_id": 25,
+        "attributes": {
+          "label": "Submit",
+          "styles": null
+        }
+      }
+    ]
+  },
+  "POST /api/admin/v2/forms/101/duplicate": {
+    "id": 2,
+    "uid": "5bcd56a2",
+    "after_submission_action": "thank_you_page",
+    "embed_display_format": "inline",
+    "popup_delay": 5,
+    "popup_frequency": 7,
+    "name": "Original Form (copy)",
+    "redirect_url": null,
+    "status": "draft",
+    "thank_you_page_body": "We're thrilled to have you as a part of our vibrant and growing community.",
+    "thank_you_page_title": "Thank you for subscribing!",
+    "updated_at": "2025-12-01T17:01:58.306Z",
+    "embed_styles": {
+      "form": {
+        "color": "#19283a",
+        "backgroundColor": "#FFFFFF"
+      },
+      "button": {
+        "color": "#FFFFFF",
+        "backgroundColor": "#a40b0b"
+      }
+    },
+    "standalone_page_styles": {
+      "form": {
+        "color": "#545861",
+        "backgroundColor": "#fff"
+      },
+      "button": {
+        "color": "#fff",
+        "backgroundColor": "#2B2E33"
+      }
+    },
+    "elements": [
+
+    ]
+  },
+  "GET /api/admin/v2/forms": {
+    "page": 1,
+    "per_page": 60,
+    "has_next_page": false,
+    "count": 2,
+    "page_count": 2,
+    "records": [
+      {
+        "id": 5,
+        "uid": "5bcd56a2",
+        "after_submission_action": "thank_you_page",
+        "embed_display_format": "inline",
+        "popup_delay": 5,
+        "popup_frequency": 7,
+        "name": "First test form (copy)",
+        "redirect_url": null,
+        "status": "draft",
+        "thank_you_page_body": "We're thrilled to have you as a part of our vibrant and growing community.",
+        "thank_you_page_title": "Thank you for subscribing!",
+        "updated_at": "2025-12-01T17:01:58.306Z",
+        "submissions_count": 0,
+        "embed_styles": {
+          "form": {
+            "color": "#19283a",
+            "backgroundColor": "#FFFFFF"
+          },
+          "button": {
+            "color": "#FFFFFF",
+            "backgroundColor": "#a40b0b"
+          }
+        },
+        "standalone_page_styles": {
+          "form": {
+            "color": "#545861",
+            "backgroundColor": "#fff"
+          },
+          "button": {
+            "color": "#fff",
+            "backgroundColor": "#2B2E33"
+          }
+        }
+      },
+      {
+        "id": 2,
+        "uid": "44bd8ec2",
+        "after_submission_action": "thank_you_page",
+        "embed_display_format": "inline",
+        "popup_delay": 5,
+        "popup_frequency": 7,
+        "name": "First test form",
+        "redirect_url": null,
+        "status": "published",
+        "thank_you_page_body": "We're thrilled to have you as a part of our vibrant and growing community.",
+        "thank_you_page_title": "Thank you for subscribing!",
+        "updated_at": "2025-05-27T20:33:40.516Z",
+        "submissions_count": 0,
+        "embed_styles": {
+          "form": {
+            "color": "#19283a",
+            "backgroundColor": "#FFFFFF"
+          },
+          "button": {
+            "color": "#FFFFFF",
+            "backgroundColor": "#a40b0b"
+          }
+        },
+        "standalone_page_styles": {
+          "form": {
+            "color": "#545861",
+            "backgroundColor": "#fff"
+          },
+          "button": {
+            "color": "#fff",
+            "backgroundColor": "#2B2E33"
+          }
+        }
+      }
+    ]
+  },
+  "GET /api/admin/v2/forms/101/submissions": {
+    "page": 1,
+    "per_page": 10,
+    "has_next_page": false,
+    "count": 2,
+    "page_count": 1,
+    "records": [
+      {
+        "id": 17,
+        "created_at": "2026-01-02T07:41:14.634Z",
+        "fields": [
+          {
+            "field_id": 343,
+            "label": "Name",
+            "value": "Donnie Rodriguez DDS",
+            "hidden": false
+          },
+          {
+            "field_id": 344,
+            "label": "Email",
+            "value": "glenda@walsh.co",
+            "hidden": false
+          }
+        ]
+      },
+      {
+        "id": 18,
+        "created_at": "2026-01-02T07:41:14.634Z",
+        "fields": [
+          {
+            "field_id": 343,
+            "label": "Name",
+            "value": "Jane Smith",
+            "hidden": false
+          },
+          {
+            "field_id": 344,
+            "label": "Email",
+            "value": "jane@smith.com",
+            "hidden": false
+          }
+        ]
+      }
+    ]
+  },
+  "GET /api/admin/v2/gamification/leaderboard": [
+    {
+      "community_member_id": 1,
+      "name": "John Doe",
+      "public_uid": "abcd1234",
+      "headline": "Member headline",
+      "avatar_url": "http://example.com/avatar.png",
+      "total_points": 10
+    },
+    {
+      "community_member_id": 2,
+      "name": "Jane Doe",
+      "public_uid": "abcd1235",
+      "headline": "Member headline",
+      "avatar_url": "http://example.com/avatar.png",
+      "total_points": 20
+    },
+    {
+      "community_member_id": 3,
+      "name": "Jamie Doe",
+      "public_uid": "abcd1236",
+      "headline": "Member headline",
+      "avatar_url": "http://example.com/avatar.png",
+      "total_points": 30
+    }
+  ],
+  "POST /api/admin/v2/spaces/101/images/posts": {
+    "message": "Post created.",
+    "post": {
+      "id": 28,
+      "status": "published",
+      "name": null,
+      "slug": "test-post",
+      "hide_meta_info": false,
+      "published_at": "2025-07-15T05:58:29.882Z",
+      "created_at": "2025-07-15T05:58:29.882Z",
+      "updated_at": "2025-07-15T05:58:29.884Z",
+      "is_comments_enabled": true,
+      "is_liking_enabled": true,
+      "flagged_for_approval_at": null,
+      "body": {
+        "id": 28,
+        "name": "body",
+        "body": "<div><p>Content</p></div>",
+        "record_type": "Post",
+        "record_id": 28,
+        "created_at": "2025-07-15T05:58:29.000Z",
+        "updated_at": "2025-07-15T05:58:29.000Z"
+      },
+      "tiptap_body": {
+        "body": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Content",
+                  "circle_ios_fallback_text": "Content"
+                }
+              ]
+            }
+          ]
+        },
+        "circle_ios_fallback_text": "Content",
+        "attachments": [
+
+        ],
+        "inline_attachments": [
+
+        ],
+        "sgids_to_object_map": {
+        },
+        "format": "post",
+        "community_members": [
+
+        ],
+        "entities": [
+
+        ],
+        "group_mentions": [
+
+        ],
+        "polls": [
+
+        ]
+      },
+      "url": "http://reilly.circledev.net:31337/c/natus/test-post",
+      "space_name": "sit",
+      "space_slug": "natus",
+      "space_id": 34,
+      "user_id": 18,
+      "user_email": "tasha@bogisich-veum.name",
+      "user_name": "Bruno Turcotte",
+      "community_id": 17,
+      "user_avatar_url": null,
+      "cover_image_url": null,
+      "cover_image": null,
+      "cardview_thumbnail_url": null,
+      "cardview_thumbnail": null,
+      "is_comments_closed": false,
+      "custom_html": null,
+      "likes_count": 0,
+      "comments_count": 0,
+      "member_posts_count": 2,
+      "member_comments_count": 0,
+      "member_likes_count": 0,
+      "topics": [
+
+      ],
+      "gallery": {
+        "id": 11,
+        "downloadable_images": false,
+        "images": [
+          {
+            "id": 21,
+            "signed_id": "eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBKZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--ed373bb5f7f53b7836603ae16b27b3d6c8876a46",
+            "original_url": "http://reilly.circledev.net/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhNbmM0Ynpsb2JHOXFkM1V6YldkdFpuTTViSGxtTVdWM01teHBPUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUjJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW14aGJtUnpZMkZ3WlM1cWNHVm5JanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRzWVc1a2MyTmhjR1V1YW5CbFp3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lEMmx0WVdkbEwycHdaV2NHT3daVU9oRnpaWEoyYVdObFgyNWhiV1U2Q1hSbGMzUT0iLCJleHAiOm51bGwsInB1ciI6ImJsb2Jfa2V5In19--ce54cc91c36354f367b70f5aebd805da730f0f0f/landscape.jpeg",
+            "url": "http://app.circledev.net:31337/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBKZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--ed373bb5f7f53b7836603ae16b27b3d6c8876a46/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lKYW5CbFp3WTZCa1ZVT2hSeVpYTnBlbVZmZEc5ZmJHbHRhWFJiQjJrQzBBZHBBdEFIT2dwellYWmxjbnNHT2dwemRISnBjRlE9IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--4d801f9d6698c5e93d9a7dbb6e428fef53ffa2fc/landscape.jpeg",
+            "filename": "landscape.jpeg",
+            "width": 100,
+            "height": 100
+          },
+          {
+            "id": 22,
+            "signed_id": "eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBKdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--61317084ad500eeb8192300061628c6336d04d02",
+            "original_url": "http://reilly.circledev.net/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhiMnRrYUdSMGVHUjZkbXd5YURWd2RYSXhNWGxoY0ROemJIWmhPUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpTzJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW01bGJ5NXFjR1ZuSWpzZ1ptbHNaVzVoYldVcVBWVlVSaTA0SnlkdVpXOHVhbkJsWndZN0JsUTZFV052Ym5SbGJuUmZkSGx3WlVraUQybHRZV2RsTDJwd1pXY0dPd1pVT2hGelpYSjJhV05sWDI1aGJXVTZDWFJsYzNRPSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9rZXkifX0=--464bec630de2257178c11f6decc833e5b8e3b287/neo.jpeg",
+            "url": "http://app.circledev.net:31337/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBKdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--61317084ad500eeb8192300061628c6336d04d02/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lKYW5CbFp3WTZCa1ZVT2hSeVpYTnBlbVZmZEc5ZmJHbHRhWFJiQjJrQzBBZHBBdEFIT2dwellYWmxjbnNHT2dwemRISnBjRlE9IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--4d801f9d6698c5e93d9a7dbb6e428fef53ffa2fc/neo.jpeg",
+            "filename": "neo.jpeg",
+            "width": 100,
+            "height": 100
+          }
+        ]
+      }
+    }
+  },
+  "DELETE /api/admin/v2/spaces/101/images/posts/102": {
+    "success": true,
+    "message": "This post has been removed from the space."
+  },
+  "POST /api/admin/v2/spaces/101/images/posts/102/duplicate": {
+    "message": "Post duplicated.",
+    "post": {
+      "id": 29,
+      "status": "draft",
+      "slug": "test-post-copy",
+      "gallery": {
+        "downloadable_images": false,
+        "images": [
+          {
+            "id": 41,
+            "filename": "landscape.jpeg",
+            "width": 2000,
+            "height": 2000
+          }
+        ]
+      }
+    }
+  },
+  "GET /api/admin/v2/invitation_links": {
+    "page": 1,
+    "per_page": 10,
+    "has_next_page": false,
+    "count": 3,
+    "page_count": 1,
+    "records": [
+      {
+        "id": 1,
+        "name": "Beta Testers",
+        "redemption_url": "https://example.circle.so/join?invitation_token=token",
+        "created_at": "2024-01-01T00:00:00.000Z",
+        "updated_at": "2024-01-01T00:00:00.000Z",
+        "access_group_ids": [
+
+        ],
+        "member_tag_ids": [
+
+        ],
+        "active": false,
+        "members_joined_count": 0,
+        "redirect_space_id": null
+      },
+      {
+        "id": 2,
+        "name": "Marketing Team",
+        "redemption_url": "https://example.circle.so/join?invitation_token=token",
+        "created_at": "2024-01-01T00:00:00.000Z",
+        "updated_at": "2024-01-01T00:00:00.000Z",
+        "access_group_ids": [
+
+        ],
+        "member_tag_ids": [
+
+        ],
+        "active": true,
+        "members_joined_count": 0,
+        "redirect_space_id": null
+      },
+      {
+        "id": 3,
+        "name": "Family Invitation",
+        "redemption_url": "https://example.circle.so/join?invitation_token=token",
+        "created_at": "2024-01-01T00:00:00.000Z",
+        "updated_at": "2024-01-01T00:00:00.000Z",
+        "access_group_ids": [
+
+        ],
+        "member_tag_ids": [
+
+        ],
+        "active": true,
+        "members_joined_count": 0,
+        "redirect_space_id": null
+      }
+    ]
+  },
+  "DELETE /api/admin/v2/invitation_links/101": {
+    "message": "Invitation link deleted successfully"
+  },
+  "PATCH /api/admin/v2/invitation_links/101/revoke": {
+    "message": "Invitation link revoked successfully"
+  },
+  "GET /api/admin/v2/live/rooms": {
+    "page": 1,
+    "per_page": 20,
+    "has_next_page": false,
+    "count": 2,
+    "page_count": 2,
+    "records": [
+      {
+        "id": 2,
+        "name": "Room 2",
+        "status": "active",
+        "room_type": "stream",
+        "created_at": "2024-09-10T12:39:32.225Z",
+        "live_at": null,
+        "closed_at": null,
+        "recording_enabled": false,
+        "slug": "some-uuid-2"
+      },
+      {
+        "id": 1,
+        "name": "Room 1",
+        "status": "active",
+        "room_type": "stream",
+        "created_at": "2024-09-10T12:39:32.191Z",
+        "live_at": null,
+        "closed_at": null,
+        "recording_enabled": false,
+        "slug": "some-uuid-1"
+      }
+    ]
+  },
+  "GET /api/admin/v2/live/rooms/101/transcripts": {
+    "transcripts": [
+      "WEBVTT\n\n00:00:00.500 --> 00:00:02.000\nThe Web is always changing\n\n00:00:02.500 --> 00:00:04.300\nand the way we access it is changing\n"
+    ]
+  },
+  "POST /api/admin/v2/member_tags": {
+    "color": "#0ce806",
+    "display_format": "label",
+    "name": "Created Tag Name",
+    "display_locations": {
+      "post_bio": true,
+      "profile_page": true,
+      "member_directory": true
+    },
+    "is_public": true,
+    "is_background_enabled": true,
+    "created_at": "2025-04-01T21:24:17.411Z",
+    "updated_at": "2025-04-01T21:33:43.219Z",
+    "id": 1,
+    "tagged_members_count": 1,
+    "emoji": "🤩",
+    "custom_emoji_url": null,
+    "custom_emoji_dark_url": null
+  },
+  "DELETE /api/admin/v2/member_tags/101": {
+    "success": true,
+    "message": "Member tag deleted"
+  },
+  "GET /api/admin/v2/member_tags/101": {
+    "color": "#0ce806",
+    "display_format": "label",
+    "name": "vips",
+    "display_locations": {
+      "post_bio": true,
+      "profile_page": true,
+      "member_directory": true
+    },
+    "is_public": true,
+    "is_background_enabled": true,
+    "created_at": "2025-04-01T21:24:17.411Z",
+    "updated_at": "2025-04-01T21:33:43.219Z",
+    "id": 1,
+    "tagged_members_count": 1,
+    "emoji": "😆",
+    "custom_emoji_url": null,
+    "custom_emoji_dark_url": null
+  },
+  "PUT /api/admin/v2/member_tags/101": {
+    "color": "#0ce806",
+    "display_format": "label",
+    "name": "Updated Tag Name",
+    "display_locations": {
+      "post_bio": true,
+      "profile_page": true,
+      "member_directory": true
+    },
+    "is_public": true,
+    "is_background_enabled": true,
+    "created_at": "2025-04-01T21:24:17.411Z",
+    "updated_at": "2025-04-01T21:33:43.219Z",
+    "id": 1,
+    "tagged_members_count": 1,
+    "emoji": "🤩",
+    "custom_emoji_url": null,
+    "custom_emoji_dark_url": null
+  },
+  "POST /api/admin/v2/messages": {
+    "message": "Message sent",
+    "chat_room_message": {
+      "id": 1,
+      "parent_message_id": null,
+      "edited_at": null,
+      "created_at": "2024-10-21T09:50:33.282Z",
+      "chat_room_uuid": "ef97ad3f-e3fb-46b9-a060-041a4b9a64dd",
+      "chat_room_participant_id": 2,
+      "body": "Hi ,\nHow was your weekend?\nPlease check out https://www.google.com/ when you have a moment. \nAlso, we should create a community on circle.so.",
+      "bookmark_id": null,
+      "rich_text_body": {
+        "body": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Hi ",
+                  "circle_ios_fallback_text": "Hi "
+                },
+                {
+                  "type": "mention",
+                  "attrs": {
+                    "sgid": "BAh7CEkiCGdpZAY6BkVUSSI7Z2lkOi8vanVtcHN0YXJ0LWFwcC9Db21tdW5pdHlNZW1iZXIvMjQ1OTQ1Mz9leHBpcmVzX2luBjsAVEkiDHB1cnBvc2UGOwBUSSIUcmljaF90ZXh0X2ZpZWxkBjsAVEkiD2V4cGlyZXNfYXQGOwBUMA==--f710f267c8c35bc29d3c934399d1c785cf96358b"
+                  }
+                },
+                {
+                  "type": "mention",
+                  "attrs": {
+                    "sgid": "BAh7CEkiCGdpZAY6BkVUSSI4Z2lkOi8vanVtcHN0YXJ0LWFwcC9Db21tdW5pdHlNZW1iZXIvMjA3Mj9leHBpcmVzX2luBjsAVEkiDHB1cnBvc2UGOwBUSSIUcmljaF90ZXh0X2ZpZWxkBjsAVEkiD2V4cGlyZXNfYXQGOwBUMA==--621f2efb40b175a8aeedbc510eeec52fbc4397d3"
+                  }
+                },
+                {
+                  "type": "text",
+                  "text": ",",
+                  "circle_ios_fallback_text": ","
+                },
+                {
+                  "type": "hardBreak",
+                  "circle_ios_fallback_text": "\n"
+                },
+                {
+                  "type": "text",
+                  "text": "How was your weekend?",
+                  "circle_ios_fallback_text": "How was your weekend?"
+                },
+                {
+                  "type": "hardBreak",
+                  "circle_ios_fallback_text": "\n"
+                },
+                {
+                  "type": "text",
+                  "text": "Please check out ",
+                  "circle_ios_fallback_text": "Please check out "
+                },
+                {
+                  "type": "text",
+                  "marks": [
+                    {
+                      "type": "link",
+                      "attrs": {
+                        "href": "https://www.google.com/",
+                        "target": "_blank"
+                      }
+                    }
+                  ],
+                  "text": "https://www.google.com/",
+                  "circle_ios_fallback_text": "https://www.google.com/"
+                },
+                {
+                  "type": "text",
+                  "text": " when you have a moment. ",
+                  "circle_ios_fallback_text": " when you have a moment. "
+                },
+                {
+                  "type": "hardBreak",
+                  "circle_ios_fallback_text": "\n"
+                },
+                {
+                  "type": "text",
+                  "text": "Also, we should create a community on ",
+                  "circle_ios_fallback_text": "Also, we should create a community on "
+                },
+                {
+                  "type": "text",
+                  "marks": [
+                    {
+                      "type": "link",
+                      "attrs": {
+                        "href": "http://circle.so/",
+                        "target": "_blank"
+                      }
+                    }
+                  ],
+                  "text": "circle.so",
+                  "circle_ios_fallback_text": "circle.so"
+                },
+                {
+                  "type": "text",
+                  "text": ".",
+                  "circle_ios_fallback_text": "."
+                }
+              ]
+            }
+          ]
+        },
+        "circle_ios_fallback_text": "Hi ,\nHow was your weekend?\nPlease check out https://www.google.com/ when you have a moment. \nAlso, we should create a community on circle.so.",
+        "attachments": [
+
+        ],
+        "inline_attachments": [
+
+        ],
+        "sgids_to_object_map": {
+        },
+        "format": "chat",
+        "community_members": [
+
+        ],
+        "entities": [
+
+        ],
+        "group_mentions": [
+
+        ],
+        "polls": [
+
+        ]
+      },
+      "sent_at": "2024-10-21T09:50:33.282Z",
+      "sender": {
+        "id": 2,
+        "name": "Clair Ziemann",
+        "community_member_id": 1,
+        "user_public_uid": "ad33e5ec",
+        "avatar_url": null
+      },
+      "chat_thread_id": null,
+      "reactions": [
+
+      ],
+      "embedded_chat_message_access": [
+
+      ],
+      "can_report": false,
+      "can_review": false,
+      "in_review": false
+    }
+  },
+  "GET /api/admin/v2/page_profile_fields": [
+    {
+      "id": 2,
+      "label": "Label",
+      "field_type": "number",
+      "key": "profile_field_key_2",
+      "placeholder": null,
+      "description": null,
+      "required": false,
+      "allow_null": false,
+      "platform_field": false,
+      "number_options": {
+        "id": 1,
+        "format": "number",
+        "decimal": 2,
+        "position": null,
+        "text": null
+      },
+      "choices": [
+
+      ]
+    },
+    {
+      "id": 1,
+      "label": "Label",
+      "field_type": "select",
+      "key": "profile_field_key_1",
+      "placeholder": null,
+      "description": null,
+      "required": false,
+      "allow_null": false,
+      "platform_field": false,
+      "number_options": null,
+      "choices": [
+        {
+          "id": 1,
+          "value": "Choice 1"
+        }
+      ]
+    }
+  ],
+  "DELETE /api/admin/v2/paywall_coupons/101": {
+    "success": true,
+    "message": "Coupon deleted"
+  },
+  "POST /api/admin/v2/paywall_groups": {
+    "id": 1,
+    "name": "Premium Memberships",
+    "currency_id": 1,
+    "created_at": "2021-01-01T00:00:00Z",
+    "updated_at": "2021-01-01T00:00:00Z"
+  },
+  "PUT /api/admin/v2/paywall_groups/101": {
+    "id": 1,
+    "name": "Renamed Group",
+    "currency_id": 1,
+    "created_at": "2021-01-01T00:00:00Z",
+    "updated_at": "2021-01-01T00:00:00Z"
+  },
+  "DELETE /api/admin/v2/paywalls/101": {
+    "success": true,
+    "message": "Paywall was deleted."
+  },
+  "PUT /api/admin/v2/paywalls/101/archive": {
+    "success": true,
+    "message": "Paywall was archived."
+  },
+  "PUT /api/admin/v2/paywalls/101/publish": {
+    "success": true,
+    "message": "Paywall was published."
+  },
+  "PUT /api/admin/v2/paywalls/101/unarchive": {
+    "success": true,
+    "message": "Paywall was unarchived."
+  },
+  "DELETE /api/admin/v2/posts/101/post_followers": {
+    "success": true,
+    "message": "Post unfollowed for the provided member."
+  },
+  "POST /api/admin/v2/posts": {
+    "message": "Post created.",
+    "post": {
+      "id": 2,
+      "status": "published",
+      "name": "ullam",
+      "slug": "ullam",
+      "comments_count": 0,
+      "hide_meta_info": false,
+      "published_at": "2024-07-01T10:44:32.659Z",
+      "created_at": "2024-07-01T10:44:32.659Z",
+      "updated_at": "2024-07-01T10:44:32.661Z",
+      "is_comments_enabled": true,
+      "is_liking_enabled": true,
+      "flagged_for_approval_at": null,
+      "body": {
+        "id": 2,
+        "name": "body",
+        "body": "<div><p>Test</p></div>",
+        "record_type": "Post",
+        "record_id": 2,
+        "created_at": "2024-08-05T05:07:04.000Z",
+        "updated_at": "2024-08-05T05:07:04.000Z"
+      },
+      "tiptap_body": {
+        "body": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Test",
+                  "circle_ios_fallback_text": "Test"
+                }
+              ]
+            }
+          ]
+        },
+        "circle_ios_fallback_text": "Test",
+        "attachments": [
+
+        ],
+        "inline_attachments": [
+
+        ],
+        "sgids_to_object_map": {
+        },
+        "format": "post",
+        "community_members": [
+
+        ],
+        "entities": [
+
+        ],
+        "group_mentions": [
+
+        ],
+        "polls": [
+
+        ]
+      },
+      "url": "http://torphy.circledev.net:31337/c/in/ullam",
+      "space_name": "distinctio",
+      "space_slug": "in",
+      "space_id": 1,
+      "user_id": 2,
+      "user_email": "antonina@hills-jaskolski.org",
+      "user_name": "Ellis Oberbrunner",
+      "community_id": 1,
+      "user_avatar_url": null,
+      "cover_image_url": null,
+      "cover_image": null,
+      "cardview_thumbnail_url": null,
+      "cardview_thumbnail": null,
+      "is_comments_closed": false,
+      "custom_html": "<div>Hello world</div>",
+      "likes_count": 0,
+      "member_posts_count": 2,
+      "member_comments_count": 0,
+      "member_likes_count": 0,
+      "topics": [
+
+      ]
+    }
+  },
+  "GET /api/admin/v2/posts": {
+    "page": 1,
+    "per_page": 60,
+    "has_next_page": false,
+    "count": 2,
+    "page_count": 2,
+    "records": [
+      {
+        "id": 2,
+        "status": "published",
+        "name": "Second post",
+        "slug": "kiehn",
+        "comments_count": 0,
+        "hide_meta_info": false,
+        "published_at": "2024-06-27T08:31:30.777Z",
+        "created_at": "2024-06-27T08:31:30.781Z",
+        "updated_at": "2024-06-27T08:31:30.784Z",
+        "is_comments_enabled": true,
+        "is_liking_enabled": true,
+        "flagged_for_approval_at": null,
+        "body": {
+          "id": 2,
+          "name": "body",
+          "body": "<div><!--block-->Iusto sint asperiores sed.</div>",
+          "record_type": "Post",
+          "record_id": 2,
+          "created_at": "2024-06-27T08:31:30.000Z",
+          "updated_at": "2024-06-27T08:31:30.000Z"
+        },
+        "url": "http://dickinson.circledev.net:31337/c/post/kiehn",
+        "space_name": "post",
+        "space_slug": "post",
+        "space_id": 1,
+        "user_id": 6,
+        "user_email": "lyndon@frami.info",
+        "user_name": "Rory Wyman",
+        "community_id": 1,
+        "user_avatar_url": "https://example.com/avatar.png",
+        "cover_image_url": "http://login.circledev.net/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhOMlk1ZURWNGRXSmlPR0Z3WnpCck1tdzNjbmR4ZURocE4zTnllUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5CcFkzTjFiUzVxY0dWbklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZHdhV056ZFcwdWFuQmxad1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRDJsdFlXZGxMMnB3WldjR093WlVPaEZ6WlhKMmFXTmxYMjVoYldVNkNYUmxjM1E9IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2tleSJ9fQ==--de2ca9f5695147b886fe65a18179e53f445d42cb/picsum.jpeg",
+        "cover_image": "eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--705b374a95b895bfd07289c5a26f002d24650efa",
+        "cardview_thumbnail_url": "http://login.circledev.net/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhOMlk1ZURWNGRXSmlPR0Z3WnpCck1tdzNjbmR4ZURocE4zTnllUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5CcFkzTjFiUzVxY0dWbklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZHdhV056ZFcwdWFuQmxad1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRDJsdFlXZGxMMnB3WldjR093WlVPaEZ6WlhKMmFXTmxYMjVoYldVNkNYUmxjM1E9IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2tleSJ9fQ==--de2ca9f5695147b886fe65a18179e53f445d42cb/picsum.jpeg",
+        "cardview_thumbnail": "eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--705b374a95b895bfd07289c5a26f002d24650efa",
+        "is_comments_closed": false,
+        "custom_html": "<div>Click Me!</div>",
+        "likes_count": 0,
+        "member_posts_count": 2,
+        "member_comments_count": 0,
+        "member_likes_count": 0,
+        "topics": [
+          12,
+          43,
+          54
+        ]
+      },
+      {
+        "id": 1,
+        "status": "published",
+        "name": "First post",
+        "slug": "ryan-brown",
+        "hide_meta_info": false,
+        "published_at": "2024-06-27T08:31:30.577Z",
+        "comments_count": 0,
+        "created_at": "2024-06-27T08:31:30.598Z",
+        "updated_at": "2024-06-27T08:31:30.602Z",
+        "is_comments_enabled": true,
+        "is_liking_enabled": true,
+        "flagged_for_approval_at": null,
+        "body": {
+          "id": 2,
+          "name": "body",
+          "body": "<div><p>Test</p></div>",
+          "record_type": "Post",
+          "record_id": 2,
+          "created_at": "2024-08-05T05:07:04.000Z",
+          "updated_at": "2024-08-05T05:07:04.000Z"
+        },
+        "tiptap_body": {
+          "body": {
+            "type": "doc",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Test",
+                    "circle_ios_fallback_text": "Test"
+                  }
+                ]
+              }
+            ]
+          },
+          "circle_ios_fallback_text": "Test",
+          "attachments": [
+
+          ],
+          "inline_attachments": [
+
+          ],
+          "sgids_to_object_map": {
+          },
+          "format": "post",
+          "community_members": [
+
+          ],
+          "entities": [
+
+          ],
+          "group_mentions": [
+
+          ],
+          "polls": [
+
+          ]
+        },
+        "url": "http://dickinson.circledev.net:31337/c/post/ryan-brown",
+        "space_name": "post",
+        "space_slug": "post",
+        "space_id": 1,
+        "user_id": 3,
+        "user_email": "delena@klein.net",
+        "user_name": "Stacey Schamberger PhD",
+        "community_id": 1,
+        "user_avatar_url": "https://example.com/avatar.png",
+        "cover_image_url": "http://login.circledev.net/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhOMlk1ZURWNGRXSmlPR0Z3WnpCck1tdzNjbmR4ZURocE4zTnllUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5CcFkzTjFiUzVxY0dWbklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZHdhV056ZFcwdWFuQmxad1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRDJsdFlXZGxMMnB3WldjR093WlVPaEZ6WlhKMmFXTmxYMjVoYldVNkNYUmxjM1E9IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2tleSJ9fQ==--de2ca9f5695147b886fe65a18179e53f445d42cb/picsum.jpeg",
+        "cover_image": "eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--705b374a95b895bfd07289c5a26f002d24650efa",
+        "cardview_thumbnail_url": "http://login.circledev.net/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhOMlk1ZURWNGRXSmlPR0Z3WnpCck1tdzNjbmR4ZURocE4zTnllUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5CcFkzTjFiUzVxY0dWbklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZHdhV056ZFcwdWFuQmxad1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRDJsdFlXZGxMMnB3WldjR093WlVPaEZ6WlhKMmFXTmxYMjVoYldVNkNYUmxjM1E9IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2tleSJ9fQ==--de2ca9f5695147b886fe65a18179e53f445d42cb/picsum.jpeg",
+        "cardview_thumbnail": "eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--705b374a95b895bfd07289c5a26f002d24650efa",
+        "is_comments_closed": false,
+        "custom_html": "<div>Hello World!</div>",
+        "likes_count": 0,
+        "member_posts_count": 2,
+        "member_comments_count": 0,
+        "member_likes_count": 0,
+        "topics": [
+          55,
+          54,
+          65
+        ]
+      }
+    ]
+  },
+  "DELETE /api/admin/v2/posts/101": {
+    "success": true,
+    "message": "This post has been removed from the space."
+  },
+  "GET /api/admin/v2/posts/101": {
+    "id": 2,
+    "status": "published",
+    "name": "Second post",
+    "slug": "kiehn",
+    "comments_count": 0,
+    "hide_meta_info": false,
+    "published_at": "2024-06-27T08:31:30.777Z",
+    "created_at": "2024-06-27T08:31:30.781Z",
+    "updated_at": "2024-06-27T08:31:30.784Z",
+    "is_comments_enabled": true,
+    "is_liking_enabled": true,
+    "flagged_for_approval_at": null,
+    "body": {
+      "id": 2,
+      "name": "body",
+      "body": "<div><p>Test</p></div>",
+      "record_type": "Post",
+      "record_id": 2,
+      "created_at": "2024-08-05T05:07:04.000Z",
+      "updated_at": "2024-08-05T05:07:04.000Z"
+    },
+    "tiptap_body": {
+      "body": {
+        "type": "doc",
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "text",
+                "text": "Test",
+                "circle_ios_fallback_text": "Test"
+              }
+            ]
+          }
+        ]
+      },
+      "circle_ios_fallback_text": "Test",
+      "attachments": [
+
+      ],
+      "inline_attachments": [
+
+      ],
+      "sgids_to_object_map": {
+      },
+      "format": "post",
+      "community_members": [
+
+      ],
+      "entities": [
+
+      ],
+      "group_mentions": [
+
+      ],
+      "polls": [
+
+      ]
+    },
+    "url": "http://dickinson.circledev.net:31337/c/post/kiehn",
+    "space_name": "post",
+    "space_slug": "post",
+    "space_id": 1,
+    "user_id": 6,
+    "user_email": "lyndon@frami.info",
+    "user_name": "Rory Wyman",
+    "community_id": 1,
+    "user_avatar_url": "https://example.com/avatar.png",
+    "cover_image_url": "http://login.circledev.net/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhOMlk1ZURWNGRXSmlPR0Z3WnpCck1tdzNjbmR4ZURocE4zTnllUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5CcFkzTjFiUzVxY0dWbklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZHdhV056ZFcwdWFuQmxad1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRDJsdFlXZGxMMnB3WldjR093WlVPaEZ6WlhKMmFXTmxYMjVoYldVNkNYUmxjM1E9IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2tleSJ9fQ==--de2ca9f5695147b886fe65a18179e53f445d42cb/picsum.jpeg",
+    "cover_image": "eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--705b374a95b895bfd07289c5a26f002d24650efa",
+    "cardview_thumbnail_url": "http://login.circledev.net/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhOMlk1ZURWNGRXSmlPR0Z3WnpCck1tdzNjbmR4ZURocE4zTnllUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5CcFkzTjFiUzVxY0dWbklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZHdhV056ZFcwdWFuQmxad1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRDJsdFlXZGxMMnB3WldjR093WlVPaEZ6WlhKMmFXTmxYMjVoYldVNkNYUmxjM1E9IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2tleSJ9fQ==--de2ca9f5695147b886fe65a18179e53f445d42cb/picsum.jpeg",
+    "cardview_thumbnail": "eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--705b374a95b895bfd07289c5a26f002d24650efa",
+    "is_comments_closed": false,
+    "custom_html": "<div>Click Me!</div>",
+    "likes_count": 0,
+    "member_posts_count": 2,
+    "member_comments_count": 0,
+    "member_likes_count": 0,
+    "topics": [
+      12,
+      43,
+      54
+    ]
+  },
+  "PUT /api/admin/v2/posts/101": {
+    "success": true,
+    "message": "Post updated.",
+    "post": {
+      "id": 1,
+      "status": "published",
+      "name": "deserunt",
+      "slug": "wintheiser",
+      "comments_count": 0,
+      "hide_meta_info": false,
+      "published_at": "2024-07-01T15:41:09.277Z",
+      "created_at": "2024-07-01T15:41:09.297Z",
+      "updated_at": "2024-07-01T15:41:09.678Z",
+      "is_comments_enabled": true,
+      "is_liking_enabled": true,
+      "flagged_for_approval_at": null,
+      "body": {
+        "id": 2,
+        "name": "body",
+        "body": "<div><p>Test</p></div>",
+        "record_type": "Post",
+        "record_id": 2,
+        "created_at": "2024-08-05T05:07:04.000Z",
+        "updated_at": "2024-08-05T05:07:04.000Z"
+      },
+      "tiptap_body": {
+        "body": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Another Test",
+                  "circle_ios_fallback_text": "Another Test"
+                }
+              ]
+            }
+          ]
+        },
+        "circle_ios_fallback_text": "Test",
+        "attachments": [
+
+        ],
+        "inline_attachments": [
+
+        ],
+        "sgids_to_object_map": {
+        },
+        "format": "post",
+        "community_members": [
+
+        ],
+        "entities": [
+
+        ],
+        "group_mentions": [
+
+        ],
+        "polls": [
+
+        ]
+      },
+      "url": "http://price.circledev.net:31337/c/similique/wintheiser",
+      "space_name": "laboriosam",
+      "space_slug": "similique",
+      "space_id": 1,
+      "user_id": 2,
+      "user_email": "zola.brekke@sporer-barrows.com",
+      "user_name": "Clay Schamberger II",
+      "community_id": 1,
+      "user_avatar_url": null,
+      "cover_image_url": null,
+      "cover_image": null,
+      "cardview_thumbnail_url": null,
+      "cardview_thumbnail": null,
+      "is_comments_closed": false,
+      "custom_html": "<div>Hello world</div>",
+      "likes_count": 0,
+      "member_posts_count": 1,
+      "member_comments_count": 0,
+      "member_likes_count": 0,
+      "topics": [
+
+      ]
+    }
+  },
+  "GET /api/admin/v2/posts/101/summary": {
+    "overview": "This is a brief overview of the post",
+    "content": "This is the detailed content of the summary with comprehensive information."
+  },
+  "PUT /api/admin/v2/profile_fields/101/archive": {
+    "success": true,
+    "message": "Profile field archived successfully."
+  },
+  "POST /api/admin/v2/profile_fields": {
+    "id": 1,
+    "label": "Department",
+    "field_type": "text",
+    "key": "department",
+    "placeholder": "e.g., Engineering",
+    "description": "Your department",
+    "required": false,
+    "allow_null": true,
+    "platform_field": false,
+    "archived": false,
+    "created_at": "2025-10-27T14:00:00.000Z",
+    "updated_at": "2025-10-27T14:00:00.000Z",
+    "number_options": null,
+    "choices": [
+
+    ],
+    "pages": [
+      {
+        "id": 1,
+        "name": "signup",
+        "position": 1,
+        "visible": true,
+        "created_at": "2025-10-27T14:00:00.000Z",
+        "updated_at": "2025-10-27T14:00:00.000Z"
+      }
+    ]
+  },
+  "GET /api/admin/v2/profile_fields": {
+    "page": 1,
+    "per_page": 10,
+    "has_next_page": false,
+    "count": 2,
+    "page_count": 1,
+    "records": [
+      {
+        "id": 1,
+        "label": "Department",
+        "field_type": "text",
+        "key": "department",
+        "placeholder": "e.g., Engineering",
+        "description": "Your department",
+        "required": false,
+        "allow_null": true,
+        "platform_field": false,
+        "archived": false,
+        "created_at": "2025-10-27T14:00:00.000Z",
+        "updated_at": "2025-10-27T14:00:00.000Z",
+        "number_options": null,
+        "choices": [
+
+        ],
+        "pages": [
+          {
+            "id": 1,
+            "name": "signup",
+            "position": 1,
+            "visible": true,
+            "created_at": "2025-10-27T14:00:00.000Z",
+            "updated_at": "2025-10-27T14:00:00.000Z"
+          }
+        ]
+      }
+    ]
+  },
+  "DELETE /api/admin/v2/profile_fields/101": {
+    "success": true,
+    "message": "Profile field deleted successfully."
+  },
+  "PUT /api/admin/v2/profile_fields/101": {
+    "id": 1,
+    "label": "Team",
+    "field_type": "text",
+    "key": "department",
+    "placeholder": null,
+    "description": null,
+    "required": false,
+    "allow_null": false,
+    "platform_field": false,
+    "archived": false,
+    "created_at": "2025-10-27T14:00:00.000Z",
+    "updated_at": "2025-10-27T14:00:00.000Z",
+    "number_options": null,
+    "choices": [
+
+    ],
+    "pages": [
+      {
+        "id": 1,
+        "name": "signup",
+        "position": 1,
+        "visible": true,
+        "created_at": "2025-10-27T14:00:00.000Z",
+        "updated_at": "2025-10-27T14:00:00.000Z"
+      }
+    ]
+  },
+  "PUT /api/admin/v2/profile_fields/101/unarchive": {
+    "success": true,
+    "message": "Profile field unarchived successfully."
+  },
+  "POST /api/admin/v2/space_group_members": {
+    "success": true,
+    "message": "User has been added to the space group."
+  },
+  "DELETE /api/admin/v2/space_group_members": {
+    "success": true,
+    "message": "User removed from the space group and its spaces"
+  },
+  "GET /api/admin/v2/space_group_members": {
+    "page": 1,
+    "per_page": 60,
+    "has_next_page": false,
+    "count": 2,
+    "page_count": 2,
+    "records": [
+      {
+        "id": 2,
+        "user_id": 3,
+        "space_group_id": 1,
+        "community_member_id": 2,
+        "moderator": false,
+        "access_type": "invite",
+        "status": "active",
+        "created_at": "2024-09-11T12:48:42.000Z",
+        "updated_at": "2024-09-11T12:48:42.000Z",
+        "community_member": {
+          "first_name": "John",
+          "last_name": "Doe",
+          "headline": "Software Engineer",
+          "community_id": 1,
+          "profile_url": "https://example.com/john-doe",
+          "public_uid": "john-doe",
+          "avatar_url": "https://example.com/john-doe.png",
+          "name": "John Doe",
+          "email": "john.doe@example.com"
+        }
+      },
+      {
+        "id": 1,
+        "user_id": 2,
+        "space_group_id": 1,
+        "community_member_id": 1,
+        "moderator": false,
+        "access_type": "invite",
+        "status": "active",
+        "created_at": "2024-09-11T12:48:42.000Z",
+        "updated_at": "2024-09-11T12:48:42.000Z",
+        "community_member": {
+          "first_name": "Jane",
+          "last_name": "Doe",
+          "headline": "Software Engineer",
+          "community_id": 1,
+          "profile_url": "https://example.com/jane-doe",
+          "public_uid": "jane-doe",
+          "avatar_url": "https://example.com/jane-doe.png",
+          "name": "Jane Doe",
+          "email": "jane.doe@example.com"
+        }
+      }
+    ]
+  },
+  "GET /api/admin/v2/space_group_member": {
+    "id": 1,
+    "user_id": 2,
+    "space_group_id": 2,
+    "community_member_id": 2,
+    "access_type": "invite",
+    "status": "active",
+    "moderator": true,
+    "created_at": "2024-09-13T11:38:31.769Z",
+    "updated_at": "2024-09-13T11:38:31.769Z",
+    "community_member": {
+      "first_name": "John",
+      "last_name": "Doe",
+      "headline": "Software Engineer",
+      "community_id": 1,
+      "profile_url": "https://example.com/john-doe",
+      "public_uid": "john-doe",
+      "avatar_url": "https://example.com/john-doe.png",
+      "name": "John Doe",
+      "email": "john.doe@example.com"
+    }
+  },
+  "POST /api/admin/v2/space_groups": {
+    "id": 1,
+    "name": "Test Group",
+    "slug": "test-group",
+    "community_id": 1,
+    "is_hidden_from_non_members": false,
+    "hide_members_count": false,
+    "allow_members_to_create_spaces": false,
+    "automatically_add_members_to_new_spaces": false,
+    "add_members_to_space_group_on_space_join": false,
+    "hide_non_member_spaces_from_sidebar": false,
+    "created_at": "2024-01-01T00:00:00Z",
+    "updated_at": "2024-01-01T00:00:00Z",
+    "space_group_members_count": 1,
+    "spaces_count": 0
+  },
+  "GET /api/admin/v2/space_groups": {
+    "page": 1,
+    "per_page": 60,
+    "has_next_page": false,
+    "count": 2,
+    "page_count": 2,
+    "records": [
+      {
+        "id": 1,
+        "name": "Public Group",
+        "slug": "public-group",
+        "community_id": 1,
+        "is_hidden_from_non_members": false,
+        "hide_members_count": false,
+        "allow_members_to_create_spaces": true,
+        "automatically_add_members_to_new_spaces": true,
+        "add_members_to_space_group_on_space_join": false,
+        "hide_non_member_spaces_from_sidebar": false,
+        "created_at": "2024-01-01T00:00:00Z",
+        "updated_at": "2024-01-01T00:00:00Z",
+        "space_group_members_count": 0,
+        "spaces_count": 0
+      },
+      {
+        "id": 2,
+        "name": "Private Group",
+        "slug": "private-group",
+        "community_id": 1,
+        "is_hidden_from_non_members": true,
+        "hide_members_count": true,
+        "allow_members_to_create_spaces": false,
+        "automatically_add_members_to_new_spaces": false,
+        "add_members_to_space_group_on_space_join": true,
+        "hide_non_member_spaces_from_sidebar": true,
+        "created_at": "2024-01-01T00:00:00Z",
+        "updated_at": "2024-01-01T00:00:00Z",
+        "space_group_members_count": 5,
+        "spaces_count": 3
+      }
+    ]
+  },
+  "DELETE /api/admin/v2/space_groups/101": {
+    "success": true,
+    "message": "The space group has been removed from the community"
+  },
+  "GET /api/admin/v2/space_groups/101": {
+    "id": 1,
+    "name": "Group 1",
+    "slug": "group-1",
+    "community_id": 1,
+    "is_hidden_from_non_members": false,
+    "hide_members_count": false,
+    "allow_members_to_create_spaces": false,
+    "automatically_add_members_to_new_spaces": false,
+    "add_members_to_space_group_on_space_join": false,
+    "hide_non_member_spaces_from_sidebar": false,
+    "created_at": "2024-01-01T00:00:00Z",
+    "updated_at": "2024-01-01T00:00:00Z",
+    "space_group_members_count": 0,
+    "spaces_count": 0
+  },
+  "PUT /api/admin/v2/space_groups/101": {
+    "id": 1,
+    "name": "Updated Name",
+    "slug": "updated-slug",
+    "community_id": 1,
+    "is_hidden_from_non_members": false,
+    "hide_members_count": false,
+    "allow_members_to_create_spaces": false,
+    "automatically_add_members_to_new_spaces": false,
+    "add_members_to_space_group_on_space_join": false,
+    "hide_non_member_spaces_from_sidebar": false,
+    "created_at": "2024-01-01T00:00:00Z",
+    "updated_at": "2024-01-01T00:00:00Z",
+    "space_group_members_count": 0,
+    "spaces_count": 0
+  },
+  "POST /api/admin/v2/space_members": {
+    "message": "User added to space"
+  },
+  "DELETE /api/admin/v2/space_members": {
+    "message": "Member removed from space"
+  },
+  "GET /api/admin/v2/space_members": {
+    "page": 1,
+    "per_page": 60,
+    "has_next_page": false,
+    "count": 2,
+    "page_count": 2,
+    "records": [
+      {
+        "id": 2,
+        "user_id": 3,
+        "space_id": 1,
+        "notification_type": "never",
+        "posts_read_count": 1,
+        "in_app_notification_setting": "never",
+        "community_member_id": 2,
+        "moderator": false,
+        "mobile_notification_setting": "never",
+        "access_type": "invite",
+        "status": "active",
+        "created_at": "2024-09-11T12:48:42.000Z",
+        "updated_at": "2024-09-11T12:48:42.000Z",
+        "community_member": {
+          "first_name": "John",
+          "last_name": "Doe",
+          "headline": "Software Engineer",
+          "community_id": 1,
+          "profile_url": "https://example.com/john-doe",
+          "public_uid": "john-doe",
+          "avatar_url": "https://example.com/john-doe.png",
+          "name": "John Doe",
+          "email": "john.doe@example.com"
+        }
+      },
+      {
+        "id": 1,
+        "user_id": 2,
+        "space_id": 1,
+        "notification_type": "never",
+        "posts_read_count": 0,
+        "in_app_notification_setting": "never",
+        "community_member_id": 1,
+        "moderator": false,
+        "mobile_notification_setting": "never",
+        "access_type": "invite",
+        "status": "active",
+        "created_at": "2024-09-11T12:48:42.000Z",
+        "updated_at": "2024-09-11T12:48:42.000Z",
+        "community_member": {
+          "first_name": "Jane",
+          "last_name": "Doe",
+          "headline": "Software Engineer",
+          "community_id": 1,
+          "profile_url": "https://example.com/jane-doe",
+          "public_uid": "jane-doe",
+          "avatar_url": "https://example.com/jane-doe.png",
+          "name": "Jane Doe",
+          "email": "jane.doe@example.com"
+        }
+      }
+    ]
+  },
+  "GET /api/admin/v2/space_member": {
+    "id": 1,
+    "user_id": 2,
+    "space_id": 1,
+    "notification_type": "never",
+    "posts_read_count": 0,
+    "in_app_notification_setting": "never",
+    "community_member_id": 1,
+    "moderator": false,
+    "mobile_notification_setting": "never",
+    "access_type": "invite",
+    "status": "active",
+    "created_at": "2024-09-12T12:03:02.000Z",
+    "updated_at": "2024-09-12T12:03:02.000Z",
+    "community_member": {
+      "name": "John Doe",
+      "first_name": "John",
+      "last_name": "Doe",
+      "headline": "Software Engineer",
+      "community_id": 1,
+      "profile_url": "https://example.com/john-doe",
+      "public_uid": "john-doe",
+      "avatar_url": "https://example.com/john-doe.png",
+      "email": "john.doe@example.com"
+    }
+  },
+  "GET /api/admin/v2/spaces/101/ai_summaries": {
+    "overview": "The space 'latest-updates' highlights recent announcements and product discussions.",
+    "topics": [
+      {
+        "topic_name": "Launch Planning",
+        "summary": "Members coordinated timelines and deliverables for the next release.",
+        "contributors": [
+          {
+            "id": 1001,
+            "name": "Ada Lovelace"
+          }
+        ],
+        "relevant_post_ids": [
+          10,
+          12
+        ]
+      },
+      {
+        "topic_name": "Community Feedback",
+        "summary": "Conversation focused on improvements suggested by power users.",
+        "contributors": [
+          {
+            "id": 1002,
+            "name": "Grace Hopper"
+          }
+        ],
+        "relevant_post_ids": [
+          14
+        ]
+      }
+    ]
+  },
+  "POST /api/admin/v2/spaces": {
+    "success": true,
+    "message": "Space created.",
+    "space": {
+      "id": 2,
+      "name": "Test Space",
+      "slug": "test-space",
+      "cover_image_url": "https://heller-nader.example.com/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZVGMyYldFNWMzRXhNR3cyYUd4aWNqQm1PWFprT0hnek16QnJNZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUVdsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW5CcFkzTjFiUzVxY0dWbklqc2dabWxzWlc1aGJXVXFQVlZVUmkwNEp5ZHdhV056ZFcwdWFuQmxad1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRDJsdFlXZGxMMnB3WldjR093WlVPaEZ6WlhKMmFXTmxYMjVoYldVNkNYUmxjM1E9IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2tleSJ9fQ==--a99c1c9c683c8f856799aec51620ef13c487b89c/picsum.jpeg",
+      "cover_image_visible": true,
+      "cover_image_display_style": "normal",
+      "community_id": 1,
+      "is_private": false,
+      "hide_post_settings": false,
+      "display_view": "posts",
+      "is_post_disabled": false,
+      "space_type": "basic",
+      "host": "https://willms.example.com",
+      "post_ids": [
+        1,
+        2,
+        3
+      ],
+      "url": "https://willms.example.com/c/test-space",
+      "custom_emoji_url": "https://example.com/emoji.png",
+      "custom_emoji_dark_url": "https://example.com/emoji-dark.png",
+      "emoji": "#",
+      "space_group": {
+        "id": 2,
+        "name": "Name 1"
+      },
+      "topics": [
+        1,
+        34,
+        4
+      ],
+      "course_setting": {
+        "course_type": "structured",
+        "custom_lesson_label": null,
+        "custom_section_label": null,
+        "enforce_lessons_order": false,
+        "new_comment_notification_enabled": false
+      }
+    }
+  },
+  "GET /api/admin/v2/spaces": {
+    "page": 1,
+    "per_page": 60,
+    "has_next_page": false,
+    "count": 2,
+    "page_count": 2,
+    "records": [
+      {
+        "id": 1,
+        "name": "aut",
+        "slug": "sit",
+        "cover_image_url": "https://medhurst.example.com/storage/cover_images/1/picsum.jpeg",
+        "cover_image_visible": true,
+        "cover_image_display_style": "wide",
+        "community_id": 1,
+        "is_private": false,
+        "hide_post_settings": false,
+        "display_view": "posts",
+        "is_post_disabled": false,
+        "space_type": "basic",
+        "host": "https://medhurst.example.com",
+        "post_ids": [
+          1
+        ],
+        "url": "https://medhurst.example.com/c/sit",
+        "custom_emoji_url": "https://medhurst.example.com/emoji/1",
+        "custom_emoji_dark_url": "https://medhurst.example.com/emoji/2",
+        "emoji": "#",
+        "space_group": {
+          "id": 2,
+          "name": "Name 1"
+        },
+        "topics": [
+          32,
+          21,
+          12
+        ],
+        "event_auto_rsvp_enabled": false,
+        "default_in_app_notification_setting": "never",
+        "default_mention_in_app_notification_setting": "never",
+        "default_mention_mobile_notification_setting": "never",
+        "default_mobile_notification_setting": "never",
+        "default_notification_setting": "never"
+      },
+      {
+        "id": 2,
+        "name": "maxime",
+        "slug": "ad",
+        "cover_image_url": "https://medhurst.example.com/storage/cover_images/2/picsum.jpeg",
+        "cover_image_visible": true,
+        "cover_image_display_style": "wide",
+        "community_id": 1,
+        "is_private": false,
+        "hide_post_settings": false,
+        "display_view": "posts",
+        "is_post_disabled": false,
+        "space_type": "basic",
+        "host": "https://medhurst.example.com",
+        "post_ids": [
+          14,
+          52
+        ],
+        "url": "https://medhurst.example.com/c/ad",
+        "custom_emoji_url": "https://medhurst.example.com/emoji/1",
+        "custom_emoji_dark_url": "https://medhurst.example.com/emoji/2",
+        "emoji": "#",
+        "space_group": {
+          "id": 3,
+          "name": "Name 2"
+        },
+        "topics": [
+          1,
+          2,
+          3
+        ],
+        "event_auto_rsvp_enabled": false,
+        "default_in_app_notification_setting": "never",
+        "default_mention_in_app_notification_setting": "never",
+        "default_mention_mobile_notification_setting": "never",
+        "default_mobile_notification_setting": "never",
+        "default_notification_setting": "never"
+      }
+    ]
+  },
+  "DELETE /api/admin/v2/spaces/101": {
+    "success": true,
+    "message": "This space has been removed from the community."
+  },
+  "GET /api/admin/v2/spaces/101": {
+    "id": 1,
+    "name": "aut",
+    "slug": "sit",
+    "cover_image_url": "https://medhurst.example.com/storage/cover_images/1/picsum.jpeg",
+    "cover_image_visible": true,
+    "cover_image_display_style": "wide",
+    "community_id": 1,
+    "is_private": false,
+    "hide_post_settings": false,
+    "display_view": "posts",
+    "is_post_disabled": false,
+    "space_type": "basic",
+    "host": "https://medhurst.example.com",
+    "post_ids": [
+      1
+    ],
+    "url": "https://medhurst.example.com/c/sit",
+    "custom_emoji_url": "https://medhurst.example.com/emoji/1",
+    "custom_emoji_dark_url": "https://medhurst.example.com/emoji/2",
+    "emoji": "#",
+    "space_group": {
+      "id": 2,
+      "name": "Name 1"
+    },
+    "topics": [
+      32,
+      21,
+      12
+    ],
+    "event_auto_rsvp_enabled": false,
+    "default_in_app_notification_setting": "never",
+    "default_mobile_notification_setting": "never",
+    "default_notification_setting": "never",
+    "default_mention_in_app_notification_setting": "never",
+    "default_mention_mobile_notification_setting": "never"
+  },
+  "PUT /api/admin/v2/spaces/101": {
+    "id": 123,
+    "name": "Real-time Team Chat",
+    "slug": "team-chat",
+    "space_group": {
+      "id": 1,
+      "name": "General"
+    },
+    "cover_image_url": "https://cdn.circle.so/signed_id_chat_cover_123.jpg",
+    "cover_image_visible": false,
+    "cover_image_display_style": "wide",
+    "thumbnail_image_url": null,
+    "url": "/c/community/team-chat",
+    "community_id": 456,
+    "is_private": true,
+    "is_hidden_from_non_members": true,
+    "is_hidden": false,
+    "locked_button_url": null,
+    "locked_button_label": null,
+    "locked_page_heading": null,
+    "locked_page_description": null,
+    "hide_post_settings": false,
+    "display_view": "posts",
+    "post_ids": [
+
+    ],
+    "is_post_disabled": false,
+    "space_type": "chat",
+    "host": "community.circle.so",
+    "emoji": "💬",
+    "custom_emoji_url": null,
+    "custom_emoji_dark_url": null,
+    "topics": [
+
+    ],
+    "event_auto_rsvp_enabled": false,
+    "default_in_app_notification_setting": "all",
+    "default_mention_in_app_notification_setting": "all",
+    "default_mention_mobile_notification_setting": "all",
+    "default_mobile_notification_setting": "all",
+    "default_notification_setting": "never",
+    "default_sort": "latest",
+    "hide_sorting": false,
+    "require_topic_selection": false,
+    "prevent_members_from_adding_others": false,
+    "hide_from_featured_areas": false,
+    "disable_member_post_covers": false,
+    "hide_members_count": false,
+    "pinned_posts_label": null,
+    "show_lock_icon_for_non_members": false,
+    "default_comment_sort": "oldest",
+    "default_member_sort": "recent_activity",
+    "default_tab": "posts",
+    "show_tab_bar": false,
+    "show_next_event": false,
+    "hide_from_sidebar": false,
+    "hide_right_sidebar": false,
+    "lock_screen_blocks": [
+
+    ],
+    "visible_tabs": {
+      "posts": true,
+      "members": true,
+      "upcoming": false,
+      "past": false
+    },
+    "meta_tag_attributes": {
+      "meta_title": "Team Chat Room",
+      "meta_description": "Private chat space for team collaboration",
+      "opengraph_title": "Team Chat",
+      "opengraph_description": "Real-time team communication space"
+    },
+    "chat_room_show_history": true,
+    "chat_room_description": "Private team chat for project discussions and quick updates"
+  },
+  "POST /api/admin/v2/tagged_members": {
+    "message": "Person tagged successfully!"
+  },
+  "DELETE /api/admin/v2/tagged_members": {
+    "message": "Tag has been removed"
+  },
+  "GET /api/admin/v2/tagged_members": {
+    "page": 1,
+    "per_page": 10,
+    "has_next_page": false,
+    "count": 2,
+    "page_count": 2,
+    "records": [
+      {
+        "id": 1,
+        "member_tag_id": 1,
+        "member_tag_name": "Member Tag 1",
+        "member_tag_emoji": "👍",
+        "user_id": 1,
+        "user_email": "user1@example.com",
+        "lead_id": 1,
+        "lead_email": "lead1@example.com",
+        "community_member_id": 1,
+        "contact_id": 1,
+        "created_at": "2021-01-01T00:00:00Z",
+        "updated_at": "2021-01-01T00:00:00Z"
+      },
+      {
+        "id": 2,
+        "member_tag_id": 2,
+        "member_tag_name": "Member Tag 2",
+        "member_tag_emoji": "👍",
+        "user_id": 2,
+        "user_email": "user2@example.com",
+        "lead_id": 2,
+        "lead_email": "lead2@example.com",
+        "community_member_id": 1,
+        "contact_id": 2,
+        "created_at": "2021-01-01T00:00:00Z",
+        "updated_at": "2021-01-01T00:00:00Z"
+      }
+    ]
+  },
+  "GET /api/admin/v2/tagged_members/101": {
+    "id": 1,
+    "member_tag_id": 1,
+    "member_tag_name": "Member Tag 1",
+    "member_tag_emoji": "👍",
+    "user_id": 1,
+    "user_email": "user1@example.com",
+    "lead_id": 1,
+    "lead_email": "lead1@example.com",
+    "community_member_id": 1,
+    "contact_id": 1,
+    "created_at": "2021-01-01T00:00:00Z",
+    "updated_at": "2021-01-01T00:00:00Z"
+  },
+  "GET /api/admin/v2/tax_setting": {
+    "processor_status": "enabled",
+    "platform_status": "disabled",
+    "default_tax_behavior": "exclusive"
+  },
+  "PUT /api/admin/v2/tax_setting": {
+    "processor_status": "enabled",
+    "platform_status": "enabled",
+    "default_tax_behavior": "inclusive"
+  },
+  "POST /api/admin/v2/topics": {
+    "id": 1,
+    "name": "New Topic",
+    "admin_only": true,
+    "created_at": "2025-04-01T21:24:17.411Z",
+    "updated_at": "2025-04-01T21:24:17.411Z",
+    "author": {
+      "first_name": "John",
+      "last_name": "Doe",
+      "avatar_url": "https://example.com/avatar.png"
+    },
+    "space_ids": [
+      1,
+      2,
+      3
+    ]
+  },
+  "GET /api/admin/v2/topics": {
+    "success": true,
+    "page": 1,
+    "per_page": 10,
+    "has_next_page": false,
+    "count": 2,
+    "page_count": 2,
+    "records": [
+      {
+        "id": 1,
+        "name": "Math assignments",
+        "admin_only": false,
+        "created_at": "2024-01-01T00:00:00Z",
+        "updated_at": "2024-01-01T00:00:00Z",
+        "author": {
+          "id": 1,
+          "name": "Chris Jones",
+          "avatar_url": "https://example.com/avatar.png"
+        },
+        "space_ids": [
+          1,
+          2
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Science assignments",
+        "admin_only": true,
+        "created_at": "2024-01-01T00:00:00Z",
+        "updated_at": "2024-01-01T00:00:00Z",
+        "author": {
+          "id": 2,
+          "name": "Matthew Smith",
+          "avatar_url": "https://example.com/avatar.png"
+        },
+        "space_ids": [
+          3
+        ]
+      }
+    ]
+  },
+  "DELETE /api/admin/v2/topics/101": {
+    "success": true,
+    "message": "Topic deleted."
+  },
+  "GET /api/admin/v2/topics/101": {
+    "id": 1,
+    "name": "Topic 1",
+    "admin_only": false,
+    "created_at": "2025-04-01T21:24:17.411Z",
+    "updated_at": "2025-04-01T21:33:43.219Z",
+    "author": {
+      "first_name": "John",
+      "last_name": "Doe",
+      "avatar_url": "https://example.com/avatar.png"
+    },
+    "space_ids": [
+      1,
+      2,
+      3
+    ]
+  },
+  "PUT /api/admin/v2/topics/101": {
+    "id": 1,
+    "name": "Updated Topic",
+    "admin_only": false,
+    "created_at": "2025-04-01T21:24:17.411Z",
+    "updated_at": "2025-04-01T21:33:43.219Z",
+    "author": {
+      "first_name": "John",
+      "last_name": "Doe",
+      "avatar_url": "https://example.com/avatar.png"
+    },
+    "space_ids": [
+      1,
+      2,
+      3
+    ]
+  }
+}
