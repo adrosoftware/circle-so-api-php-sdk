@@ -63,6 +63,29 @@ members, spaces, space groups, posts, comments, messages, events, attendees,
 subscriptions, charges, likes, tags, courses, topics, notifications, contacts,
 profile fields, and flagged content.
 
+The SDK also covers every operation currently published in Circle's Admin API
+V2, Headless Auth API, and Headless Member API specifications:
+
+```php
+use AdroSoftware\CircleSoSdk\AdminV2;
+use AdroSoftware\CircleSoSdk\HeadlessAuth;
+use AdroSoftware\CircleSoSdk\HeadlessMember;
+
+$admin = AdminV2::make($adminApiToken);
+$members = $admin->communityMembers()->all(['page' => 1]);
+
+$auth = HeadlessAuth::make($headlessApiToken);
+$tokens = $auth->tokens()->createGetAnAuthToken([
+    'email' => 'member@example.com',
+]);
+
+$member = HeadlessMember::make($tokens['access_token']);
+$spaces = $member->spaces()->getListOfSpaces();
+```
+
+Each client also exposes `raw()` for newly released Circle routes that are not
+yet represented by a named resource method.
+
 ## License
 
 This package is licensed under the MIT License - see the [LICENSE](https://github.com/adrosoftware/circle-so-api-php-sdk/blob/main/LICENSE) file for details
