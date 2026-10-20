@@ -1,0 +1,13 @@
+[
+    {
+        "id": 12,
+        "name": "General",
+        "slug": "general",
+        "space_group_id": 3,
+        "space_group_name": "Community",
+        "community_id": 5,
+        "is_private": false,
+        "space_type": "basic",
+        "topic_ids": [7]
+    }
+]

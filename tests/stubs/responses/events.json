@@ -1,0 +1,13 @@
+[
+    {
+        "id": 71,
+        "name": "Community Meetup",
+        "slug": "community-meetup",
+        "space_id": 12,
+        "community_id": 5,
+        "starts_at": "2026-11-01T18:00:00.000Z",
+        "duration_in_seconds": 3600,
+        "rsvp_disabled": false,
+        "location_type": "virtual"
+    }
+]

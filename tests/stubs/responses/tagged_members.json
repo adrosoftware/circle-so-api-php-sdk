@@ -1,0 +1,11 @@
+[
+    {
+        "id": 41,
+        "member_tag_id": 12345,
+        "member_tag_name": "Rock n' Roll",
+        "member_tag_emoji": "🤘🏼",
+        "user_id": 34,
+        "user_email": "member@example.com",
+        "community_member_id": 56
+    }
+]

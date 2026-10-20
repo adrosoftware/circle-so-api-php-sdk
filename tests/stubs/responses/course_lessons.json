@@ -1,0 +1,18 @@
+{
+    "page": 1,
+    "per_page": 20,
+    "has_next_page": false,
+    "count": 1,
+    "page_count": 1,
+    "records": [
+        {
+            "id": 131,
+            "name": "Welcome Lesson",
+            "status": "published",
+            "section_id": 121,
+            "space_id": 12,
+            "is_comments_enabled": true,
+            "body_html": "<p>Welcome!</p>"
+        }
+    ]
+}

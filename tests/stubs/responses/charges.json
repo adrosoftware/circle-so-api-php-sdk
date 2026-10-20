@@ -1,0 +1,13 @@
+[
+    {
+        "id": 91,
+        "community_id": 5,
+        "community_member_id": 56,
+        "processor_id": "ch_123",
+        "status": "paid",
+        "amount": 2500,
+        "amount_refunded": 0,
+        "currency": "USD",
+        "paywalls": []
+    }
+]

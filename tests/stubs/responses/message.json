@@ -1,0 +1,8 @@
+{
+    "success": true,
+    "message": "Message sent.",
+    "chat_room_message": {
+        "id": 51,
+        "body": "Hello from the API"
+    }
+}

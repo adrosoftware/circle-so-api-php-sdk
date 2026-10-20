@@ -1,0 +1,17 @@
+[
+    {
+        "id": 21,
+        "status": "published",
+        "name": "Welcome",
+        "body": "Welcome to the community",
+        "slug": "welcome",
+        "space_id": 12,
+        "community_id": 5,
+        "user_email": "member@example.com",
+        "comments_count": 2,
+        "likes_count": 4,
+        "is_comments_enabled": true,
+        "is_liking_enabled": true,
+        "topics": []
+    }
+]

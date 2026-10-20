@@ -1,0 +1,13 @@
+[
+    {
+        "id": 111,
+        "label": "Company",
+        "field_type": "text",
+        "key": "company",
+        "placeholder": "Your company",
+        "required": false,
+        "allow_null": true,
+        "platform_field": false,
+        "choices": []
+    }
+]

@@ -1,0 +1,10 @@
+[
+    {
+        "id": 81,
+        "event_id": 71,
+        "community_member_id": 56,
+        "member_name": "Circle Member",
+        "member_email": "member@example.com",
+        "rsvp_date": "2026-10-20T18:00:00.000Z"
+    }
+]
