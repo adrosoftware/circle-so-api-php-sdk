@@ -30,20 +30,42 @@ jobs:
         uses: php-actions/composer@v6
 
       - name: PHPUnit Tests
-        uses: php-actions/phpunit@v4
-        env:
-          XDEBUG_MODE: coverage
+        run: vendor/bin/phpunit
+
+  coverage:
+    name: Coverage
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
         with:
-          bootstrap: vendor/autoload.php
-          configuration: phpunit.xml
-          php_extensions: xdebug
-          args: tests --coverage-clover ./coverage.xml
+          php-version: '8.5'
+          coverage: xdebug
+
+      - name: Install Composer Dependencies
+        uses: ramsey/composer-install@v3
+
+      - name: Generate coverage report
+        run: vendor/bin/phpunit --coverage-clover coverage.xml --coverage-text
+
+      - name: Save coverage report
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-report
+          path: coverage.xml
 
       - name: Upload to Codecov
-        uses: codecov/codecov-action@v2
+        uses: codecov/codecov-action@v5
         with:
-          token: ${{ secrets.CODE_COV_TOKEN }}
+          use_oidc: true
           files: ./coverage.xml
+          fail_ci_if_error: true
           verbose: true
 
   phpstan:
