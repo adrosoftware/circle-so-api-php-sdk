@@ -28,7 +28,7 @@ To see full documentation visit the official [documentation](https://adrosoftwar
 
 ## Requirements
 
-* PHP >= 8.1
+* PHP >= 8.1 (tested through PHP 8.5)
 * A [PSR-17 implementation](https://packagist.org/providers/psr/http-factory-implementation)
 * A [PSR-18 implementation](https://packagist.org/providers/psr/http-client-implementation)
 
