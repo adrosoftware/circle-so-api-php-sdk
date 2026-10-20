@@ -1,18 +1,48 @@
 {
-    "page": 1,
-    "per_page": 20,
-    "has_next_page": false,
-    "count": 1,
-    "page_count": 1,
-    "records": [
-        {
-            "id": 131,
-            "name": "Welcome Lesson",
-            "status": "published",
-            "section_id": 121,
-            "space_id": 12,
-            "is_comments_enabled": true,
-            "body_html": "<p>Welcome!</p>"
-        }
-    ]
+  "page": 1,
+  "per_page": 10,
+  "has_next_page": false,
+  "count": 3,
+  "page_count": 3,
+  "records": [
+    {
+      "id": 233933,
+      "name": "Lesson 3",
+      "status": "published",
+      "created_at": "2023-06-01T20:28:25.277Z",
+      "updated_at": "2023-06-01T20:28:25.280Z",
+      "section_id": 71814,
+      "is_comments_enabled": true,
+      "is_featured_media_enabled": false,
+      "is_featured_media_download_enabled": false,
+      "body_html": "<div><p>Lesson Content</p></div>",
+      "space_id": 700930
+    },
+    {
+      "id": 233932,
+      "name": "Lesson 2",
+      "status": "published",
+      "created_at": "2023-06-01T20:28:15.909Z",
+      "updated_at": "2023-06-01T20:28:15.912Z",
+      "section_id": 71814,
+      "is_comments_enabled": true,
+      "is_featured_media_enabled": false,
+      "is_featured_media_download_enabled": false,
+      "body_html": "<div><p>Lesson Content</p></div>",
+      "space_id": 700930
+    },
+    {
+      "id": 233930,
+      "name": "Introduction to research",
+      "status": "published",
+      "created_at": "2023-06-01T20:27:09.535Z",
+      "updated_at": "2023-06-01T20:27:09.538Z",
+      "section_id": 71814,
+      "is_comments_enabled": true,
+      "is_featured_media_enabled": false,
+      "is_featured_media_download_enabled": false,
+      "body_html": "<div><p>I'm glad you're here!</p></div>",
+      "space_id": 700930
+    }
+  ]
 }

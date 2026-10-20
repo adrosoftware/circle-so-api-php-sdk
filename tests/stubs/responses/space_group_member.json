@@ -1,8 +1,11 @@
 {
-    "id": 101,
-    "space_group_id": 12,
-    "user_id": 34,
-    "community_member_id": 56,
-    "access_type": "member",
-    "status": "active"
+  "id": 3314450,
+  "space_group_id": 54575,
+  "user_id": 351629,
+  "created_at": "2021-10-14T06:34:22.963Z",
+  "updated_at": "2021-10-14T06:34:22.963Z",
+  "moderator": false,
+  "community_member_id": 1989341,
+  "access_type": "invite",
+  "status": "active"
 }

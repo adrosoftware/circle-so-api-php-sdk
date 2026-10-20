@@ -1,13 +1,199 @@
 [
-    {
-        "id": 111,
-        "label": "Company",
-        "field_type": "text",
-        "key": "company",
-        "placeholder": "Your company",
-        "required": false,
-        "allow_null": true,
-        "platform_field": false,
-        "choices": []
-    }
+  {
+    "id": 703707,
+    "label": "Preferred programming language",
+    "field_type": "select",
+    "key": "preferred_programming_language",
+    "placeholder": "",
+    "description": "Choose your preferred programming language",
+    "required": false,
+    "allow_null": false,
+    "platform_field": false,
+    "number_options": null,
+    "choices": [
+      {
+        "id": 133,
+        "value": "Ruby"
+      },
+      {
+        "id": 134,
+        "value": "Javascript"
+      },
+      {
+        "id": 135,
+        "value": "Python"
+      }
+    ]
+  },
+  {
+    "id": 108349,
+    "label": "Bio",
+    "field_type": "textarea",
+    "key": "bio",
+    "placeholder": "Tell us a bit about yourself",
+    "description": "A short bio about yourself",
+    "required": false,
+    "allow_null": false,
+    "platform_field": true,
+    "number_options": null,
+    "choices": [
+
+    ]
+  },
+  {
+    "id": 108350,
+    "label": "Location",
+    "field_type": "text",
+    "key": "location",
+    "placeholder": "Add your location",
+    "description": "Your location",
+    "required": false,
+    "allow_null": false,
+    "platform_field": true,
+    "number_options": null,
+    "choices": [
+
+    ]
+  },
+  {
+    "id": 108351,
+    "label": "Website",
+    "field_type": "link",
+    "key": "website",
+    "placeholder": "Add your website",
+    "description": "Your website URL",
+    "required": false,
+    "allow_null": false,
+    "platform_field": true,
+    "number_options": null,
+    "choices": [
+
+    ]
+  },
+  {
+    "id": 108352,
+    "label": "Twitter URL",
+    "field_type": "link",
+    "key": "twitter_url",
+    "placeholder": "Add your Twitter URL",
+    "description": "Your Twitter URL",
+    "required": false,
+    "allow_null": false,
+    "platform_field": true,
+    "number_options": null,
+    "choices": [
+
+    ]
+  },
+  {
+    "id": 108354,
+    "label": "Instagram URL",
+    "field_type": "link",
+    "key": "instagram_url",
+    "placeholder": "Add your Instagram URL",
+    "description": "Your Instagram URL",
+    "required": false,
+    "allow_null": false,
+    "platform_field": true,
+    "number_options": null,
+    "choices": [
+
+    ]
+  },
+  {
+    "id": 108353,
+    "label": "Facebook URL",
+    "field_type": "link",
+    "key": "facebook_url",
+    "placeholder": "Add your Facebook URL",
+    "description": "Your Facebook URL",
+    "required": false,
+    "allow_null": false,
+    "platform_field": true,
+    "number_options": null,
+    "choices": [
+
+    ]
+  },
+  {
+    "id": 108355,
+    "label": "Linkedin URL",
+    "field_type": "link",
+    "key": "linkedin_url",
+    "placeholder": "Add your LinkedIn URL",
+    "description": "Your LinkedIn URL",
+    "required": false,
+    "allow_null": false,
+    "platform_field": true,
+    "number_options": null,
+    "choices": [
+
+    ]
+  },
+  {
+    "id": 797625,
+    "label": "Age",
+    "field_type": "number",
+    "key": "age",
+    "placeholder": "",
+    "description": "Age",
+    "required": false,
+    "allow_null": false,
+    "platform_field": false,
+    "number_options": {
+      "id": 46,
+      "format": "number",
+      "decimal": 0,
+      "position": "right",
+      "text": ""
+    },
+    "choices": [
+
+    ]
+  },
+  {
+    "id": 108356,
+    "label": "Profession",
+    "field_type": "text",
+    "key": "profession",
+    "placeholder": "Add your profession",
+    "description": "Your profession",
+    "required": false,
+    "allow_null": false,
+    "platform_field": false,
+    "number_options": null,
+    "choices": [
+
+    ]
+  },
+  {
+    "id": 108357,
+    "label": "Birthday",
+    "field_type": "text",
+    "key": "birthday",
+    "placeholder": "Add your birthday",
+    "description": "Your birthday",
+    "required": false,
+    "allow_null": false,
+    "platform_field": false,
+    "number_options": null,
+    "choices": [
+
+    ]
+  },
+  {
+    "id": 108358,
+    "label": "Company",
+    "field_type": "text",
+    "key": "company",
+    "placeholder": "Add your company",
+    "description": "Your company",
+    "required": false,
+    "allow_null": false,
+    "platform_field": false,
+    "number_options": null,
+    "choices": [
+
+    ]
+  }
 ]

@@ -1,15 +1,80 @@
 {
-    "page": 1,
-    "per_page": 20,
-    "has_next_page": false,
-    "count": 1,
-    "page_count": 1,
-    "records": [
-        {
-            "id": 12,
-            "name": "General",
-            "slug": "general"
-        }
-    ],
-    "meta": {}
+  "page": 1,
+  "per_page": 30,
+  "has_next_page": false,
+  "count": 3,
+  "page_count": 3,
+  "records": [
+    {
+      "id": 0,
+      "name": "1:1 Sessions",
+      "slug": "1-1-sessions",
+      "emoji": null,
+      "space_group_id": 0,
+      "space_group_name": "Information",
+      "url": "https://app.circle.so/c/1-1-sessions",
+      "community_id": 11111,
+      "is_private": false,
+      "hide_post_settings": true,
+      "display_view": "posts",
+      "post_ids": [
+        0
+      ],
+      "is_post_disabled": true,
+      "space_type": "event",
+      "hide_topic_settings": true,
+      "is_topic_disabled": true,
+      "topic_ids": [
+        0
+      ]
+    },
+    {
+      "id": 0,
+      "name": "Private Posts",
+      "slug": "private-posts",
+      "emoji": null,
+      "space_group_id": 0,
+      "space_group_name": "Information",
+      "url": "https://app.circle.so/c/private-posts",
+      "community_id": 11111,
+      "is_private": true,
+      "hide_post_settings": false,
+      "display_view": "posts",
+      "post_ids": [
+        0
+      ],
+      "is_post_disabled": false,
+      "space_type": "basic",
+      "hide_topic_settings": false,
+      "is_topic_disabled": false,
+      "topic_ids": [
+        0
+      ]
+    },
+    {
+      "id": 0,
+      "name": "Public posts",
+      "slug": "public-posts",
+      "emoji": null,
+      "space_group_id": 0,
+      "space_group_name": "Information",
+      "url": "https://app.circle.so/c/public-posts",
+      "community_id": 11111,
+      "is_private": false,
+      "hide_post_settings": false,
+      "display_view": "posts",
+      "post_ids": [
+        0
+      ],
+      "is_post_disabled": true,
+      "space_type": "basic",
+      "hide_topic_settings": false,
+      "is_topic_disabled": true,
+      "topic_ids": [
+        0
+      ]
+    }
+  ],
+  "meta": {
+  }
 }

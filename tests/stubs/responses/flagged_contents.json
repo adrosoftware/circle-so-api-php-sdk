@@ -1,15 +1,75 @@
 {
-    "page": 1,
-    "per_page": 20,
-    "has_next_page": false,
-    "count": 1,
-    "page_count": 1,
-    "records": [
-        {
-            "id": 161,
-            "status": "pending",
-            "content_type": "Post",
-            "content_id": 21
-        }
-    ]
+  "page": 2,
+  "per_page": 3,
+  "has_next_page": true,
+  "count": 30,
+  "page_count": 10,
+  "records": [
+    {
+      "id": 91,
+      "status": "rejected",
+      "reported_reason_type": "other",
+      "reported_reason_body": "Reason provided by the reporter",
+      "reported_at": "2025-05-15T14:26:23.000Z",
+      "action_taken_at": "2025-07-14T22:39:22.000Z",
+      "action_reason_body": "Violates the community guidelines",
+      "created_at": "2025-05-15T14:26:23.862Z",
+      "updated_at": "2025-07-14T22:39:22.894Z",
+      "content_id": 108,
+      "content_type": "comment",
+      "content_authored_by_id": 15,
+      "content_authored_by_name": "John",
+      "content_authored_by_email": "john@world.org",
+      "reported_by_id": 5,
+      "reported_by_name": "Jane",
+      "reported_by_email": "jane@world.org",
+      "action_by_id": 2,
+      "action_by_name": "Alice",
+      "action_by_email": "alice@world.org"
+    },
+    {
+      "id": 92,
+      "status": "rejected",
+      "reported_reason_type": "other",
+      "reported_reason_body": "Reason provided by the reporter",
+      "reported_at": "2025-06-11T14:04:48.000Z",
+      "action_taken_at": "2025-07-14T22:38:55.000Z",
+      "action_reason_body": "Violates the community guidelines",
+      "created_at": "2025-06-11T14:04:48.140Z",
+      "updated_at": "2025-07-14T22:38:55.639Z",
+      "content_id": 114,
+      "content_type": "comment",
+      "content_authored_by_id": 15,
+      "content_authored_by_name": "John",
+      "content_authored_by_email": "john@world.org",
+      "reported_by_id": null,
+      "reported_by_name": null,
+      "reported_by_email": null,
+      "action_by_id": 2,
+      "action_by_name": "Alice",
+      "action_by_email": "alice@world.org"
+    },
+    {
+      "id": 93,
+      "status": "rejected",
+      "reported_reason_type": "other",
+      "reported_reason_body": "Reason provided by the reporter",
+      "reported_at": "2025-06-11T14:04:48.000Z",
+      "action_taken_at": "2025-07-14T22:38:55.000Z",
+      "action_reason_body": "Violates the community guidelines",
+      "created_at": "2025-06-11T14:04:48.140Z",
+      "updated_at": "2025-07-14T22:38:55.639Z",
+      "content_id": 115,
+      "content_type": "post",
+      "content_authored_by_id": 15,
+      "content_authored_by_name": "John",
+      "content_authored_by_email": "john@world.org",
+      "reported_by_id": 5,
+      "reported_by_name": "Thomas",
+      "reported_by_email": "thomas@world.org",
+      "action_by_id": 2,
+      "action_by_name": "Alice",
+      "action_by_email": "alice@world.org"
+    }
+  ]
 }

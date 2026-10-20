@@ -1,15 +1,35 @@
 {
-    "page": 1,
-    "per_page": 20,
-    "has_next_page": false,
-    "count": 1,
-    "page_count": 1,
-    "records": [
-        {
-            "id": 101,
-            "name": "Circle Member",
-            "email": "member@example.com"
-        }
-    ],
-    "meta": {}
+  "page": 1,
+  "per_page": 10,
+  "has_next_page": false,
+  "count": 2,
+  "page_count": 2,
+  "records": [
+    {
+      "id": 0,
+      "user_id": 0,
+      "public_uid": "a82e3938",
+      "first_name": "Member",
+      "last_name": "One",
+      "name": "Member One",
+      "headline": "Community educator",
+      "admin": false,
+      "user_attachable_sgid": "BAh7CEkiCGdpZAY6BkVUSSIqZ2lkOi8vanVtcHN0YXJ0LWFwcC9Vc2VyLzY_ZXhwaXJlc19pbggxwdXJwb3NlBjsAVEkiD2F0dGFjaGFibGUGOwBUSSIPZXhwaXJlc19hdAY7AFQw--77a66970902ae68209ba20e749b569f3d3cee302",
+      "avatar_url": "https://secure.gravatar.com/avatar/68798b556442142a01495bff24b5e850c?default=blank&secure=true&size=300"
+    },
+    {
+      "id": 0,
+      "user_id": 0,
+      "public_uid": "40a4da7d",
+      "first_name": "Member",
+      "last_name": "Two",
+      "name": "Member Two",
+      "headline": "Legacy Administration Liaison",
+      "admin": true,
+      "user_attachable_sgid": "BAh7CEkiCGdpZAY6BkVUSSIqZ2lkOi8vanVtcHN0YXJ0LWFwcC95465515XhwaXJlc19pbgY7AFRJIgxwdXJwb3NlBjsAVEkiD2F0dGFjaGFibGUGOwBUSSIPZXhwaXJlc19hdAY7AFQw--4d1bed584868dc70512e0a3976e1e84c6daf46f9",
+      "avatar_url": "https://secure.gravatar.com/avatar/2c34e4a00bf664d54d5cdc303f3005d07?default=blank&secure=true&size=300"
+    }
+  ],
+  "meta": {
+  }
 }
