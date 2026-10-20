@@ -1,0 +1,43 @@
+[
+  {
+    "id": 0,
+    "user_id": 0,
+    "community_id": 11111,
+    "community_member_id": 0,
+    "processor_id": "sub_1a2b3456cDE7890122",
+    "status": "paid",
+    "amount": 120,
+    "fee_amount": 1,
+    "amount_refunded": 0,
+    "deleted_at": null,
+    "created_at": "2021-12-29T19:57:30.105Z",
+    "updated_at": "2021-12-29T20:02:02.443Z",
+    "community_member_subscription_id": 0,
+    "currency": "usd",
+    "community_member": {
+      "id": 0,
+      "name": "Member One",
+      "email": "member@circle.co",
+      "public_uid": "123fe0e1",
+      "created_at": "2021-12-29T19:57:34.622Z",
+      "updated_at": "2021-12-29T19:58:11.019Z",
+      "deleted_at": null
+    },
+    "paywalls": [
+      {
+        "id": 0,
+        "status": "active",
+        "display_name": "Level A",
+        "internal_name": "Basic membership annual",
+        "currency": "usd",
+        "price": {
+          "amount_in_cents": 12000,
+          "type": "subscription",
+          "interval_count": 1,
+          "interval": "yearly",
+          "currency": "usd"
+        }
+      }
+    ]
+  }
+]

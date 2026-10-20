@@ -1,0 +1,24 @@
+[
+  {
+    "id": 7781149,
+    "member_tag_id": 54710,
+    "member_tag_name": "Founder",
+    "member_tag_emoji": "👑",
+    "user_id": 0,
+    "user_email": "member1@circle.co",
+    "community_member_id": 0,
+    "created_at": "2023-05-10T21:35:32.426Z",
+    "updated_at": "2023-05-10T21:35:32.426Z"
+  },
+  {
+    "id": 7778852,
+    "member_tag_id": 54710,
+    "member_tag_name": "Founder",
+    "member_tag_emoji": "👑",
+    "user_id": 0,
+    "user_email": "member2@circle.co",
+    "community_member_id": 0,
+    "created_at": "2023-05-10T20:44:14.457Z",
+    "updated_at": "2023-05-10T20:44:14.457Z"
+  }
+]

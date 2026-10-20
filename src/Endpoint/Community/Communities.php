@@ -11,17 +11,15 @@ final class Communities extends AbstractEndpoint implements EndpointInterface
 {
     public function all(): mixed
     {
-        return $this->factorResponse(
-            $this->circleSo->getHttpClient()->get('/communities')
-        );
+        return $this->request('GET', '/communities');
     }
 
     public function community(string $slug, ?int $communityId = null): mixed
     {
-        $this->ensureCommunityIdIsPresent($communityId);
-
-        return $this->factorResponse(
-            response: $this->circleSo->getHttpClient()->get('/communities'),
+        return $this->request(
+            'GET',
+            "/communities/{$this->communityQuery($communityId)['community_id']}",
+            ['slug' => $slug],
             throwNotFoundException: true,
         );
     }

@@ -1,0 +1,26 @@
+{
+  "success": true,
+  "message": "Message sent",
+  "chat_room_message": {
+    "id": 12911178,
+    "updated_at": "2023-05-11T20:51:50.178Z",
+    "deleted_at": null,
+    "parent_message_id": null,
+    "created_at": "2023-05-11T20:51:50.174Z",
+    "chat_room_id": 2115586,
+    "chat_room_uuid": "45ab2af5-3d64-4079-ad7e-87a889f094fa",
+    "chat_room_participant_id": 54726113,
+    "body": "Hello and welcome to my Community",
+    "rich_text_body": null,
+    "sent_at": "2023-05-11T20:51:50.174Z",
+    "embedded": false,
+    "sender": {
+      "id": 0,
+      "name": "Community Admin",
+      "community_member_id": 0,
+      "user_public_uid": "00000",
+      "avatar_url": "https://secure.gravatar.com/avatar/971a73e753c5d11414300994ada66f85?default=404&secure=true&size=300"
+    },
+    "chat_thread_id": null
+  }
+}

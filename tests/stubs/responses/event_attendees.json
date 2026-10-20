@@ -1,0 +1,12 @@
+[
+  {
+    "id": 0,
+    "event_id": 0,
+    "community_member_id": 0,
+    "member_name": "Member One",
+    "member_email": "member@circle.so",
+    "headline": "Community builder",
+    "member_avatar_url": "https://app.circle.so/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBNzR5QlE9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--8585dcc27e82033fefb93409e115e9f8dd228d57/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFJc0FXa0NMQUU9IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--303343140e2172dc8c24fca3ba2b0156e869f191/member.png",
+    "rsvp_date": "2023-02-05T19:56:13.392Z"
+  }
+]

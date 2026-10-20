@@ -1,0 +1,125 @@
+[
+  {
+    "id": 266787,
+    "user_id": 0,
+    "community_id": 11111,
+    "community_member_id": 0,
+    "processor_id": "sub_1a2b3456cDE7890122",
+    "status": "active",
+    "fee_percent": "0.5",
+    "ends_at": null,
+    "trial_ends_at": null,
+    "deleted_at": null,
+    "created_at": "2023-05-11T16:18:53.042Z",
+    "updated_at": "2023-05-11T16:18:53.042Z",
+    "renews_at": "2023-06-11T16:18:51.000Z",
+    "currency": "usd",
+    "community_member": {
+      "id": 0,
+      "name": "Member One",
+      "email": "member1@circle.co",
+      "public_uid": "a38bb250",
+      "created_at": "2022-03-16T14:13:54.248Z",
+      "updated_at": "2023-04-18T14:32:52.809Z",
+      "deleted_at": null
+    },
+    "paywalls": [
+      {
+        "id": 0,
+        "status": "active",
+        "display_name": "My Course",
+        "internal_name": "Course only",
+        "currency": "usd",
+        "price": {
+          "amount_in_cents": 1000,
+          "type": "subscription",
+          "interval_count": 1,
+          "interval": "monthly",
+          "currency": "usd"
+        }
+      }
+    ]
+  },
+  {
+    "id": 169143,
+    "user_id": 0,
+    "community_id": 11111,
+    "community_member_id": 0,
+    "processor_id": "sub_1a2b3456cDE78901234",
+    "status": "active",
+    "fee_percent": "0.5",
+    "ends_at": null,
+    "trial_ends_at": "2023-04-19T18:25:10.000Z",
+    "deleted_at": null,
+    "created_at": "2023-04-18T18:25:11.150Z",
+    "updated_at": "2023-04-19T18:26:51.348Z",
+    "renews_at": "2023-05-19T18:25:10.000Z",
+    "currency": "usd",
+    "community_member": {
+      "id": 0,
+      "name": "Member Two",
+      "email": "member2@circle.co",
+      "public_uid": "97c573eb",
+      "created_at": "2023-04-18T18:25:09.921Z",
+      "updated_at": "2023-04-18T18:25:32.137Z",
+      "deleted_at": null
+    },
+    "paywalls": [
+      {
+        "id": 0,
+        "status": "active",
+        "display_name": "Level A",
+        "internal_name": "Basic membership monthly",
+        "currency": "usd",
+        "price": {
+          "amount_in_cents": 1200,
+          "type": "subscription",
+          "interval_count": 1,
+          "interval": "monthly",
+          "currency": "usd"
+        }
+      }
+    ]
+  },
+  {
+    "id": 156687,
+    "user_id": 0,
+    "community_id": 11111,
+    "community_member_id": 0,
+    "processor_id": "sub_1a2b3456cDE7890122345t57",
+    "status": "active",
+    "fee_percent": "0.5",
+    "ends_at": null,
+    "trial_ends_at": "2023-04-18T19:36:34.000Z",
+    "deleted_at": null,
+    "created_at": "2023-03-27T19:36:35.441Z",
+    "updated_at": "2023-04-18T19:36:54.639Z",
+    "renews_at": "2024-04-18T19:36:34.000Z",
+    "currency": "usd",
+    "community_member": {
+      "id": 0,
+      "name": "Member Three",
+      "email": "member3@circle.co",
+      "public_uid": "02fd30e4",
+      "created_at": "2023-03-27T19:36:33.952Z",
+      "updated_at": "2023-03-30T15:01:24.446Z",
+      "deleted_at": null
+    },
+    "paywalls": [
+      {
+        "id": 0,
+        "status": "active",
+        "display_name": "Level A",
+        "internal_name": "Basic membership annual",
+        "currency": "usd",
+        "price": {
+          "amount_in_cents": 1200,
+          "type": "subscription",
+          "interval_count": 1,
+          "interval": "yearly",
+          "currency": "usd"
+        }
+      }
+    ]
+  }
+]

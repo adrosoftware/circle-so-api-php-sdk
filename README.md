@@ -28,7 +28,7 @@ To see full documentation visit the official [documentation](https://adrosoftwar
 
 ## Requirements
 
-* PHP >= 8.1
+* PHP >= 8.1 (tested through PHP 8.5)
 * A [PSR-17 implementation](https://packagist.org/providers/psr/http-factory-implementation)
 * A [PSR-18 implementation](https://packagist.org/providers/psr/http-client-implementation)
 
@@ -57,6 +57,11 @@ $circleSo = CircleSo::make('5up3r53cr3770k3n');
 
 $me = $circleSo->me()->info();
 ```
+
+The V1 client covers the complete published API surface, including communities,
+members, spaces, space groups, posts, comments, messages, events, attendees,
+subscriptions, charges, likes, tags, courses, topics, notifications, contacts,
+profile fields, and flagged content.
 
 ## License
 

@@ -16,15 +16,18 @@ class Spaces extends AbstractEndpoint implements EndpointInterface
     /**
      * @throws CommunityIdNotPresentException
      */
-    public function spaces(?int $communityId = null): mixed
-    {
-        $this->ensureCommunityIdIsPresent($communityId);
-
-        return $this->factorResponse(
-            $this->circleSo->getHttpClient()->get(
-                "/spaces?community_id={$this->communityId}"
-            )
-        );
+    public function spaces(
+        ?int $communityId = null,
+        ?string $sort = null,
+        ?int $perPage = null,
+        ?int $page = null,
+    ): mixed {
+        return $this->request('GET', '/spaces', [
+            ...$this->communityQuery($communityId),
+            'sort' => $sort,
+            'per_page' => $perPage,
+            'page' => $page,
+        ]);
     }
 
     /**
@@ -33,13 +36,7 @@ class Spaces extends AbstractEndpoint implements EndpointInterface
      */
     public function show(int $id, ?int $communityId = null): mixed
     {
-        $this->ensureCommunityIdIsPresent($communityId);
-
-        return $this->factorResponse(
-            $this->circleSo->getHttpClient()->get(
-                "/spaces/{$id}?community_id={$this->communityId}"
-            )
-        );
+        return $this->request('GET', "/spaces/{$id}", $this->communityQuery($communityId));
     }
 
     /**
@@ -65,14 +62,7 @@ class Spaces extends AbstractEndpoint implements EndpointInterface
         array $data,
         ?int $communityId = null,
     ): mixed {
-        $this->ensureCommunityIdIsPresent($communityId);
-
-        return $this->factorResponse(
-            $this->circleSo->getHttpClient()->post(
-                uri: "/spaces?community_id={$this->communityId}",
-                body: json_encode($data),
-            )
-        );
+        return $this->request('POST', '/spaces', $this->communityQuery($communityId), $data);
     }
 
     /**
@@ -85,25 +75,16 @@ class Spaces extends AbstractEndpoint implements EndpointInterface
         int $id,
         ?int $communityId = null,
     ): mixed {
-        $this->ensureCommunityIdIsPresent($communityId);
-
-        return $this->factorResponse(
-            $this->circleSo->getHttpClient()->delete(
-                "/spaces/{$id}?community_id={$this->communityId}",
-            )
-        );
+        return $this->request('DELETE', "/spaces/{$id}", $this->communityQuery($communityId));
     }
 
     public function members(
         int $id,
         ?int $communityId = null
     ): mixed {
-        $this->ensureCommunityIdIsPresent($communityId);
-
-        return $this->factorResponse(
-            $this->circleSo->getHttpClient()->delete(
-                "/space_members/{$id}?space_id={$id}&community_id={$this->communityId}",
-            )
-        );
+        return $this->request('GET', '/space_members', [
+            ...$this->communityQuery($communityId),
+            'space_id' => $id,
+        ]);
     }
 }

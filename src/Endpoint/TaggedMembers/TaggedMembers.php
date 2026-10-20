@@ -13,27 +13,29 @@ use AdroSoftware\CircleSoSdk\Exception\{
 
 final class TaggedMembers extends AbstractEndpoint implements EndpointInterface
 {
+    public function all(?string $sort = null, ?int $perPage = null, ?int $page = null): mixed
+    {
+        return $this->request('GET', '/tagged_members', [
+            'sort' => $sort,
+            'per_page' => $perPage,
+            'page' => $page,
+        ]);
+    }
+
+    public function show(int $id): mixed
+    {
+        return $this->request('GET', "/tagged_members/{$id}");
+    }
+
     /**
      * @throws CommunityIdNotPresentException
      */
     public function tagMember(string|array $email, int $memberTagId): mixed
     {
-        if (is_array($email)) {
-            $emailParam = '';
-            foreach ($email as $e) {
-                $emailParam .= "user_email[]={$e}&";
-            }
-
-            $emailParam = trim($emailParam, '&');
-        } else {
-            $emailParam = "user_email={$email}";
-        }
-
-        return $this->factorResponse(
-            $this->circleSo->getHttpClient()->post(
-                "/tagged_members?{$emailParam}&member_tag_id={$memberTagId}"
-            )
-        );
+        return $this->request('POST', '/tagged_members', [
+            'user_email' => $email,
+            'member_tag_id' => $memberTagId,
+        ]);
     }
 
     /**
@@ -41,12 +43,10 @@ final class TaggedMembers extends AbstractEndpoint implements EndpointInterface
      */
     public function untagMember(string $email, int $memberTagId, ?int $communityId = null): mixed
     {
-        $this->ensureCommunityIdIsPresent($communityId);
-
-        return $this->factorResponse(
-            $this->circleSo->getHttpClient()->delete(
-                "/tagged_members?email={$email}&member_tag_id={$memberTagId}&community_id={$this->communityId}"
-            )
-        );
+        return $this->request('DELETE', '/tagged_members', [
+            'email' => $email,
+            'member_tag_id' => $memberTagId,
+            ...$this->communityQuery($communityId),
+        ]);
     }
 }

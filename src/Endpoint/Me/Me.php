@@ -11,8 +11,6 @@ final class Me extends AbstractEndpoint implements EndpointInterface
 {
     public function info(): mixed
     {
-        return $this->factorResponse(
-            $this->circleSo->getHttpClient()->get('/me')
-        );
+        return $this->request('GET', '/me');
     }
 }
