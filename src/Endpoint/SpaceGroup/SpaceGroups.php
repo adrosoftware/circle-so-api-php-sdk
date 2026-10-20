@@ -18,13 +18,7 @@ class SpaceGroups extends AbstractEndpoint implements EndpointInterface
      */
     public function spaceGroups(?int $communityId = null): mixed
     {
-        $this->ensureCommunityIdIsPresent($communityId);
-
-        return $this->factorResponse(
-            $this->circleSo->getHttpClient()->get(
-                "/space_groups?community_id={$this->communityId}"
-            )
-        );
+        return $this->request('GET', '/space_groups', $this->communityQuery($communityId));
     }
 
     /**
@@ -33,13 +27,7 @@ class SpaceGroups extends AbstractEndpoint implements EndpointInterface
      */
     public function show(int $id, ?int $communityId = null): mixed
     {
-        $this->ensureCommunityIdIsPresent($communityId);
-
-        return $this->factorResponse(
-            $this->circleSo->getHttpClient()->get(
-                "/space_groups/{$id}?community_id={$this->communityId}"
-            )
-        );
+        return $this->request('GET', "/space_groups/{$id}", $this->communityQuery($communityId));
     }
 
     /**
@@ -67,14 +55,7 @@ class SpaceGroups extends AbstractEndpoint implements EndpointInterface
         array $data,
         ?int $communityId = null,
     ): mixed {
-        $this->ensureCommunityIdIsPresent($communityId);
-
-        return $this->factorResponse(
-            $this->circleSo->getHttpClient()->post(
-                uri: "/space_groups?community_id={$this->communityId}",
-                body: json_encode($data),
-            )
-        );
+        return $this->request('POST', '/space_groups', $this->communityQuery($communityId), $data);
     }
 
     /**
@@ -101,14 +82,7 @@ class SpaceGroups extends AbstractEndpoint implements EndpointInterface
         array $data,
         ?int $communityId = null,
     ): mixed {
-        $this->ensureCommunityIdIsPresent($communityId);
-
-        return $this->factorResponse(
-            $this->circleSo->getHttpClient()->put(
-                uri: "/space_groups/{$id}?community_id={$this->communityId}",
-                body: json_encode($data),
-            )
-        );
+        return $this->request('PUT', "/space_groups/{$id}", $this->communityQuery($communityId), $data);
     }
 
     /**
@@ -121,12 +95,6 @@ class SpaceGroups extends AbstractEndpoint implements EndpointInterface
         int $id,
         ?int $communityId = null,
     ): mixed {
-        $this->ensureCommunityIdIsPresent($communityId);
-
-        return $this->factorResponse(
-            $this->circleSo->getHttpClient()->delete(
-                "/space_groups/{$id}?community_id={$this->communityId}",
-            )
-        );
+        return $this->request('DELETE', "/space_groups/{$id}", $this->communityQuery($communityId));
     }
 }

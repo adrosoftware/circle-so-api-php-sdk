@@ -20,20 +20,15 @@ final class Members extends AbstractEndpoint implements EndpointInterface
         ?int $page = null,
         ?string $status = null,
     ): mixed {
-        $this->ensureCommunityIdIsPresent($communityId);
-
         $query = [
+            ...$this->communityQuery($communityId),
             'sort' => $sortBy ?? 'latest',
             'per_page' => $perPage ?? 10,
             'page' => $page ?? 1,
             'status' => $status ?? 'active',
         ];
 
-        return $this->factorResponse(
-            $this->circleSo->getHttpClient()->get(
-                "/community_members?" . http_build_query($query)
-            )
-        );
+        return $this->request('GET', '/community_members', $query);
     }
 
     /**
@@ -41,13 +36,10 @@ final class Members extends AbstractEndpoint implements EndpointInterface
      */
     public function search(string $email, ?int $communityId = null): mixed
     {
-        $this->ensureCommunityIdIsPresent($communityId);
-
-        return $this->factorResponse(
-            $this->circleSo->getHttpClient()->get(
-                "/community_members/search?community_id={$this->communityId}&email={$email}"
-            )
-        );
+        return $this->request('GET', '/community_members/search', [
+            ...$this->communityQuery($communityId),
+            'email' => $email,
+        ]);
     }
 
     /**
@@ -56,13 +48,7 @@ final class Members extends AbstractEndpoint implements EndpointInterface
      */
     public function member(int $id, ?int $communityId = null): mixed
     {
-        $this->ensureCommunityIdIsPresent($communityId);
-
-        return $this->factorResponse(
-            $this->circleSo->getHttpClient()->get(
-                "/community_members/{$id}?community_id={$this->communityId}"
-            )
-        );
+        return $this->request('GET', "/community_members/{$id}", $this->communityQuery($communityId));
     }
 
     /**
@@ -105,10 +91,8 @@ final class Members extends AbstractEndpoint implements EndpointInterface
         ?array $spaceGroupIds = null,
         ?bool $skipInvitation = null,
     ): mixed {
-        $this->ensureCommunityIdIsPresent($communityId);
-
         $params = [
-            'community_id' => $this->communityId,
+            ...$this->communityQuery($communityId),
         ];
 
         if (is_array($spaceIds)) {
@@ -119,18 +103,9 @@ final class Members extends AbstractEndpoint implements EndpointInterface
             $params['space_group_ids'] = '[' . implode(',', $spaceGroupIds) . ']';
         }
 
-        if ($skipInvitation) {
-            $params['skip_invitation'] = 'true';
-        }
+        $params['skip_invitation'] = $skipInvitation;
 
-        $endpoint =  "/community_members/{$id}?" . urldecode(http_build_query($params));
-
-        return $this->factorResponse(
-            $this->circleSo->getHttpClient()->put(
-                uri: $endpoint,
-                body: json_encode($data),
-            )
-        );
+        return $this->request('PUT', "/community_members/{$id}", $params, $data);
     }
 
     /**
@@ -138,13 +113,10 @@ final class Members extends AbstractEndpoint implements EndpointInterface
      */
     public function remove(string $email, ?int $communityId = null): mixed
     {
-        $this->ensureCommunityIdIsPresent($communityId);
-
-        return $this->factorResponse(
-            $this->circleSo->getHttpClient()->delete(
-                "/community_members?community_id={$this->communityId}&email={$email}"
-            )
-        );
+        return $this->request('DELETE', '/community_members', [
+            ...$this->communityQuery($communityId),
+            'email' => $email,
+        ]);
     }
 
     /**
@@ -152,22 +124,14 @@ final class Members extends AbstractEndpoint implements EndpointInterface
      */
     public function invite(string $email, ?int $communityId = null): mixed
     {
-        $endpoint =  "/community_members/";
-
         $data = [
             'email' => $email,
         ];
 
-        if (!empty($communityId)) {
-            $this->ensureCommunityIdIsPresent($communityId);
-            $data['community_id'] = $communityId;
+        if ($communityId !== null || $this->communityId !== null) {
+            $data['community_id'] = $this->communityQuery($communityId)['community_id'];
         }
 
-        return $this->factorResponse(
-            $this->circleSo->getHttpClient()->post(
-                uri: $endpoint,
-                body: json_encode($data),
-            )
-        );
+        return $this->request('POST', '/community_members', data: $data);
     }
 }

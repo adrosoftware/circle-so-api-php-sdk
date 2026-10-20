@@ -18,13 +18,7 @@ final class MemberTag extends AbstractEndpoint implements EndpointInterface
      */
     public function memberTags(?int $communityId = null): mixed
     {
-        $this->ensureCommunityIdIsPresent($communityId);
-
-        return $this->factorResponse(
-            $this->circleSo->getHttpClient()->get(
-                "/member_tags?community_id={$this->communityId}"
-            )
-        );
+        return $this->request('GET', '/member_tags', $this->communityQuery($communityId));
     }
 
     /**
@@ -33,12 +27,6 @@ final class MemberTag extends AbstractEndpoint implements EndpointInterface
      */
     public function show(int $id, ?int $communityId = null): mixed
     {
-        $this->ensureCommunityIdIsPresent($communityId);
-
-        return $this->factorResponse(
-            $this->circleSo->getHttpClient()->get(
-                "/member_tags/{$id}?community_id={$this->communityId}"
-            )
-        );
+        return $this->request('GET', "/member_tags/{$id}", $this->communityQuery($communityId));
     }
 }

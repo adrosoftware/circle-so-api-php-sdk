@@ -33,9 +33,13 @@ final class ClientBuilder
         $this->plugins[] = $plugin;
     }
 
-    public function getHttpClient(): HttpMethodsClientInterface
+    /** @param array<Plugin> $plugins */
+    public function getHttpClient(array $plugins = []): HttpMethodsClientInterface
     {
-        $pluginClient = (new PluginClientFactory())->createClient($this->httpClient, $this->plugins);
+        $pluginClient = (new PluginClientFactory())->createClient(
+            $this->httpClient,
+            [...$this->plugins, ...$plugins],
+        );
 
         return new HttpMethodsClient(
             $pluginClient,

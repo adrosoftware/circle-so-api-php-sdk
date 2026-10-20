@@ -17,6 +17,7 @@ use Http\Client\Common\HttpMethodsClientInterface;
 use Http\Client\Common\Plugin\BaseUriPlugin;
 use Http\Client\Common\Plugin\HeaderDefaultsPlugin;
 use Psr\Http\Message\ResponseInterface;
+use Psr\Http\Message\UriInterface;
 
 abstract class AbstractClient
 {
@@ -25,6 +26,8 @@ abstract class AbstractClient
     protected FactoryInterface $responseFactory;
 
     protected ResponseTransformerInterface $responseTransformer;
+
+    private HeaderDefaultsPlugin $headerDefaultsPlugin;
 
     public function __construct(
         protected string $token,
@@ -36,20 +39,25 @@ abstract class AbstractClient
         $this->responseFactory = $this->options->getResponseFactory();
 
         $this->clientBuilder = $this->options->getClientBuilder();
-        $this->clientBuilder->addPlugin(new BaseUriPlugin($this->options->getUri()));
-        $this->clientBuilder->addPlugin(
-            new HeaderDefaultsPlugin([
-                'User-Agent' => $this->options->getUserAgent(),
-                'Content-Type' => 'application/json',
-                'Accept' => 'application/json',
-                'Authorization' => "Token {$this->token}",
-            ])
-        );
+        $this->headerDefaultsPlugin = new HeaderDefaultsPlugin([
+            'User-Agent' => $this->options->getUserAgent(),
+            'Content-Type' => 'application/json',
+            'Accept' => 'application/json',
+            'Authorization' => "Token {$this->token}",
+        ]);
     }
 
-    public function getHttpClient(): HttpMethodsClientInterface
+    public function getHttpClient(?UriInterface $baseUri = null): HttpMethodsClientInterface
     {
-        return $this->clientBuilder->getHttpClient();
+        return $this->clientBuilder->getHttpClient([
+            new BaseUriPlugin($baseUri ?? $this->options->getUri()),
+            $this->headerDefaultsPlugin,
+        ]);
+    }
+
+    public function uri(string $uri): UriInterface
+    {
+        return $this->options->getUriFactory()->createUri($uri);
     }
 
     public function getResponseTransformer(): ResponseTransformerInterface
