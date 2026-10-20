@@ -67,11 +67,11 @@ The SDK also covers every operation currently published in Circle's Admin API
 V2, Headless Auth API, and Headless Member API specifications:
 
 ```php
-use AdroSoftware\CircleSoSdk\AdminV2;
+use AdroSoftware\CircleSoSdk\Admin;
 use AdroSoftware\CircleSoSdk\HeadlessAuth;
 use AdroSoftware\CircleSoSdk\HeadlessMember;
 
-$admin = AdminV2::make($adminApiToken);
+$admin = Admin::make($adminApiToken, version: 2);
 $members = $admin->communityMembers()->all(['page' => 1]);
 
 $auth = HeadlessAuth::make($headlessApiToken);
@@ -82,6 +82,17 @@ $tokens = $auth->tokens()->createGetAnAuthToken([
 $member = HeadlessMember::make($tokens['access_token']);
 $spaces = $member->spaces()->getListOfSpaces();
 ```
+
+The unified admin entry point supports both published API versions. Version 2
+is the default, while V1 can be selected explicitly:
+
+```php
+$adminV1 = Admin::make($adminApiToken, version: 1);
+$adminV2 = Admin::make($adminApiToken, version: 2);
+```
+
+The existing `CircleSo::make()` and `AdminV2::make()` entry points remain
+available for backward compatibility.
 
 Each client also exposes `raw()` for newly released Circle routes that are not
 yet represented by a named resource method.
