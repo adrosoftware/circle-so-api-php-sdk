@@ -4,12 +4,8 @@ declare(strict_types=1);
 
 namespace AdroSoftware\CircleSoSdk;
 
-final class Admin
+abstract class Admin
 {
-    private function __construct()
-    {
-    }
-
     /** @param int $version Admin API version (1 or 2). */
     public static function make(
         string $token,
