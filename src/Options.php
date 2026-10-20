@@ -70,4 +70,9 @@ final class Options
     {
         return $this->options['user_agent'];
     }
+
+    public function withApiVersion(string $apiVersion): self
+    {
+        return new self([...$this->options, 'api_version' => trim($apiVersion, '/')]);
+    }
 }

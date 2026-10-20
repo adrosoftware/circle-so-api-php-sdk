@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace AdroSoftware\CircleSoSdk\Endpoint;
 
-use AdroSoftware\CircleSoSdk\CircleSo;
+use AdroSoftware\CircleSoSdk\AbstractClient;
 use AdroSoftware\CircleSoSdk\Exception\{
     CommunityIdNotPresentException,
     RequestUnauthorizedException,
@@ -16,7 +16,7 @@ use JsonException;
 
 abstract class AbstractEndpoint
 {
-    public function __construct(protected CircleSo $circleSo, protected ?int $communityId = null)
+    public function __construct(protected AbstractClient $circleSo, protected ?int $communityId = null)
     {
     }
 

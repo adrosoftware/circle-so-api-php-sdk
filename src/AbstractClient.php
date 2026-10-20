@@ -43,8 +43,13 @@ abstract class AbstractClient
             'User-Agent' => $this->options->getUserAgent(),
             'Content-Type' => 'application/json',
             'Accept' => 'application/json',
-            'Authorization' => "Token {$this->token}",
+            'Authorization' => $this->authorizationHeader(),
         ]);
+    }
+
+    protected function authorizationHeader(): string
+    {
+        return "Token {$this->token}";
     }
 
     public function getHttpClient(?UriInterface $baseUri = null): HttpMethodsClientInterface
